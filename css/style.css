@@ -1,11 +1,26 @@
+:root {
+  --black-main: rgb(54, 51, 51);
+  --white-main: rgb(238, 232, 232);
+  --blue-main: rgb(71, 88, 175);
+  --blue-main-2: rgb(52, 74, 183);
+}
+
 * {
   margin: none;
   padding: none;
+  word-spacing: -4px;
 }
 
 @font-face {
   font-family: "MythbustersFont";
   src: url(./fonts/MythBusters.ttf);
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v25-latin_cyrillic-regular.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../fonts/montserrat-v25-latin_cyrillic-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/montserrat-v25-latin_cyrillic-regular.woff2") format("woff2"), url("../fonts/montserrat-v25-latin_cyrillic-regular.woff") format("woff"), url("../fonts/montserrat-v25-latin_cyrillic-regular.ttf") format("truetype"), url("../fonts/montserrat-v25-latin_cyrillic-regular.svg#Montserrat") format("svg"); /* Legacy iOS */
 }
 .mobile-navbar-toggle {
   display: none;
@@ -16,7 +31,7 @@
 }
 
 body {
-  background-color: rgb(245, 243, 243);
+  background-color: var(--white-main);
   scroll-behavior: smooth;
   overflow-x: hidden;
   max-width: 100%;
@@ -25,13 +40,17 @@ body {
 }
 
 .header {
+  position: fixed;
+  background-color: var(--white-main);
+  width: 100vw;
+  height: 3.6rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .header img {
-  width: 13em;
-  height: 3rem;
+  width: 11.5em;
+  height: 2.6rem;
   margin: 0.65rem;
 }
 
@@ -43,26 +62,23 @@ nav {
   font-family: "MythbustersFont";
   display: flex;
   margin: 0;
-  margin-right: 1.2rem;
+  margin-right: 2.5rem;
   background: none;
-  font-size: 1.6rem;
+  font-size: 1.55rem;
 }
 .navbar a {
-  color: rgb(51, 37, 37);
+  color: var(--black-main);
   text-decoration: none;
 }
 .navbar li {
   list-style-type: none;
-  margin-left: 40px;
+  margin-left: 33px;
+}
+.navbar a:hover {
+  color: #4452b9;
 }
 
-@supports ((-webkit-backdrop-filter: blur(0.5rem)) or (backdrop-filter: blur(0.5rem))) {
-  .navbar {
-    -webkit-backdrop-filter: blur(0.5rem);
-            backdrop-filter: blur(0.5rem);
-  }
-}
-@media (max-width: 35em) {
+@media (max-width: 920px) {
   html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -75,11 +91,14 @@ nav {
     position: fixed;
     inset: 0 0 0 0%;
     flex-direction: column;
-    padding: min(30vh, 7rem) 1rem;
+    padding: min(30vh, 7rem) 0rem;
     font-size: 2.3rem;
     z-index: 16;
     transform: translateX(100%);
-    transition: transform 350ms ease-out;
+    transition: transform 280ms ease-out;
+    background: rgba(231, 230, 230, 0.248);
+    -webkit-backdrop-filter: blur(0.5rem);
+            backdrop-filter: blur(0.5rem);
   }
   .navbar li {
     margin-bottom: 0.8rem;
@@ -90,7 +109,8 @@ nav {
   .header {
     position: fixed;
     width: 100vw;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white-main);
+    height: 4rem;
     top: -0.1rem;
     right: 0rem;
   }
@@ -99,6 +119,7 @@ nav {
     height: 2.5rem;
     margin: 0.5rem;
     margin-left: 0.7rem;
+    margin-top: 0.6rem;
   }
   .mobile-navbar-toggle {
     display: block;
@@ -116,11 +137,13 @@ nav {
   }
   .button-bg {
     display: block;
-    background-color: rgb(38, 38, 38);
+    position: absolute;
+    background-color: var(--black-main);
     width: 4rem;
     height: 4rem;
+    right: inherit;
+    top: auto;
     z-index: 7;
-    margin-left: 8.2rem;
   }
   .mobile-navbar-toggle[aria-expanded=true] {
     background: url("/img/VisualEditor_-_Icon_-_Close_-_white.svg");
@@ -128,20 +151,12 @@ nav {
     background-size: 100%;
     width: 4rem;
     top: 0rem;
-    right: -0.2rem;
+    right: 0rem;
   }
 }
-@media (min-width: 35em) and (max-width: 45em) {
-  .navbar {
-    font-size: 1.5rem;
-  }
-  .navbar li {
-    margin-right: 20px;
-  }
+@media (min-width: 415px) and (max-width: 900px) {
   .header img {
-    width: 10rem;
-    height: 2.5rem;
-    margin: 0.5rem;
+    margin-left: 2rem;
   }
 }
 .anim-container {
@@ -178,4 +193,106 @@ nav {
 }
 .first-section {
   height: 100vh;
+}
+
+#language {
+  width: 50rem;
+  height: 20rem;
+  margin-right: 3.5rem;
+}
+#language option img {
+  width: 20px;
+  height: 20px;
+}
+
+main {
+  font-family: "Inter", sans-serif;
+}
+
+.lang-menu {
+  margin-top: 0.4rem;
+  position: relative;
+}
+
+.selected-lang {
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  width: 100px;
+  margin-bottom: 0.4rem;
+}
+
+.selected-lang::before {
+  content: "";
+  display: block;
+  height: 24px;
+  background-image: url(https://countryflagsapi.com/png/gb);
+  background-size: 100%;
+  width: 3rem;
+}
+
+.lang-menu ul {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(242, 241, 241);
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: none;
+  position: absolute;
+  top: 1.9rem;
+  left: -0.3rem;
+}
+
+.lang-menu:hover ul {
+  display: block;
+}
+
+.lang-menu ul li {
+  list-style: none;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.lang-menu ul li a {
+  width: 125px;
+  display: block;
+  padding: 5px 8px;
+}
+
+.lang-menu ul li a::before {
+  content: "";
+  display: inline-block;
+  height: 21px;
+  vertical-align: middle;
+  margin-right: 10px;
+  background-image: url(https://countryflagsapi.com/png/gb);
+  background-size: 100%;
+  width: 2rem;
+}
+
+.lang-menu ul li a:hover {
+  background-color: #e4e3e3;
+  border-radius: 5px;
+}
+
+#nl:before {
+  background-image: url(https://countryflagsapi.com/png/nl);
+}
+
+#ge:before {
+  background-image: url(https://countryflagsapi.com/png/de);
+  height: 19px;
+}
+
+#fr:before {
+  background-image: url(https://countryflagsapi.com/png/fr);
+}
+
+#ua:before {
+  background-image: url(https://countryflagsapi.com/png/ua);
 }/*# sourceMappingURL=style.css.map */
