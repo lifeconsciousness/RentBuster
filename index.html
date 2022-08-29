@@ -5,36 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rent Buster</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <a href=""><img src="./img/RentBuster logo without background.png" alt="RentBuster logo"></a>
+        <div class="navbar-wrapper">
+            <a href=""><img src="/img/RentBuster logo without background.png" alt="RentBuster logo"></a>
 
-        <button class="mobile-navbar-toggle" aria-expanded="false"></button>
-        <div class="button-bg"></div>
+            <button class="mobile-navbar-toggle" aria-expanded="false"></button>
+            <div class="button-bg"></div>
+            
+            <nav>
+                <ul id="navbar" class="navbar" data-visible = false>
+                    <li class="active"><a href="">Home</a></li>
+                    <li class="active"><a href="">About us</a></li>
+                    <li class="active"><a href="">FAQ</a></li>
+                    <li class="active"><a href="">More information</a></li>
+                    <li class="active"><a href="">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+        
 
+        <!-- make separate html pages for different languages -->
+        <!-- Make separate wrapper for all objects exept language  -->
         <div class="lang-menu">
             <div class="selected-lang">
-                English
+                <!-- English -->
             </div>
             <ul>
                 <li><a id="nl">Dutch</a></li>
+                <li><a href="./index.html" id="en">English</a></li>
                 <li><a id="ge">German</a></li>
                 <li><a id="fr">French</a></li>
-                <li><a id="ua">Ukrainian</a></li>
+                <li><a href="./translatedPages/indexUA.html" id="ua">Ukrainian</a></li>
             </ul>
         </div>
-        <nav>
-            <ul id="navbar" class="navbar" data-visible = false>
-                <li class="active"><a href="">Home</a></li>
-                <li class="active"><a href="">About us</a></li>
-                <li class="active"><a href="">FAQ</a></li>
-                <li class="active"><a href="">More information</a></li>
-                <li class="active"><a href="">Contact us</a></li>
-            </ul>
-        </nav>
     </header>
     
     <main>

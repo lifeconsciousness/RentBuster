@@ -9,7 +9,6 @@
 *{
     margin: none;
     padding: none;
-    word-spacing: -4px;
 }
 
 @font-face {
@@ -54,8 +53,8 @@ body{
     width: 100vw;
     height: 3.6rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    //justify-content: space-between;
+    //align-items: center;
     img{
         width: 11.5em;
         height: 2.6rem;
@@ -63,16 +62,23 @@ body{
     }
 }
 
+.navbar-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+}
+
 nav{
     display: flex;
-
 }
 
 .navbar{
     font-family: 'MythbustersFont';
     display: flex;
     margin: 0;
-    margin-right: 2.5rem;
+    margin-right: 3.7rem;
+    word-spacing: -4px;
     a{
         //color: rgb(51, 37, 37);
         color: var(--black-main);
@@ -148,7 +154,7 @@ nav{
         aspect-ratio: 1;
         //top: 0.8rem;
         //right: 1.4rem;
-        top: 0.6rem;
+        top: 0.5rem;
         //right: 0.95rem;
         right: 0.44rem;
         z-index: 17;
@@ -163,7 +169,7 @@ nav{
         background-color: var(--black-main);
         width: 4rem;
         height: 4rem;
-        right: inherit;
+        right: 0rem;
         top: auto;
         z-index: 7;
     }
@@ -175,6 +181,11 @@ nav{
         width: 4rem;
         top: -0rem;
         right: -0rem;
+    }
+
+    .lang-menu{
+        margin-right: 3rem;
+        padding-top: 0.3rem;
     }
 }
 
@@ -211,27 +222,15 @@ nav{
     height: 100vh;
 }
 
- 
-#language{
-    //width: 5rem;
-    width: 50rem;
-    height: 20rem;
-    margin-right: 3.5rem;
-    option{
-        img{
-            width: 20px;
-            height: 20px;
-        }
-    }
-}
 
-main{
-    font-family: 'Inter', sans-serif;
-}
+//language selection menu
 
 .lang-menu{
     margin-top: 0.4rem;
     position: relative;
+    width: 5rem;
+    top: 0.5rem;
+    right: 1.5rem;
 }
 
 .selected-lang{
@@ -241,9 +240,10 @@ main{
     justify-content: space-between;
     font-size: 0.9rem;
     line-height: 1.55;
-    width: 100px;
+    //width: 100px;
     margin-bottom: 0.4rem;
 }
+
 
 .selected-lang::before{
     content: '';
@@ -265,8 +265,8 @@ main{
     //padding: 0.14rem;
     display: none;
     position: absolute;
-    top: 1.9rem;
-    left: -0.3rem;
+    top: 2.2rem;
+    right: -0.2rem;
 }
 
 .lang-menu:hover ul{
@@ -284,7 +284,9 @@ main{
 .lang-menu ul li a{
     width: 125px;
     display: block;
-    padding: 5px 8px;
+    padding: 7px 8px;
+    text-decoration: none;
+    color:var(--black-main)
 }
 
 .lang-menu ul li a::before{
@@ -305,6 +307,12 @@ main{
 
 #nl:before{
     background-image: url(https://countryflagsapi.com/png/nl);
+}
+
+#en:before{
+    background-image: url(https://countryflagsapi.com/png/gb);
+    background-position: center;
+    background-size: 125%;
 }
 
 #ge:before{

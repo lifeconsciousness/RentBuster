@@ -8,7 +8,6 @@
 * {
   margin: none;
   padding: none;
-  word-spacing: -4px;
 }
 
 @font-face {
@@ -45,13 +44,18 @@ body {
   width: 100vw;
   height: 3.6rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .header img {
   width: 11.5em;
   height: 2.6rem;
   margin: 0.65rem;
+}
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
 }
 
 nav {
@@ -62,7 +66,8 @@ nav {
   font-family: "MythbustersFont";
   display: flex;
   margin: 0;
-  margin-right: 2.5rem;
+  margin-right: 3.7rem;
+  word-spacing: -4px;
   background: none;
   font-size: 1.55rem;
 }
@@ -129,7 +134,7 @@ nav {
     background-size: 100%;
     width: 3rem;
     aspect-ratio: 1;
-    top: 0.6rem;
+    top: 0.5rem;
     right: 0.44rem;
     z-index: 17;
     border: 0;
@@ -141,7 +146,7 @@ nav {
     background-color: var(--black-main);
     width: 4rem;
     height: 4rem;
-    right: inherit;
+    right: 0rem;
     top: auto;
     z-index: 7;
   }
@@ -152,6 +157,10 @@ nav {
     width: 4rem;
     top: 0rem;
     right: 0rem;
+  }
+  .lang-menu {
+    margin-right: 3rem;
+    padding-top: 0.3rem;
   }
 }
 @media (min-width: 415px) and (max-width: 900px) {
@@ -195,23 +204,12 @@ nav {
   height: 100vh;
 }
 
-#language {
-  width: 50rem;
-  height: 20rem;
-  margin-right: 3.5rem;
-}
-#language option img {
-  width: 20px;
-  height: 20px;
-}
-
-main {
-  font-family: "Inter", sans-serif;
-}
-
 .lang-menu {
   margin-top: 0.4rem;
   position: relative;
+  width: 5rem;
+  top: 0.5rem;
+  right: 1.5rem;
 }
 
 .selected-lang {
@@ -221,7 +219,6 @@ main {
   justify-content: space-between;
   font-size: 0.9rem;
   line-height: 1.55;
-  width: 100px;
   margin-bottom: 0.4rem;
 }
 
@@ -242,8 +239,8 @@ main {
   border-radius: 5px;
   display: none;
   position: absolute;
-  top: 1.9rem;
-  left: -0.3rem;
+  top: 2.2rem;
+  right: -0.2rem;
 }
 
 .lang-menu:hover ul {
@@ -261,7 +258,9 @@ main {
 .lang-menu ul li a {
   width: 125px;
   display: block;
-  padding: 5px 8px;
+  padding: 7px 8px;
+  text-decoration: none;
+  color: var(--black-main);
 }
 
 .lang-menu ul li a::before {
@@ -282,6 +281,12 @@ main {
 
 #nl:before {
   background-image: url(https://countryflagsapi.com/png/nl);
+}
+
+#en:before {
+  background-image: url(https://countryflagsapi.com/png/gb);
+  background-position: center;
+  background-size: 125%;
 }
 
 #ge:before {
