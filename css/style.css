@@ -66,7 +66,7 @@ nav {
   font-family: "MythbustersFont";
   display: flex;
   margin: 0;
-  margin-right: 3.7rem;
+  margin-right: 1.85rem;
   word-spacing: -4px;
   background: none;
   font-size: 1.55rem;
@@ -83,7 +83,7 @@ nav {
   color: #4452b9;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 923px) {
   html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -144,9 +144,9 @@ nav {
     display: block;
     position: absolute;
     background-color: var(--black-main);
-    width: 4rem;
+    width: 4.4rem;
     height: 4rem;
-    right: 0rem;
+    right: -0.23rem;
     top: auto;
     z-index: 7;
   }
@@ -159,8 +159,11 @@ nav {
     right: 0rem;
   }
   .lang-menu {
-    margin-right: 3rem;
+    margin-right: 4.7rem;
     padding-top: 0.3rem;
+  }
+  #languages {
+    right: 0rem;
   }
 }
 @media (min-width: 415px) and (max-width: 900px) {
@@ -209,7 +212,7 @@ nav {
   position: relative;
   width: 5rem;
   top: 0.5rem;
-  right: 1.5rem;
+  right: 0rem;
 }
 
 .selected-lang {
@@ -240,7 +243,7 @@ nav {
   display: none;
   position: absolute;
   top: 2.2rem;
-  right: -0.2rem;
+  right: 1rem;
 }
 
 .lang-menu:hover ul {
