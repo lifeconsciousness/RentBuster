@@ -48,16 +48,16 @@ body{
 
 .header{
     position: fixed;
-    background-color: var(--white-main);
-    //background-color: var(--blue-main-2);
+    //background-color: var(--white-main);
+    background-color: rgba(238, 232, 232, 0.66);     //CHANGED TRANSPARENT
+    backdrop-filter: blur(0.7rem);
     width: 100vw;
     height: 3.6rem;
     display: flex;
-    //justify-content: space-between;
-    //align-items: center;
+
     img{
-        width: 11.5em;
-        height: 2.6rem;
+        width: 11em;
+        height: 2.5rem;
         margin: 0.65rem;
     }
 }
@@ -91,11 +91,14 @@ nav{
         margin-left: 33px;
     }
     a:hover{
-        color: #4452b9;
+        //color: #4452b9;
+        color: #4153da;
     }
     background: none;
     font-size: 1.55rem;
 }
+
+//making website responsive on a small devices
 
 @media (max-width: 923px){
     html, body {
@@ -103,10 +106,11 @@ nav{
         overflow-x: hidden;
     }
     main{
-        padding-top: 3.8rem;
+        //padding-top: 3.8rem;                      //CHANGED TRANSPARENT
     }
     .navbar{
         width: 100%;
+        height: 2000px;
         position: fixed;
         inset: 0 0 0 0%;
         flex-direction: column;
@@ -138,9 +142,11 @@ nav{
         position: fixed; //newly added
         width: 100vw;
         //background-color: rgb(38, 38, 38);
-        background-color:var(--white-main);
+        //background-color:var(--white-main);
+        background-color: rgba(238, 232, 232, 0.66);
+        backdrop-filter: blur(0.7rem);                  //CHANGED TRANSPARENT
         height: 4rem;
-        top: -0.1rem;
+        //top: -0.1rem;
         right: 0rem;
     }
 
@@ -184,13 +190,15 @@ nav{
     }
 
     .lang-menu{
-        margin-right: 4.7rem;
+        margin-right: 4.2rem;
         padding-top: 0.3rem;
     }
     #languages{
         right: 0rem;
     }
 }
+
+
 
 @media (min-width: 415px) and (max-width:900px){
     .header{
@@ -200,32 +208,6 @@ nav{
     }
 }
 
-.anim-container{
-    height: 100vh;
-    width: 100%;
-    //background: linear-gradient(30deg,#222831,#30475E,#F05454);
-    background: linear-gradient(-30deg, #713038, #463d81, #1babf485);
-    background-size: 200% 200%;
-    animation: color 50s ease-in-out infinite;
-}
-
-@keyframes color{
-    0%{
-        background-position: 0 50%;
-    }
-    50%{
-        background-position: 100% 50%;
-    }
-    100%{
-        background-position: 0 50%;
-    }
-}
-
-.first-section{
-    height: 100vh;
-}
-
-
 //language selection menu
 
 .lang-menu{
@@ -233,7 +215,7 @@ nav{
     position: relative;
     width: 5rem;
     top: 0.5rem;
-    right: 0rem;
+    right: 0.5rem;
 }
 
 .selected-lang{
@@ -329,4 +311,51 @@ nav{
 
 #ua:before{
     background-image: url(https://countryflagsapi.com/png/ua);
+}
+
+
+//animated gradient backgrounds
+.anim-container{
+    height: 100vh;
+    width: 100%;
+    //background: linear-gradient(30deg,#222831,#30475E,#F05454);
+    //background: linear-gradient(-30deg, #713038, #463d81, #1babf485); //standard gradient
+    //background: linear-gradient(-30deg, #2c60d9, #dd8c2899, #1bacf4d0); //blue yellow blue
+    //background: linear-gradient(-30deg, #1f5def, #d0cdc9ac, #1bacf4f5); //blue 1
+    //background: linear-gradient(-30deg, #373B44, #4286f4); //blue 2
+    background: linear-gradient(-30deg, #12c2e9, #5a69ef, #ea3939); //lightblue blue red
+    background-size: 200% 200%;
+    animation: color 50s ease-in-out infinite;
+}
+
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+//Home section
+
+
+.home{
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding-top: 17rem;
+
+    .video-wrapper{
+        grid-column: 1/2;
+        width: 100px;
+        height: 100px;
+        background-color: black;
+    }
+    
 }
