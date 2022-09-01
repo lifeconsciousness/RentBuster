@@ -3,11 +3,51 @@
   --white-main: rgb(238, 232, 232);
   --blue-main: rgb(71, 88, 175);
   --blue-main-2: rgb(52, 74, 183);
+  --transparent-white: rgba(255, 255, 255, 0.814);
+  --cursor-size: 18px;
+  --bg: #232323;
+}
+
+#cursor {
+  position: fixed;
+  top: calc(var(--cursor-size) * -0.5);
+  left: calc(var(--cursor-size) * -0.5);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  filter: url(#goo);
+}
+
+.cursor-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--cursor-size);
+  height: var(--cursor-size);
+  border-radius: var(--cursor-size);
+  background: var(--bg);
+  transform-origin: center center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 148px;
+  line-height: 1;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.goo {
+  display: none;
 }
 
 * {
   margin: none;
   padding: none;
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -31,7 +71,6 @@
 
 body {
   background-color: var(--white-main);
-  scroll-behavior: smooth;
   overflow-x: hidden;
   max-width: 100%;
   overflow-x: hidden;
@@ -40,17 +79,19 @@ body {
 
 .header {
   position: fixed;
-  background-color: rgba(238, 232, 232, 0.66);
+  background-color: var(--transparent-white);
   -webkit-backdrop-filter: blur(0.7rem);
           backdrop-filter: blur(0.7rem);
   width: 100vw;
   height: 3.6rem;
   display: flex;
+  z-index: 999;
 }
 .header img {
   width: 11em;
   height: 2.5rem;
-  margin: 0.65rem;
+  margin: 1rem;
+  margin-left: 0.74rem;
 }
 
 .navbar-wrapper {
@@ -68,7 +109,7 @@ nav {
   font-family: "MythbustersFont";
   display: flex;
   margin: 0;
-  margin-right: 1.85rem;
+  margin-right: 1.05rem;
   word-spacing: -4px;
   background: none;
   font-size: 1.55rem;
@@ -90,6 +131,9 @@ nav {
     max-width: 100%;
     overflow-x: hidden;
   }
+  main {
+    background-color: rgba(228, 227, 227, 0);
+  }
   .navbar {
     width: 100%;
     height: 2000px;
@@ -109,12 +153,12 @@ nav {
     margin-bottom: 0.8rem;
   }
   .navbar[data-visible=true] {
-    transform: translateX(0%);
+    transform: translateX(50%);
   }
   .header {
     position: fixed;
     width: 100vw;
-    background-color: rgba(238, 232, 232, 0.66);
+    background-color: var(--transparent-white);
     -webkit-backdrop-filter: blur(0.7rem);
             backdrop-filter: blur(0.7rem);
     height: 4rem;
@@ -124,7 +168,7 @@ nav {
     width: 10rem;
     height: 2.5rem;
     margin: 0.5rem;
-    margin-left: 0.7rem;
+    margin-left: 1.3rem;
     margin-top: 0.6rem;
   }
   .mobile-navbar-toggle {
@@ -139,7 +183,7 @@ nav {
     right: 0.44rem;
     z-index: 17;
     border: 0;
-    height: 100vh;
+    height: 10vh;
   }
   .button-bg {
     display: block;
@@ -166,18 +210,57 @@ nav {
   #languages {
     right: 0rem;
   }
+  .home {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    padding-top: 7rem;
+  }
+  .home .video-wrapper {
+    width: 80%;
+    height: 0;
+    padding-bottom: 45%;
+    position: relative;
+  }
+  .home .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
-@media (min-width: 415px) and (max-width: 900px) {
-  .header img {
-    margin-left: 2rem;
+@media (min-width: 750px) {
+  .home {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding-top: 11rem;
+  }
+  .home .video-wrapper {
+    margin-right: 6rem;
+    width: 90%;
+    height: 0;
+    padding-bottom: 50.625%;
+    position: relative;
+  }
+  .home .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 }
 .lang-menu {
   margin-top: 0.4rem;
   position: relative;
   width: 5rem;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.6rem;
+  right: 0.1rem;
 }
 
 .selected-lang {
@@ -193,10 +276,10 @@ nav {
 .selected-lang::before {
   content: "";
   display: block;
-  height: 24px;
+  height: 22.5px;
   background-image: url(https://countryflagsapi.com/png/gb);
   background-size: 100%;
-  width: 3rem;
+  width: 2.8rem;
 }
 
 .lang-menu ul {
@@ -273,7 +356,7 @@ nav {
 .anim-container {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(-30deg, #12c2e9, #5a69ef, #ea3939);
+  background: linear-gradient(-60deg, #12c2e9, #5a69ef, #b83d3d);
   background-size: 200% 200%;
   -webkit-animation: color 50s ease-in-out infinite;
           animation: color 50s ease-in-out infinite;
@@ -302,16 +385,74 @@ nav {
     background-position: 0 50%;
   }
 }
-.home {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: center;
-  padding-top: 17rem;
+.carousel {
+  position: relative;
+  height: 65%;
+  width: 80%;
+  margin: 0 auto;
 }
-.home .video-wrapper {
-  grid-column: 1/2;
-  width: 100px;
-  height: 100px;
-  background-color: black;
+.carousel .carousel-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.carousel .carousel-track-container {
+  height: 100%;
+  position: relative;
+}
+.carousel .carousel-track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.carousel .slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.carousel .carouselBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.carousel .carouselBtn img {
+  width: 30px;
+}
+.carousel .carouselBtn-left {
+  left: -40px;
+}
+.carousel .carouselBtn-right {
+  right: -40px;
+}
+.carousel .carousel-nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.carousel .carousel-nav .carousel-indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.389);
+  margin: 0 5px;
+}
+.carousel .carousel-indicator.current-slide {
+  background-color: rgba(0, 0, 0, 0.785);
+}
+
+.text-container-home h1 {
+  font-size: 3rem;
+  max-width: 550px;
+  padding: 0 2rem;
+}
+
+.about-us {
+  height: 100vh;
+  padding: 4rem;
 }/*# sourceMappingURL=style.css.map */

@@ -15,7 +15,7 @@
     <header class="header">
         <div class="navbar-wrapper">
             <!-- Logo -->
-            <a href=""><img src="/img/RentBuster logo without background.png" alt="RentBuster logo"></a>
+            <a href="#home"><img src="/img/RentBuster logo without background.png" alt="RentBuster logo"></a>
 
             <!-- Navbar button for mobile -->
             <button class="mobile-navbar-toggle" aria-expanded="false"></button>
@@ -24,8 +24,8 @@
             <!-- Navigation bar -->
             <nav>
                 <ul id="navbar" class="navbar" data-visible = false>
-                    <li class="active"><a href="">Home</a></li>
-                    <li class="active"><a href="">About us</a></li>
+                    <li class="active"><a href="#home">Home</a></li>
+                    <li class="active"><a href="#about-us">About us</a></li>
                     <li class="active"><a href="">How we work</a></li>
                     <li class="active"><a href="">FAQ</a></li>
                     <li class="active"><a href="">Contact us</a></li>
@@ -47,16 +47,60 @@
             </ul>
         </div>
     </header>
-    
-    <main>    
-        <div class="home anim-container">
-            <div class="video-wrapper">
 
+    <svg xmlns="http://www.w3.org/2000/svg" class="goo" version="1.1" width="100%">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15" result="goo"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+    
+    <div id="cursor"></div>
+
+    <main>    
+        <div id="home" class="home anim-container">
+            <div class="text-container-home">
+                <h1>Who ya gonna call</h1>
+            </div>
+            <div class="video-wrapper">
+                <!-- Maybe make video responsive using media queries -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/QpymO9SQIQo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         
-        <div class="about-us">
-            gblgjgjn
+        <div id="about-us" class="about-us">
+            <div class="carousel">
+                <button class="carouselBtn carouselBtn-left">
+                    <img src="img/left-arrow-next.svg" alt="left-arrow-next">
+                </button>
+
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="slide">
+                            <img class="carousel-image" src="img/carousel/javier-m-2Hs8zbwOLDA-unsplash.jpg" alt="">
+                        </li>
+                        <li class="slide">
+                            <img class="carousel-image" src="img/carousel/matheo-jbt-3vQXi_i0P4w-unsplash.jpg" alt="">
+                        </li>
+                        <li class="slide">
+                            <img class="carousel-image" src="img/carousel/robin-ooode-4ZtYoQavCVI-unsplash.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+
+                <button class="carouselBtn carouselBtn-right">
+                    <img src="img/right-arrow-next.svg" alt="right-arrow-next">
+                </button>
+
+                <div class="carousel-nav">
+                    <button class="carousel-indicator current-slide"></button>
+                    <button class="carousel-indicator"></button>
+                    <button class="carousel-indicator"></button>
+                </div>
+            </div>
         </div>
 
         <div class="how-we-work">
@@ -76,6 +120,7 @@
         <!-- Some links, useful stuff and link to the data privacy document -->
     </footer>
 
+    
     <script src="./script.js"></script>
 </body>
 </html>

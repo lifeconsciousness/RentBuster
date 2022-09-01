@@ -4,11 +4,53 @@
     //--white-main: rgb(245, 243, 243);
     --blue-main: rgb(71, 88, 175);
     --blue-main-2: rgb(52, 74, 183);
+
+    //--transparent-white: rgba(255, 255, 255, 0.536);
+    --transparent-white: rgba(255, 255, 255, 0.814);
+
+    --cursor-size: 18px;
+    --bg: #232323;
 }
+
+  
+#cursor {
+    position: fixed;
+    top: calc(var(--cursor-size) * -0.5);
+    left:  calc(var(--cursor-size) * -0.5);
+    pointer-events: none;
+    mix-blend-mode: difference;  
+    filter: url(#goo);
+}
+  
+.cursor-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border-radius: var(--cursor-size);
+    background: var(--bg);
+    transform-origin: center center;
+}
+  
+h1 {
+    margin: 0;
+    font-size: 148px;
+    line-height: 1;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    user-select: none;
+}
+  
+.goo {
+    display: none;
+}
+
 
 *{
     margin: none;
     padding: none;
+    scroll-behavior: smooth;
 }
 
 @font-face {
@@ -39,7 +81,6 @@
 
 body{
     background-color:var(--white-main);
-    scroll-behavior: smooth;
     overflow-x: hidden;
     max-width: 100%;
     overflow-x: hidden;
@@ -49,7 +90,7 @@ body{
 .header{
     position: fixed;
     //background-color: var(--white-main);
-    background-color: rgba(238, 232, 232, 0.66);     //CHANGED TRANSPARENT
+    background-color: var(--transparent-white);     //CHANGED TRANSPARENT
     backdrop-filter: blur(0.7rem);
     width: 100vw;
     height: 3.6rem;
@@ -58,8 +99,11 @@ body{
     img{
         width: 11em;
         height: 2.5rem;
-        margin: 0.65rem;
+        //margin: 0.65rem;
+        margin: 1rem;
+        margin-left: 0.74rem;
     }
+    z-index: 999;
 }
 
 .navbar-wrapper{
@@ -77,7 +121,7 @@ nav{
     font-family: 'MythbustersFont';
     display: flex;
     margin: 0;
-    margin-right: 1.85rem;
+    margin-right: 1.05rem;
     word-spacing: -4px;
     a{
         //color: rgb(51, 37, 37);
@@ -98,6 +142,16 @@ nav{
     font-size: 1.55rem;
 }
 
+
+
+
+
+
+
+
+
+
+
 //making website responsive on a small devices
 
 @media (max-width: 923px){
@@ -107,6 +161,7 @@ nav{
     }
     main{
         //padding-top: 3.8rem;                      //CHANGED TRANSPARENT
+        background-color: #e4e3e300;
     }
     .navbar{
         width: 100%;
@@ -127,7 +182,7 @@ nav{
     }
 
     .navbar[data-visible = "true"]{
-        transform: translateX(0%);
+        transform: translateX(50%);
     }
 
     .header{
@@ -136,14 +191,14 @@ nav{
             width: 10rem;
             height: 2.5rem;
             margin: 0.5rem;
-            margin-left: 0.7rem;
+            margin-left: 1.3rem;
             margin-top: 0.6rem;
         }
         position: fixed; //newly added
         width: 100vw;
         //background-color: rgb(38, 38, 38);
         //background-color:var(--white-main);
-        background-color: rgba(238, 232, 232, 0.66);
+        background-color: var(--transparent-white);
         backdrop-filter: blur(0.7rem);                  //CHANGED TRANSPARENT
         height: 4rem;
         //top: -0.1rem;
@@ -165,7 +220,7 @@ nav{
         right: 0.44rem;
         z-index: 17;
         border: 0;
-        height: 100vh;
+        height: 10vh;
     }
 
     .button-bg{
@@ -196,17 +251,78 @@ nav{
     #languages{
         right: 0rem;
     }
+
+    .home{
+        height: 100vh;
+    
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        padding-top: 7rem;
+    
+        .video-wrapper{
+            width: 80%;
+            height: 0;
+            
+            padding-bottom: 45%;
+            position: relative;
+    
+            iframe{
+                position: absolute;
+                width: 100%;
+                height: 100%;   
+            }
+        }
+    }
+    
 }
 
 
 
-@media (min-width: 415px) and (max-width:900px){
-    .header{
-        img{
-            margin-left: 2rem;
-        }   
+@media (min-width: 750px){
+    .home{
+        height: 100vh;
+    
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        padding-top: 11rem;
+    
+        .video-wrapper{
+            margin-right: 6rem;
+            width: 90%;
+            height: 0;
+            
+            padding-bottom: 50.625%;
+
+            position: relative;
+    
+            iframe{
+                position: absolute;
+                width: 100%;
+                height: 100%;   
+            }
+        }
+    }
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 //language selection menu
 
@@ -214,8 +330,8 @@ nav{
     margin-top: 0.4rem;
     position: relative;
     width: 5rem;
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.6rem;
+    right: 0.1rem;
 }
 
 .selected-lang{
@@ -234,10 +350,10 @@ nav{
     content: '';
     display: block;
     //width: 32px;
-    height: 24px;
+    height: 22.5px;
     background-image: url(https://countryflagsapi.com/png/gb);
     background-size: 100%;
-    width: 3rem;
+    width: 2.8rem;
 }
 
 .lang-menu ul{
@@ -314,6 +430,9 @@ nav{
 }
 
 
+
+
+
 //animated gradient backgrounds
 .anim-container{
     height: 100vh;
@@ -323,7 +442,8 @@ nav{
     //background: linear-gradient(-30deg, #2c60d9, #dd8c2899, #1bacf4d0); //blue yellow blue
     //background: linear-gradient(-30deg, #1f5def, #d0cdc9ac, #1bacf4f5); //blue 1
     //background: linear-gradient(-30deg, #373B44, #4286f4); //blue 2
-    background: linear-gradient(-30deg, #12c2e9, #5a69ef, #ea3939); //lightblue blue red
+    //background: linear-gradient(-30deg, #12c2e9, #5a69ef, #ea3939); //lightblue blue red
+    background: linear-gradient(-60deg, #12c2e9, #5a69ef, #b83d3d); //lightblue blue red
     background-size: 200% 200%;
     animation: color 50s ease-in-out infinite;
 }
@@ -340,22 +460,120 @@ nav{
     }
 }
 
-//Home section
 
 
-.home{
-    height: 100vh;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
-    padding-top: 17rem;
 
-    .video-wrapper{
-        grid-column: 1/2;
-        width: 100px;
-        height: 100px;
-        background-color: black;
+
+
+
+
+
+//image carousel styling
+
+.carousel{
+    position: relative;
+    height: 65%;
+    width: 80%;
+    margin: 0 auto;
+
+    .carousel-image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel-track-container{
+        height: 100%;
+        position: relative;
+    }
+
+    .carousel-track{
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
     
+    .slide{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .carouselBtn{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+
+        img{
+            width: 30px;
+        }
+    }
+
+    .carouselBtn-left{
+        left: -40px;
+    }
+    .carouselBtn-right{
+        right: -40px;
+    }
+
+    .carousel-nav{
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+
+        .carousel-indicator{
+            border: 0;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.389);
+            margin: 0 5px;
+        }
+    }
+    .carousel-indicator.current-slide{
+        background-color: rgba(0, 0, 0, 0.785);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+//left text
+
+.text-container-home{
+    h1{
+        font-size: 3rem;
+        max-width: 550px;
+        padding: 0 2rem;
+    }
+}
+
+    
+
+
+
+
+
+
+
+.about-us{
+    height: 100vh;
+    padding: 4rem;
+}
+
+
+
+
+
+  
