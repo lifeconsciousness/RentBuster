@@ -113,32 +113,45 @@ const updateDots = (currentDot, targetDot) => {
 }
 
 leftButton.addEventListener("click", e =>{
-  const currentSlide = track.querySelector('.current-slide')
-  const previousSlide = currentSlide.previousElementSibling
-  const currentDot = carouselNav.querySelector('.current-slide')
-  const previousDot = currentDot.previousElementSibling
-  
+  let currentSlide = track.querySelector('.current-slide')
+  let previousSlide = currentSlide.previousElementSibling
+  let currentDot = carouselNav.querySelector('.current-slide')
+  let previousDot = currentDot.previousElementSibling
+  counter--
+
+  if(counter < 0){
+    counter = -1
+  }
+  if(counter == -1){
+    previousSlide = slides[slides.length-1]
+    currentSlide = slides[0]
+    previousDot = dots[dots.length-1]
+    counter = slides.length - 1
+  }
+
   moveSlide(track, currentSlide, previousSlide);
   updateDots(currentDot, previousDot)
-  counter--
-  if(counter < 0){
-    //move to the last slide
-  }
 })
 
 rightButton.addEventListener("click", e =>{
-  const currentSlide = track.querySelector('.current-slide')
-  const nextSlide = currentSlide.nextElementSibling
-  const currentDot = carouselNav.querySelector('.current-slide')
-  const nextDot = currentDot.nextElementSibling
+  let currentSlide = track.querySelector('.current-slide')
+  let nextSlide = currentSlide.nextElementSibling
+  let currentDot = carouselNav.querySelector('.current-slide')
+  let nextDot = currentDot.nextElementSibling
+  counter++
+  if(counter < 0 || counter > slides.length){
+    counter = 0
+  }
+  if(counter > slides.length-1){
+    currentSlide = slides[slides.length-1]
+    nextSlide = slides[0]
+    nextDot = dots[0]
+    counter = 0
+  }
 
   moveSlide(track, currentSlide, nextSlide);
   updateDots(currentDot, nextDot)
-  counter++
-  if(counter > 0){
-    //move to the first slide
-  }
-})
+}) 
 
 
 carouselNav.addEventListener("click", e => {
