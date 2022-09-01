@@ -356,7 +356,7 @@ nav {
 .anim-container {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(-60deg, #12c2e9, #5a69ef, #b83d3d);
+  background: linear-gradient(-60deg, #12c2e9, #5363f5, #b83d3d);
   background-size: 200% 200%;
   -webkit-animation: color 50s ease-in-out infinite;
           animation: color 50s ease-in-out infinite;
@@ -388,7 +388,8 @@ nav {
 .carousel {
   position: relative;
   height: 65%;
-  width: 80%;
+  width: 90%;
+  max-width: 600px;
   margin: 0 auto;
 }
 .carousel .carousel-image {
@@ -400,11 +401,15 @@ nav {
 .carousel .carousel-track-container {
   height: 100%;
   position: relative;
+  overflow: hidden;
 }
 .carousel .carousel-track {
   padding: 0;
   margin: 0;
   list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 350ms ease-in;
 }
 .carousel .slide {
   position: absolute;
@@ -441,6 +446,7 @@ nav {
   height: 20px;
   background: rgba(0, 0, 0, 0.389);
   margin: 0 5px;
+  cursor: pointer;
 }
 .carousel .carousel-indicator.current-slide {
   background-color: rgba(0, 0, 0, 0.785);

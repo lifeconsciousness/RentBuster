@@ -443,7 +443,8 @@ nav{
     //background: linear-gradient(-30deg, #1f5def, #d0cdc9ac, #1bacf4f5); //blue 1
     //background: linear-gradient(-30deg, #373B44, #4286f4); //blue 2
     //background: linear-gradient(-30deg, #12c2e9, #5a69ef, #ea3939); //lightblue blue red
-    background: linear-gradient(-60deg, #12c2e9, #5a69ef, #b83d3d); //lightblue blue red
+    //background: linear-gradient(-60deg, #12c2e9, #5a69ef, #b83d3d); //lightblue blue red
+    background: linear-gradient(-60deg, #12c2e9, #5363f5, #b83d3d); //lightblue blue red
     background-size: 200% 200%;
     animation: color 50s ease-in-out infinite;
 }
@@ -474,24 +475,29 @@ nav{
 .carousel{
     position: relative;
     height: 65%;
-    width: 80%;
+    width: 90%;
+    max-width: 600px;           //can change this
     margin: 0 auto;
 
     .carousel-image{
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit:cover;
     }
 
     .carousel-track-container{
         height: 100%;
         position: relative;
+        overflow: hidden;
     }
 
     .carousel-track{
         padding: 0;
         margin: 0;
         list-style: none;
+        position: relative;
+        height: 100%;
+        transition: transform 350ms ease-in;
     }
     
     .slide{
@@ -533,12 +539,14 @@ nav{
             height: 20px;
             background: rgba(0, 0, 0, 0.389);
             margin: 0 5px;
+            cursor: pointer;
         }
     }
     .carousel-indicator.current-slide{
         background-color: rgba(0, 0, 0, 0.785);
     }
 }
+
 
 
 
