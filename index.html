@@ -1,130 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Description that will appear in the list of websites in search-->
-    <meta name="description" content=""> 
-    <meta name="keywords" content="rent, rent reduction, low rental cost, service costs, rent Netherlands, rent Nederland, rent price, ">
+    <meta name="description" content="" />
+    <meta
+      name="keywords"
+      content="rent, rent reduction, low rental cost, service costs, rent Netherlands, rent Nederland, rent price, "
+    />
     <title>Rent Buster</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header class="header">
-        <div class="navbar-wrapper">
-            <!-- Logo -->
-            <a href="#home"><img src="/img/RentBuster logo without background.png" alt="RentBuster logo"></a>
+      <div class="navbar-wrapper">
+        <!-- Logo -->
+        <a href="#home"
+          ><img
+            src="/img/RentBuster logo without background.png"
+            alt="RentBuster logo"
+        /></a>
 
-            <!-- Navbar button for mobile -->
-            <button class="mobile-navbar-toggle" aria-expanded="false"></button>
-            <div class="button-bg"></div>
-            
-            <!-- Navigation bar -->
-            <nav>
-                <ul id="navbar" class="navbar" data-visible = false>
-                    <li class="active"><a href="#home">Home</a></li>
-                    <li class="active"><a href="#about-us">About us</a></li>
-                    <li class="active"><a href="">How we work</a></li>
-                    <li class="active"><a href="">FAQ</a></li>
-                    <li class="active"><a href="">Contact us</a></li>
-                </ul>
-            </nav>
-        </div>
-        
+        <!-- Navbar button for mobile -->
+        <button class="mobile-navbar-toggle" aria-expanded="false"></button>
+        <div class="button-bg"></div>
 
-        <div class="lang-menu">
-            <!-- Language button-flag icon -->
-            <div class="selected-lang"></div>
-            <!-- List of languages -->
-            <ul id="languages">
-                <li><a href="/translatedPages/indexNL.html" id="nl">Dutch</a></li>
-                <li><a href="./index.html" id="en">English</a></li>
-                <li><a href="/translatedPages/indexGE.html" id="ge">German</a></li>
-                <li><a href="/translatedPages/" id="fr">French</a></li>
-                <li><a href="./translatedPages/indexUA.html" id="ua">Ukrainian</a></li>
-            </ul>
-        </div>
+        <!-- Navigation bar -->
+        <nav>
+          <ul id="navbar" class="navbar" data-visible="false">
+            <li class="active"><a href="#home">Home</a></li>
+            <li class="active"><a href="#about-us">About us</a></li>
+            <li class="active"><a href="">How we work</a></li>
+            <li class="active"><a href="">FAQ</a></li>
+            <li class="active"><a href="">Contact us</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="lang-menu">
+        <!-- Language button-flag icon -->
+        <div class="selected-lang"></div>
+        <!-- List of languages -->
+        <ul id="languages">
+          <li><a href="/translatedPages/indexNL.html" id="nl">Dutch</a></li>
+          <li><a href="./index.html" id="en">English</a></li>
+          <li><a href="/translatedPages/indexGE.html" id="ge">German</a></li>
+          <li><a href="/translatedPages/" id="fr">French</a></li>
+          <li>
+            <a href="./translatedPages/indexUA.html" id="ua">Ukrainian</a>
+          </li>
+        </ul>
+      </div>
     </header>
 
-    <svg xmlns="http://www.w3.org/2000/svg" class="goo" version="1.1" width="100%">
-        <defs>
-            <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"></feGaussianBlur>
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15" result="goo"></feColorMatrix>
-                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
-            </filter>
-        </defs>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="goo"
+      version="1.1"
+      width="100%"
+    >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="6"
+            result="blur"
+          ></feGaussianBlur>
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
+            result="goo"
+          ></feColorMatrix>
+          <feComposite
+            in="SourceGraphic"
+            in2="goo"
+            operator="atop"
+          ></feComposite>
+        </filter>
+      </defs>
     </svg>
-    
+
     <div id="cursor"></div>
 
-    <main>    
-        <div id="home" class="home anim-container">
-            <div class="text-container-home">
-                <h1>Who ya gonna call</h1>
-            </div>
-            <div class="video-wrapper">
-                <!-- Maybe make video responsive using media queries -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/QpymO9SQIQo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+    <main>
+      <!-- HOME SECTION -->
+      <div id="home" class="home anim-container">
+        <div class="text-container-home">
+          <h1>If your rent is high</h1>
+          <h1>In your neighbourhood</h1>
+          <h1>Who you gonna call</h1>
+          <h2>RENT BUSTER!</h2>
         </div>
-        
-        <div id="about-us" class="about-us">
-            <div class="carousel">
-                <button class="carouselBtn carouselBtn-left">
-                    <img src="img/left-arrow-next.svg" alt="left-arrow-next">
-                </button>
-
-                <div class="carousel-track-container">
-                    <ul class="carousel-track">
-                        <li class="slide current-slide">
-                            <img class="carousel-image" src="img/carousel/javier-m-2Hs8zbwOLDA-unsplash.jpg" alt="">
-                        </li>
-                        <li class="slide">
-                            <img class="carousel-image" src="img/carousel/matheo-jbt-3vQXi_i0P4w-unsplash.jpg" alt="">
-                        </li>
-                        <li class="slide">
-                            <img class="carousel-image" src="img/carousel/robin-ooode-4ZtYoQavCVI-unsplash.jpg" alt="">
-                        </li>
-                        <li class="slide">
-                            <img class="carousel-image" src="img/carousel/robin-ooode-4ZtYoQavCVI-unsplash.jpg" alt="">
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="carouselBtn carouselBtn-right">
-                    <img src="img/right-arrow-next.svg" alt="right-arrow-next">
-                </button>
-
-                <div class="carousel-nav">
-                    <button class="carousel-indicator current-slide"></button>
-                    <button class="carousel-indicator"></button>
-                    <button class="carousel-indicator"></button>
-                    <button class="carousel-indicator"></button>
-                </div>
-            </div>
+        <div class="video-wrapper">
+          <!-- Maybe make video responsive using media queries -->
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/QpymO9SQIQo"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
+      </div>
 
-        <div class="how-we-work">
-            lorem3000
-        </div>
-
-        <div class="faq">
-
+      <!-- ABOUT US SECTION -->
+      <div id="about-us" class="about-us">
+        <div class="text-wrapper">
+          <h1>About us:</h1>
+          <p style="margin-bottom: 10px;">
+            Rent Buster NL was founded in 2022 to deal with the problem of
+            landlords overcharging tenants. The organization aims to seek out
+            and <span class="highlight-text">alert new tenants who moved into new apartments</span>/studios/rooms in
+            the Netherlands<span class="highlight-text"> that they may be overpaying on their rent. </span>
+          </p>
+          <p style="margin: 0;">
+            While there may be a massive shortage of housing in major cities, a large
+            portion of the rental market is subject to strict price controls to
+            ensure basic housing is affordable. <span class="highlight-text">Landlords and estate agents
+                regularly ignore these price controls and grossly inflate the price</span>
+            of accommodation to turn a higher profit sometimes up to 200%. They
+            rely on most tenant’s ignorance of the law or fear of losing their
+            home to get away with this. 
+          </p>
+          <p style="margin-top: 10px;">
+            Rent Buster NL aims to <span class="highlight-text">help these
+            tenants get out from under this overpricing.</span> If you received a
+            letter from us, then you most likely are overpaying. Check out our
+            FAQ for more information or contact us for a free consultation.
+          </p>
         </div>
 
-        <div class="contact-us">
+        <div class="carousel">
+          <button class="carouselBtn carouselBtn-left">
+            <img src="img/left-arrow-next.svg" alt="left-arrow-next" />
+          </button>
 
+          <div class="carousel-track-container">
+            <ul class="carousel-track">
+              <li class="slide current-slide">
+                <img
+                  class="carousel-image"
+                  src="img/carousel/javier-m-2Hs8zbwOLDA-unsplash.jpg"
+                  alt=""
+                />
+              </li>
+              <li class="slide">
+                <img
+                  class="carousel-image"
+                  src="img/carousel/matheo-jbt-3vQXi_i0P4w-unsplash.jpg"
+                  alt=""
+                />
+              </li>
+              <li class="slide">
+                <img
+                  class="carousel-image"
+                  src="img/carousel/robin-ooode-4ZtYoQavCVI-unsplash.jpg"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
+
+          <button class="carouselBtn carouselBtn-right">
+            <img src="img/right-arrow-next.svg" alt="right-arrow-next" />
+          </button>
+
+          <div class="carousel-nav">
+            <button class="carousel-indicator current-slide"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+          </div>
         </div>
+      </div>
+
+      <div class="line-animation-container">
+        <div class="line"></div>
+      </div>
+
+      <div class="about-us-2"></div>
+
+      <!-- HOW WE WORK SECTION -->
+      <div class="how-we-work"></div>
+
+      <!-- FAQ SECTION -->
+      <div class="faq"></div>
+
+      <!-- CONTACT US SECTION -->
+      <div class="contact-us"></div>
     </main>
 
     <footer>
-        <!-- Some links, useful stuff and link to the data privacy document -->
+      <!-- Some links, useful stuff and link to the data privacy document -->
     </footer>
 
-    
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>

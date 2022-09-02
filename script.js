@@ -113,6 +113,14 @@ const updateDots = (currentDot, targetDot) => {
 }
 
 leftButton.addEventListener("click", e =>{
+  slideToLeft()
+})
+
+rightButton.addEventListener("click", e =>{
+  slideToRight()
+}) 
+
+function slideToLeft(){
   let currentSlide = track.querySelector('.current-slide')
   let previousSlide = currentSlide.previousElementSibling
   let currentDot = carouselNav.querySelector('.current-slide')
@@ -131,9 +139,9 @@ leftButton.addEventListener("click", e =>{
 
   moveSlide(track, currentSlide, previousSlide);
   updateDots(currentDot, previousDot)
-})
+}
 
-rightButton.addEventListener("click", e =>{
+function slideToRight(){
   let currentSlide = track.querySelector('.current-slide')
   let nextSlide = currentSlide.nextElementSibling
   let currentDot = carouselNav.querySelector('.current-slide')
@@ -151,7 +159,7 @@ rightButton.addEventListener("click", e =>{
 
   moveSlide(track, currentSlide, nextSlide);
   updateDots(currentDot, nextDot)
-}) 
+}
 
 
 carouselNav.addEventListener("click", e => {
@@ -168,5 +176,14 @@ carouselNav.addEventListener("click", e => {
 
   updateDots(currentDot, targetDot)
 })
+
+function autoplay(){
+  setInterval(function() { slideToRight()}, 6000)
+}
+
+window.onload = function() {
+  autoplay()
+}
+
 
 

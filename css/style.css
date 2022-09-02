@@ -3,7 +3,7 @@
   --white-main: rgb(238, 232, 232);
   --blue-main: rgb(71, 88, 175);
   --blue-main-2: rgb(52, 74, 183);
-  --transparent-white: rgba(255, 255, 255, 0.814);
+  --transparent-white: rgba(255, 255, 255, 0.962);
   --cursor-size: 18px;
   --bg: #232323;
 }
@@ -214,11 +214,12 @@ nav {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
     padding-top: 7rem;
   }
   .home .video-wrapper {
+    grid-row: 2/3;
     width: 80%;
     height: 0;
     padding-bottom: 45%;
@@ -229,14 +230,19 @@ nav {
     width: 100%;
     height: 100%;
   }
+  .home .video-wrapper .line-animation {
+    grid-row: 3/4;
+  }
 }
 @media (min-width: 750px) {
   .home {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.1fr;
     justify-items: center;
     padding-top: 11rem;
+    border-bottom-left-radius: 35rem;
   }
   .home .video-wrapper {
     margin-right: 6rem;
@@ -356,7 +362,7 @@ nav {
 .anim-container {
   height: 100vh;
   width: 100%;
-  background: linear-gradient(-60deg, #12c2e9, #5363f5, #b83d3d);
+  background: linear-gradient(-60deg, #12c2e9, #5363f5, #4d427b);
   background-size: 200% 200%;
   -webkit-animation: color 50s ease-in-out infinite;
           animation: color 50s ease-in-out infinite;
@@ -385,12 +391,18 @@ nav {
     background-position: 0 50%;
   }
 }
+.line-animation {
+  grid-column: 1/3;
+}
+
 .carousel {
   position: relative;
   height: 65%;
   width: 90%;
+  min-height: 430px;
   max-width: 600px;
   margin: 0 auto;
+  top: 0.5rem;
 }
 .carousel .carousel-image {
   width: 100%;
@@ -409,7 +421,7 @@ nav {
   list-style: none;
   position: relative;
   height: 100%;
-  transition: transform 300ms ease-in;
+  transition: transform 350ms ease-in;
 }
 .carousel .slide {
   position: absolute;
@@ -456,10 +468,78 @@ nav {
   font-size: 3rem;
   max-width: 550px;
   padding: 0 2rem;
-  color: rgba(255, 255, 255, 0.978);
+  color: rgb(255, 255, 255);
+  text-transform: lowercase;
+}
+.text-container-home h2 {
+  font-size: 3rem;
+  max-width: 550px;
+  padding: 0 2rem;
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  text-transform: uppercase;
 }
 
 .about-us {
-  height: 100vh;
+  margin-top: 1rem;
+  height: 70.3vh;
   padding: 4rem;
+  padding-top: 7rem;
+  padding-left: 6.2rem;
+  font-family: "Inter", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.about-us .text-wrapper {
+  grid-column: 1/2;
+  max-width: 624px;
+}
+.about-us .text-wrapper h1 {
+  font-size: 4.5rem;
+}
+.about-us .text-wrapper p {
+  font-size: 1.17rem;
+}
+
+.line-animation-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.line {
+  content: "";
+  top: 50%;
+  transform: translateZ(-50%);
+  width: 87%;
+  height: 2px;
+  background: linear-gradient(90deg, #000000 0%, #000000 70%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
+  background-size: 25px;
+  -webkit-animation: animateLine 0.5s linear infinite;
+          animation: animateLine 0.5s linear infinite;
+}
+
+@-webkit-keyframes animateLine {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -25px;
+  }
+}
+
+@keyframes animateLine {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -25px;
+  }
+}
+.highlight-text {
+  text-decoration: underline;
+}
+
+.how-we-work {
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */
