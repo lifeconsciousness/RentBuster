@@ -93,6 +93,7 @@ const rightButton = document.querySelector('.carouselBtn-right')
 const carouselNav = document.querySelector('.carousel-nav')
 const dots = Array.from(carouselNav.children)
 
+
 const slideSize = slides[0].getBoundingClientRect()
 const slideWidth = slideSize.width
 let counter = 0
@@ -178,11 +179,12 @@ carouselNav.addEventListener("click", e => {
 })
 
 function autoplay(){
-  setInterval(function() { slideToRight()}, 6000)
+  setInterval(function() { slideToRight()}, 8000)
 }
 
 window.onload = function() {
   autoplay()
+  document.body.className += " loaded";
 }
 
 

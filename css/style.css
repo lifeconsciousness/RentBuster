@@ -4,8 +4,8 @@
   --blue-main: rgb(71, 88, 175);
   --blue-main-2: rgb(52, 74, 183);
   --transparent-white: rgba(255, 255, 255, 0.962);
-  --cursor-size: 18px;
-  --bg: #232323;
+  --cursor-size: 14px;
+  --bg: #f1f1f1;
 }
 
 #cursor {
@@ -33,7 +33,6 @@ h1 {
   font-size: 148px;
   line-height: 1;
   font-family: sans-serif;
-  text-transform: uppercase;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -236,7 +235,6 @@ nav {
 }
 @media (min-width: 750px) {
   .home {
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 0.1fr;
@@ -252,6 +250,7 @@ nav {
     position: relative;
   }
   .home .video-wrapper iframe {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -360,7 +359,7 @@ nav {
 }
 
 .anim-container {
-  height: 100vh;
+  height: 70vh;
   width: 100%;
   background: linear-gradient(-60deg, #12c2e9, #5363f5, #4d427b);
   background-size: 200% 200%;
@@ -436,9 +435,17 @@ nav {
   background: transparent;
   border: 0;
   cursor: pointer;
+  transition: 0.1s;
 }
 .carousel .carouselBtn img {
   width: 30px;
+}
+.carousel .carouselBtn:active {
+  transition: 0.1s ease-in;
+}
+.carousel .carouselBtn:active img {
+  width: 26px;
+  height: 40px;
 }
 .carousel .carouselBtn-left {
   left: -40px;
@@ -464,25 +471,176 @@ nav {
   background-color: rgba(0, 0, 0, 0.785);
 }
 
+.text-container-home {
+  display: none;
+}
 .text-container-home h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   max-width: 550px;
   padding: 0 2rem;
   color: rgb(255, 255, 255);
-  text-transform: lowercase;
+  opacity: 0.8;
 }
 .text-container-home h2 {
-  font-size: 3rem;
+  font-size: 4.4rem;
   max-width: 550px;
   padding: 0 2rem;
   color: rgb(255, 255, 255);
   font-family: sans-serif;
   text-transform: uppercase;
 }
+.text-container-home img {
+  position: relative;
+  width: 22em;
+  height: 5.5rem;
+  top: 3rem;
+  right: 0.4rem;
+}
+
+body.loaded .video-wrapper {
+  -webkit-animation: videoFromRight 6s both;
+          animation: videoFromRight 6s both;
+}
+body.loaded .video-wrapper iframe {
+  display: block;
+}
+@-webkit-keyframes videoFromRight {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body.loaded .text-container-home {
+  display: block;
+  -webkit-animation: fadeIn 10s both;
+          animation: fadeIn 10s both;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@-webkit-keyframes fadeIn {}
+body.loaded .fadeIn1 {
+  -webkit-animation: fadeIn1 5s both;
+  animation: fadeIn1 5s both;
+}
+@-webkit-keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-160px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+body.loaded .fadeIn2 {
+  -webkit-animation: fadeIn2 5s both;
+  animation: fadeIn2 5s both;
+}
+@-webkit-keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+body.loaded .fadeIn3 {
+  -webkit-animation: fadeIn3 5s both;
+  animation: fadeIn3 5s both;
+}
+@-webkit-keyframes fadeIn3 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+    -webkit-transform: translateX(-110px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+  }
+}
+@keyframes fadeIn3 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+body.loaded .fadeInLeft {
+  -webkit-animation: fadeInLeft 5s both;
+  animation: fadeInLeft 5s both;
+}
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: rotateZ(-180deg);
+  }
+  97% {
+    opacity: 0;
+    -webkit-transform: scale(3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+  }
+  97% {
+    opacity: 0;
+    transform: scale(4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 .about-us {
-  margin-top: 1rem;
-  height: 70.3vh;
+  margin-top: 2rem;
+  height: 70.3%;
   padding: 4rem;
   padding-top: 7rem;
   padding-left: 6.2rem;
@@ -493,6 +651,7 @@ nav {
 .about-us .text-wrapper {
   grid-column: 1/2;
   max-width: 624px;
+  margin-right: 1rem;
 }
 .about-us .text-wrapper h1 {
   font-size: 4.5rem;
@@ -537,7 +696,7 @@ nav {
   }
 }
 .highlight-text {
-  text-decoration: underline;
+  border-bottom: 2px solid black;
 }
 
 .how-we-work {
