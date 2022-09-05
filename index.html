@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <!-- Description that will appear in the list of websites in search-->
     <meta name="description" content="" />
     <meta
@@ -90,12 +90,13 @@
     <div id="cursor"></div>
 
     <main>
+      
       <!-- HOME SECTION -->
       <div id="home" class="home anim-container">
         <div class="text-container-home">
           <h1 class="animated fadeIn1">If your rent is high</h1>
           <h1 class="animated fadeIn2">In your neighbourhood</h1>
-          <h1 class="animated fadeIn3">Who you gonna call?</h1>  
+          <h1 class="animated fadeIn3">Who you gonna call?</h1> 
           <!-- <h2>RENT BUSTER!</h2> -->
           <img class="animated fadeInLeft" src="/img/RentBuster logo without background.png" alt="rentbuster logo">
         </div>
@@ -140,6 +141,9 @@
           </p>
         </div>
 
+        <!-- This is the image slider. To add a new picture you neen to 
+        copy li with class slide and change the path to the picture
+        also you need to create another button (carousel indicator) -->
         <div class="carousel">
           <button class="carouselBtn carouselBtn-left">
             <img src="img/left-arrow-next.svg" alt="left-arrow-next" />
@@ -151,6 +155,13 @@
                 <img
                   class="carousel-image"
                   src="img/carousel/javier-m-2Hs8zbwOLDA-unsplash.jpg"
+                  alt=""
+                />
+              </li>
+              <li class="slide">
+                <img
+                  class="carousel-image"
+                  src="img/carousel/matheo-jbt-3vQXi_i0P4w-unsplash.jpg"
                   alt=""
                 />
               </li>
@@ -177,6 +188,7 @@
 
           <div class="carousel-nav">
             <button class="carousel-indicator current-slide"></button>
+            <button class="carousel-indicator"></button>
             <button class="carousel-indicator"></button>
             <button class="carousel-indicator"></button>
           </div>

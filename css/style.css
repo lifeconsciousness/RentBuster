@@ -3,7 +3,7 @@
   --white-main: rgb(238, 232, 232);
   --blue-main: rgb(71, 88, 175);
   --blue-main-2: rgb(52, 74, 183);
-  --transparent-white: rgba(255, 255, 255, 0.962);
+  --transparent-white: rgba(247, 246, 246, 0.962);
   --cursor-size: 14px;
   --bg: #f1f1f1;
 }
@@ -84,13 +84,12 @@ body {
   width: 100vw;
   height: 3.6rem;
   display: flex;
+  border-bottom: solid 2px black;
   z-index: 999;
 }
 .header img {
   width: 11em;
   height: 2.5rem;
-  margin: 1rem;
-  margin-left: 0.74rem;
 }
 
 .navbar-wrapper {
@@ -122,10 +121,21 @@ nav {
   margin-left: 33px;
 }
 .navbar a:hover {
-  color: #4153da;
+  border-bottom: solid black;
+  transition: 0.1s ease;
 }
 
-@media (max-width: 923px) {
+@media (min-width: 426px) and (max-width: 845px) {
+  .header img {
+    margin-left: 13%;
+  }
+}
+@media (max-width: 425px) {
+  .header img {
+    margin-left: 5%;
+  }
+}
+@media (max-width: 845px) {
   html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -163,13 +173,6 @@ nav {
     height: 4rem;
     right: 0rem;
   }
-  .header img {
-    width: 10rem;
-    height: 2.5rem;
-    margin: 0.5rem;
-    margin-left: 1.3rem;
-    margin-top: 0.6rem;
-  }
   .mobile-navbar-toggle {
     display: block;
     position: absolute;
@@ -179,7 +182,7 @@ nav {
     width: 3rem;
     aspect-ratio: 1;
     top: 0.5rem;
-    right: 0.44rem;
+    right: 0.5rem;
     z-index: 17;
     border: 0;
     height: 10vh;
@@ -210,7 +213,7 @@ nav {
     right: 0rem;
   }
   .home {
-    height: 100vh;
+    height: 110vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -233,14 +236,15 @@ nav {
     grid-row: 3/4;
   }
 }
-@media (min-width: 750px) {
+@media (min-width: 845px) {
   .home {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 0.1fr;
     justify-items: center;
-    padding-top: 11rem;
+    padding-top: 10rem;
     border-bottom-left-radius: 35rem;
+    align-items: center;
   }
   .home .video-wrapper {
     margin-right: 6rem;
@@ -248,6 +252,7 @@ nav {
     height: 0;
     padding-bottom: 50.625%;
     position: relative;
+    border-radius: 3px;
   }
   .home .video-wrapper iframe {
     display: none;
@@ -258,6 +263,9 @@ nav {
   html, body {
     max-width: 100%;
     overflow-x: hidden;
+  }
+  .header img {
+    margin-left: 5%;
   }
 }
 .lang-menu {
@@ -359,9 +367,8 @@ nav {
 }
 
 .anim-container {
-  height: 70vh;
+  height: 60vh;
   width: 100%;
-  background: linear-gradient(-60deg, #12c2e9, #5363f5, #4d427b);
   background-size: 200% 200%;
   -webkit-animation: color 50s ease-in-out infinite;
           animation: color 50s ease-in-out infinite;
@@ -471,14 +478,26 @@ nav {
   background-color: rgba(0, 0, 0, 0.785);
 }
 
+.curve {
+  position: absolute;
+  height: 92.4vh;
+  border-bottom: solid 2px black;
+  width: 100%;
+  border-bottom-left-radius: 0rem;
+}
+
 .text-container-home {
+  height: 70%;
+  position: relative;
+  top: 0.7rem;
+  right: 1rem;
   display: none;
 }
 .text-container-home h1 {
   font-size: 2.8rem;
   max-width: 550px;
   padding: 0 2rem;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   opacity: 0.8;
 }
 .text-container-home h2 {
@@ -493,13 +512,13 @@ nav {
   position: relative;
   width: 22em;
   height: 5.5rem;
-  top: 3rem;
+  top: 2rem;
   right: 0.4rem;
 }
 
 body.loaded .video-wrapper {
-  -webkit-animation: videoFromRight 6s both;
-          animation: videoFromRight 6s both;
+  -webkit-animation: videoFromRight 8.4s both;
+          animation: videoFromRight 8.4s both;
 }
 body.loaded .video-wrapper iframe {
   display: block;
@@ -526,8 +545,20 @@ body.loaded .text-container-home {
 }
 @-webkit-keyframes fadeIn {}
 body.loaded .fadeIn1 {
-  -webkit-animation: fadeIn1 5s both;
-  animation: fadeIn1 5s both;
+  -webkit-animation: fadeIn1 8.5s both;
+  animation: fadeIn1 8.5s both;
+}
+body.loaded .fadeIn2 {
+  -webkit-animation: fadeIn2 8.5s both;
+  animation: fadeIn2 8.5s both;
+}
+body.loaded .fadeIn3 {
+  -webkit-animation: fadeIn3 8s both;
+  animation: fadeIn3 8s both;
+}
+body.loaded .fadeInLeft {
+  -webkit-animation: fadeInLeft 7s both;
+  animation: fadeInLeft 7s both;
 }
 @-webkit-keyframes fadeIn1 {
   0% {
@@ -547,10 +578,6 @@ body.loaded .fadeIn1 {
     opacity: 1;
     transform: translateX(0);
   }
-}
-body.loaded .fadeIn2 {
-  -webkit-animation: fadeIn2 5s both;
-  animation: fadeIn2 5s both;
 }
 @-webkit-keyframes fadeIn2 {
   0% {
@@ -577,10 +604,6 @@ body.loaded .fadeIn2 {
     transform: translateX(0);
   }
 }
-body.loaded .fadeIn3 {
-  -webkit-animation: fadeIn3 5s both;
-  animation: fadeIn3 5s both;
-}
 @-webkit-keyframes fadeIn3 {
   0% {
     opacity: 0;
@@ -605,10 +628,6 @@ body.loaded .fadeIn3 {
     opacity: 1;
     transform: translateX(0);
   }
-}
-body.loaded .fadeInLeft {
-  -webkit-animation: fadeInLeft 5s both;
-  animation: fadeInLeft 5s both;
 }
 @-webkit-keyframes fadeInLeft {
   0% {
@@ -639,10 +658,10 @@ body.loaded .fadeInLeft {
 }
 
 .about-us {
-  margin-top: 2rem;
+  margin-top: 8rem;
   height: 70.3%;
   padding: 4rem;
-  padding-top: 7rem;
+  padding-top: 9rem;
   padding-left: 6.2rem;
   font-family: "Inter", sans-serif;
   display: grid;

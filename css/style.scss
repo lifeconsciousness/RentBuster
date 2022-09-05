@@ -6,7 +6,7 @@
     --blue-main-2: rgb(52, 74, 183);
 
     //--transparent-white: rgba(255, 255, 255, 0.536);
-    --transparent-white: rgba(255, 255, 255, 0.962);
+    --transparent-white: rgba(247, 246, 246, 0.962);
 
     --cursor-size: 14px;
     --bg: #f1f1f1;
@@ -95,13 +95,14 @@ body{
     width: 100vw;
     height: 3.6rem;
     display: flex;
+    border-bottom: solid 2px black;
 
     img{
         width: 11em;
         height: 2.5rem;
         //margin: 0.65rem;
-        margin: 1rem;
-        margin-left: 0.74rem;
+        //margin: 1rem;
+        //margin-left: 0.5rem;
     }
     z-index: 999;
 }
@@ -130,6 +131,7 @@ nav{
         //color: var(--white-main);
         //color: var(--blue-main);
         text-decoration: none;
+        //transition: 0.3s;
     }
     li{
         list-style-type: none;
@@ -137,7 +139,9 @@ nav{
     }
     a:hover{
         //color: #4452b9;
-        color: #4153da;
+        //color: #565656;
+        border-bottom: solid black;
+        transition: 0.1s ease;
     }
     background: none;
     font-size: 1.55rem;
@@ -145,17 +149,32 @@ nav{
 
 
 
+*{
+    //outline: 1px solid limegreen !important;
+}
 
 
 
 
-
-
+@media (min-width: 426px) and (max-width: 845px){
+    .header{
+        img{
+            margin-left: 13%;
+        }
+    }
+}
+@media (max-width: 425px){
+    .header{
+        img{
+            margin-left: 5%;
+        }
+    }
+}
 
 
 //making website responsive on a small devices
 
-@media (max-width: 923px){
+@media (max-width: 845px){
     html, body {
         max-width: 100%;
         overflow-x: hidden;
@@ -188,13 +207,13 @@ nav{
 
     .header{
         //padding: 0.4rem 0rem;
-        img{
-            width: 10rem;
-            height: 2.5rem;
-            margin: 0.5rem;
-            margin-left: 1.3rem;
-            margin-top: 0.6rem;
-        }
+        // img{
+        //     width: 10rem;
+        //     height: 2.5rem;
+        //     margin: 0.5rem;
+        //     margin-left: 0.7rem;
+        //     margin-top: 0.6rem;
+        // }
         position: fixed; //newly added
         width: 100vw;
         //background-color: rgb(38, 38, 38);
@@ -218,7 +237,7 @@ nav{
         //right: 1.4rem;
         top: 0.5rem;
         //right: 0.95rem;
-        right: 0.44rem;
+        right: 0.5rem;
         z-index: 17;
         border: 0;
         height: 10vh;
@@ -254,7 +273,7 @@ nav{
     }
 
     .home{
-        height: 100vh;
+        height: 110vh;
     
         display: grid;
         grid-template-columns: 1fr;
@@ -285,14 +304,15 @@ nav{
 
 
 
-@media (min-width: 750px){
+@media (min-width: 845px){
     .home{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 0.1fr;
         justify-items: center;
-        padding-top: 11rem;
+        padding-top: 10rem;
         border-bottom-left-radius: 35rem;
+        align-items: center;
     
         .video-wrapper{
             margin-right: 6rem;
@@ -302,6 +322,8 @@ nav{
             padding-bottom: 50.625%;
 
             position: relative;
+            //border: solid 3px rgb(9, 9, 9);
+            border-radius: 3px;
     
             iframe{
                 display: none;
@@ -315,6 +337,12 @@ nav{
     html, body {
         max-width: 100%;
         overflow-x: hidden;
+    }
+
+    .header{
+        img{
+            margin-left: 5%;
+        }
     }
 }
 
@@ -441,7 +469,7 @@ nav{
 
 //animated gradient backgrounds
 .anim-container{
-    height: 70vh;
+    height: 60vh;
     width: 100%;
     //background: linear-gradient(30deg,#222831,#30475E,#F05454);
     //background: linear-gradient(-30deg, #713038, #463d81, #1babf485); //standard gradient
@@ -450,7 +478,7 @@ nav{
     //background: linear-gradient(-30deg, #373B44, #4286f4); //blue 2
     //background: linear-gradient(-30deg, #12c2e9, #5a69ef, #ea3939); //lightblue blue red
     //background: linear-gradient(-60deg, #12c2e9, #5a69ef, #b83d3d); //lightblue blue red
-    background: linear-gradient(-60deg, #12c2e9, #5363f5, #4d427b); //lightblue blue red
+    //background: linear-gradient(-60deg, #12c2e9, #5363f5, #4d427b); //lightblue blue red
     background-size: 200% 200%;
     animation: color 50s ease-in-out infinite;
 }
@@ -577,18 +605,29 @@ nav{
 
 
 
-
+.curve{
+    position: absolute;
+    height: 92.4vh;
+    border-bottom: solid 2px black;
+    width: 100%;
+    border-bottom-left-radius: 0rem;
+}
 
 
 //Home section text
 
 .text-container-home{
+    height: 70%;
+    position: relative;
+    top: 0.7rem;
+    right: 1rem;
     display: none;
     h1{
         font-size: 2.8rem;
         max-width: 550px;
         padding: 0 2rem;
-        color: rgb(255, 255, 255);
+        //color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         //text-transform: lowercase;
         opacity: 0.8;
     }
@@ -607,7 +646,7 @@ nav{
         height: 5.5rem;
         // width: 22em;
         // height: 5.5rem;
-        top: 3rem;
+        top: 2rem;
         right: 0.4rem;
     }
     
@@ -615,7 +654,7 @@ nav{
 
 body.loaded{
     .video-wrapper{
-        animation: videoFromRight 6s both;
+        animation: videoFromRight 8.4s both;
         iframe{
             display: block;
         }
@@ -640,6 +679,7 @@ body.loaded{
         display: flex;
         flex-direction: column;
         align-items: center;
+        //justify-content: center;
     }
 
     @-webkit-keyframes fadeIn{
@@ -655,11 +695,33 @@ body.loaded{
     }
 
     .fadeIn1{
-    -webkit-animation: fadeIn1 5s both;
-    -moz-animation: fadeIn1 5s both;
-    -o-animation: fadeIn1 5s both;
-    animation: fadeIn1 5s both;
+    -webkit-animation: fadeIn1 8.5s both;
+    -moz-animation: fadeIn1 8.5s both;
+    -o-animation: fadeIn1 8.5s both;
+    animation: fadeIn1 8.5s both;
     }
+
+    .fadeIn2{
+        -webkit-animation: fadeIn2 8.5s both;
+        -moz-animation: fadeIn2 8.5s both;
+        -o-animation: fadeIn2 8.5s both;
+        animation: fadeIn2 8.5s both;
+    }
+    
+    .fadeIn3{
+        -webkit-animation: fadeIn3 8s both;
+        -moz-animation: fadeIn3 8s both;
+        -o-animation: fadeIn3 8s both;
+        animation: fadeIn3 8s both;
+    }
+
+    .fadeInLeft{
+        -webkit-animation: fadeInLeft 7s both;
+        -moz-animation: fadeInLeft 7s both;
+        -o-animation: fadeInLeft 7s both;
+        animation: fadeInLeft 7s both;
+    }
+
 
 @-webkit-keyframes fadeIn1{
     0%{
@@ -703,12 +765,6 @@ body.loaded{
     }
 }
 
-.fadeIn2{
-    -webkit-animation: fadeIn2 5s both;
-    -moz-animation: fadeIn2 5s both;
-    -o-animation: fadeIn2 5s both;
-    animation: fadeIn2 5s both;
-}
 
 @-webkit-keyframes fadeIn2{
     0%{
@@ -765,15 +821,6 @@ body.loaded{
 }
 
 
-
-
-.fadeIn3{
-    -webkit-animation: fadeIn3 5s both;
-    -moz-animation: fadeIn3 5s both;
-    -o-animation: fadeIn3 5s both;
-    animation: fadeIn3 5s both;
-}
-
 @-webkit-keyframes fadeIn3{
     0%{
         opacity: 0;
@@ -828,17 +875,6 @@ body.loaded{
     }
 }
 
-
-
-
-
-
-.fadeInLeft{
-    -webkit-animation: fadeInLeft 5s both;
-    -moz-animation: fadeInLeft 5s both;
-    -o-animation: fadeInLeft 5s both;
-    animation: fadeInLeft 5s both;
-}
 
 @-webkit-keyframes fadeInLeft{
     0%{
@@ -907,11 +943,11 @@ body.loaded{
 //About us styling
 
 .about-us{
-    margin-top: 2rem;
+    margin-top: 8rem;
     //height: 70.3vh;
     height: 70.3%;
     padding: 4rem;
-    padding-top: 7rem;
+    padding-top: 9rem;
     padding-left: 6.2rem;
     font-family: 'Inter', sans-serif;
 
