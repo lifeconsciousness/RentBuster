@@ -206,11 +206,12 @@ nav{
             text-align: center;
         }
         img{
+            display: none;
             //margin-top: 1.4rem !important;
             //margin-bottom: 2rem !important;
             position: relative;
-            width: 22rem !important;
-            height: 5.5rem !important;
+            width: 15rem !important;
+            height: 4rem !important;
             // width: 22em;
             // height: 5.5rem;
             //top: 1.2rem !important;
@@ -378,7 +379,37 @@ nav{
     *{
        // outline: solid green;
     }
+
+    .anim-container{
+        height: 80vh !important;
+    }
+
+    .about-us{
+        height: fit-content !important;
+        padding: 1.5rem !important;
+        padding-top: 2rem !important;
+        font-family: 'Inter', sans-serif;
+        margin-top: 0 !important;
     
+        display: grid;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr !important;
+    
+        .text-wrapper{
+            padding: 0rem 1rem !important;
+            display: flex;
+            flex-direction: column;
+            grid-row: 1/2;
+            max-width: 624px;
+            margin-right: 0rem !important;
+            h1{
+                font-size: 3.5rem !important;
+            }
+            p{
+                font-size: 1rem !important;
+            }
+        }
+    }
 }
 
 
@@ -686,7 +717,7 @@ nav{
 
 .curve{
     position: absolute;
-    height: 92.9vh;
+    height: 92.7vh;
     border-bottom: solid 2px black;
     width: 100%;
     border-bottom-left-radius: 0rem;
@@ -721,10 +752,10 @@ nav{
     // }
     img{
         position: relative;
-        width: 22em;
-        height: 5.5rem;
         // width: 22em;
         // height: 5.5rem;
+         width: 32em;
+         height: 8rem;
         top: 2rem;
         right: 0.4rem;
     }
@@ -761,17 +792,7 @@ body.loaded{
         //justify-content: center;
     }
 
-    @-webkit-keyframes fadeIn{
-        // 0%{
-        //     opacity: 1;
-        // }
-        // 99%{
-        //     opacity: 1;
-        // }
-        // 100%{
-        //     opacity: 0;
-        // }
-    }
+
 
     .fadeIn1{
     -webkit-animation: fadeIn1 8.5s both;
@@ -1024,7 +1045,6 @@ body.loaded{
 .about-us{
     margin-top: 8rem;
     //height: 70.3vh;
-    height: 70.3%;
     padding: 4rem;
     padding-top: 9rem;
     padding-left: 6.2rem;
@@ -1055,6 +1075,7 @@ body.loaded{
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: 4rem 0 0 0;
 }
 
 .line{
@@ -1091,9 +1112,127 @@ body.loaded{
     //text-decoration: underline;
 }
 
-
-
 .how-we-work{
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.hww-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 6rem;
+    max-width: 1000px;
+
+    h1{
+        font-size: 5rem;
+        padding: 5rem 0 3rem 0;
+    }
+
+    .picture-and-text{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .hww-img{
+            width: 100%;
+            max-width: 250px;
+            min-width: 150px;
+            height: auto;
+            
+            aspect-ratio: 1;
+            border-radius: 1.5%;
+        }
+        .hww-text{
+            font-family: 'Inter', sans-serif;
+            font-size: 1.17rem;
+            margin: 0 3rem;
+        }
+    }
+
+    .left-slideImg{
+        background-image: url(https://cdn.pixabay.com/photo/2016/03/05/20/00/accountant-1238598_960_720.jpg);
+        background-size: cover;
+        -webkit-animation: fadeInl 2s both;
+        -moz-animation: fadeInl 2s both;
+        -o-animation: fadeInl 2s both;
+        animation: fadeInl 2s both;
+    }
+    .right-slideText{
+        -webkit-animation: fadeInr 2s both;
+        -moz-animation: fadeInr 2s both;
+        -o-animation: fadeInr 2s both;
+        animation: fadeInr 2s both;
+    }
+
+    .right-slideText::before {content: "If you received the letter and if you decide to proceed with getting your rent reduced, Rent Buster NL will present your case to the Landlord and lobby on your behalf for a reduced rent. This is a required step and it does alert the landlord that one of his/her tenants is aware of the disputed rent price. ";}
+
+
+
+
+    .left-slideImg1{
+        background-image: url(https://cdn.pixabay.com/photo/2016/08/23/12/37/files-1614223_960_720.jpg);
+        background-size: cover;
+        -webkit-animation: fadeInr 2.6s both;
+        -moz-animation: fadeInr 2.6s both;
+        -o-animation: fadeInr 2.6s both;
+        animation: fadeInr 2.6s both;
+    }
+    .right-slideText1{
+        -webkit-animation: fadeInl 2.6s both;
+        -moz-animation: fadeInl 2.6s both;
+        -o-animation: fadeInl 2.6s both;
+        animation: fadeInl 2.6s both;
+    }
+
+    .right-slideText1::before {content: "There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling.  ";}
+
+    @-webkit-keyframes fadeInl{
+        
+    }
+    @-moz-keyframes fadeInl{
+        
+    }
+    @-o-keyframes fadeInl{
+        
+    }
+    
+    @keyframes fadeInl{
+        0%{
+            opacity: 0;
+            transform: translateX(-160px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+
+
+
+    @-webkit-keyframes fadeInr{
+        
+    }
+    @-moz-keyframes fadeInr{
+        
+    }
+    @-o-keyframes fadeInr{
+        
+    }
+    
+    @keyframes fadeInr{
+        0%{
+            opacity: 0;
+            transform: translateX(160px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 }
 
