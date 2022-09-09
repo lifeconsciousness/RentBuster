@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --black-main: rgb(54, 51, 51);
   --white-main: rgb(238, 232, 232);
@@ -891,4 +892,104 @@ body.loaded .fadeInLeft {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.faq h2 {
+  padding-top: 1rem;
+  font-family: sans-serif;
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6rem;
+  max-width: 1000px;
+}
+
+.accordion {
+  margin-top: 1rem;
+}
+
+.accordionBtn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: #000000 solid 2px;
+  outline: none;
+  cursor: pointer;
+  background: #141414;
+  color: #ffffff;
+  text-align: left;
+  transition: background 0.2s;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+}
+
+.accordionBtn::after {
+  position: relative;
+  top: -2px;
+  content: "▽";
+  float: right;
+  transform: scale(1.35);
+}
+
+.accordionBtnBig {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: #000000 solid 2px;
+  outline: none;
+  cursor: pointer;
+  background: #141414;
+  color: #ffffff;
+  text-align: left;
+  transition: background 0.2s;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+}
+
+.accordionBtnBig::after {
+  position: relative;
+  top: -12px;
+  content: "▽";
+  float: right;
+  transform: scale(1.35);
+}
+
+.accordionBtn-active {
+  background: #ececec;
+  color: black;
+  border: #000000 solid 2px;
+}
+
+.accordionBtn-active::after {
+  position: relative;
+  top: -4px;
+  content: "△";
+}
+
+.accordion-content {
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s;
+  padding: 0 15px;
+  background: #1a1a1a;
+  color: white;
+}
+
+.contact-us {
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */

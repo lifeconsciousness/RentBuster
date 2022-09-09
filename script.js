@@ -214,3 +214,31 @@ const observer1 = new IntersectionObserver(entries1 => {
 })
 
 observer1.observe(document.querySelector(".secondText"))
+
+
+
+//faq accordion
+
+document.querySelectorAll('.accordionBtn').forEach(button => {
+  button.addEventListener('click', () => {
+    const accordionContent = button.nextElementSibling
+    button.classList.toggle('accordionBtn-active')
+    if (button.classList.contains('accordionBtn-active')){
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+    } else{
+      accordionContent.style.maxHeight = 0
+    }
+  })
+})
+
+document.querySelectorAll('.accordionBtnBig').forEach(button => {
+  button.addEventListener('click', () => {
+    const accordionContent = button.nextElementSibling
+    button.classList.toggle('accordionBtn-active')
+    if (button.classList.contains('accordionBtn-active')){
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+    } else{
+      accordionContent.style.maxHeight = 0
+    }
+  })
+})
