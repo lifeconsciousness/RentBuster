@@ -266,7 +266,7 @@ nav{
         inset: 0 0 0 0%;
         flex-direction: column;
         padding: min(30vh, 7rem) 0rem;
-        font-size: 2.3rem;
+        font-size: 2.1rem;
         li{
             margin-bottom: 0.8rem;
         }
@@ -1168,8 +1168,8 @@ body.loaded{
         animation: fadeInr 2s both;
     }
 
-    .right-slideText::before {content: "If you received the letter and if you decide to proceed with getting your rent reduced, Rent Buster NL will present your case to the Landlord and lobby on your behalf for a reduced rent. This is a required step and it does alert the landlord that one of his/her tenants is aware of the disputed rent price. ";}
-
+    .right-slideText::after {content: "If you received the letter and if you decide to proceed with getting your rent reduced, Rent Buster NL will present your case to the Landlord and lobby on your behalf for a reduced rent. This is a required step and it does alert the landlord that one of his/her tenants is aware of the disputed rent price. ";}
+    //this content thing is causing the bug
 
 
 
@@ -1188,7 +1188,7 @@ body.loaded{
         animation: fadeInl 2.6s both;
     }
 
-    .right-slideText1::before {content: "There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling.  ";}
+    .right-slideText1::after {content: "There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling.  ";}
 
     @-webkit-keyframes fadeInl{
         
@@ -1323,6 +1323,17 @@ body.loaded{
     content: '\25B3';
 }
 
+.accordionBtn-activeBig{
+    background: #ececec;
+    color: black;
+    border: #000000 solid 2px;
+}
+.accordionBtn-activeBig::after{
+    position: relative;
+    top: -12px;
+    content: '\25B3';
+}
+
 .accordion-content{
     font-family: 'Inter', sans-serif;
     overflow: hidden;
@@ -1342,5 +1353,111 @@ body.loaded{
 
 
 .contact-us{
-    height: 100vh;
+    min-height: 100vh;
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+
+    .contact-form{
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-left: 32px;
+        padding-right: 32px;
+        
+    }
+    h2{
+        font-family: sans-serif;
+        font-size: 5rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    p{
+        color: rgba(0, 0, 0, 0.834);
+        font-family: "Inter", sans-serif;
+    }
+
+    form{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 16px;
+        background: white;
+        padding: 32px 32px 18px 32px;
+        border-radius: 5px;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+
+        @media (min-width: 913px){
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 25px;
+        }
+
+        .full{
+            grid-column: 1/-1;
+        }
+
+        --white-bg-new: rgb(243, 243, 243);
+        --black-bg-new: #141414;
+
+        .form-element{
+            appearance: none;
+            outline: none;
+            border: none;
+            display: block;
+            border-radius: 4px;
+            padding: 12px 0px;
+            //padding-left: 0px;
+            background-color: var(--white-bg-new);
+            width: 100%;
+            font-family: "Inter", sans-serif;
+            font-size: 1.05rem;
+        }
+
+        textarea{
+            resize: none;
+            min-height: 100px;
+            font-family: "Inter", sans-serif;
+            font-size: 1rem;
+        }
+
+        .group{
+            display: flex;
+        }
+
+        .empty-space{
+            width: 12px;
+            height: 100%;
+            background-color: var(--white-bg-new);
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+        .empty-space-big{
+            width: 12px;
+            min-height: 150px;
+            background-color: var(--white-bg-new);
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .submit{
+            text-align: right;
+            input[type = "submit"]{
+                appearance: none;
+                border: none;
+                outline: none;
+                background: none;
+
+                padding: 12px 22px;
+                background-color: #1a1a1a;
+                color: #e4e3e3;
+                font-family: "Inter", sans-serif;
+                font-size: 0.9rem;
+                border-radius: 12px;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover{
+                    background-color: #e2e2e2;
+                    color: #000000;
+                }
+            }
+        }
+    }
 }

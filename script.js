@@ -195,25 +195,25 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
       console.log('int')
-      document.querySelectorAll(".firstImg")[0].classList.add("left-slideImg")
-      document.querySelectorAll(".firstText")[0].classList.add("right-slideText")
+      document.querySelectorAll("#firstImg")[0].classList.add("left-slideImg")
+      document.querySelectorAll("#firstText")[0].classList.add("right-slideText")
     }
   })
 })
 
-observer.observe(document.querySelector(".firstText"))
+observer.observe(document.querySelector("#firstText"))
 
 const observer1 = new IntersectionObserver(entries1 => {
   entries1.forEach(entry1 => {
     if(entry1.isIntersecting){
       console.log('int111')
-      document.querySelectorAll(".secondText")[0].classList.add("right-slideText1")
-      document.querySelectorAll(".secondImg")[0].classList.add("left-slideImg1")
+      document.querySelectorAll("#secondText")[0].classList.add("right-slideText1")
+      document.querySelectorAll("#secondImg")[0].classList.add("left-slideImg1")
     }
   })
 })
 
-observer1.observe(document.querySelector(".secondText"))
+observer1.observe(document.querySelector("#secondText"))
 
 
 
@@ -234,8 +234,8 @@ document.querySelectorAll('.accordionBtn').forEach(button => {
 document.querySelectorAll('.accordionBtnBig').forEach(button => {
   button.addEventListener('click', () => {
     const accordionContent = button.nextElementSibling
-    button.classList.toggle('accordionBtn-active')
-    if (button.classList.contains('accordionBtn-active')){
+    button.classList.toggle('accordionBtn-activeBig')
+    if (button.classList.contains('accordionBtn-activeBig')){
       accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
     } else{
       accordionContent.style.maxHeight = 0
