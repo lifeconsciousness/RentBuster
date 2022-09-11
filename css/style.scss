@@ -119,30 +119,56 @@ nav{
 }
 
 .navbar{
-    font-family: 'MythbustersFont';
-    //font-family: sans-serif;
+    //font-family: 'MythbustersFont';
+    //word-spacing: -4px;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem !important;
+    text-transform:uppercase;
+
     display: flex;
     margin: 0;
     margin-right: 1.05rem;
-    word-spacing: -4px;
-    a{
-        //color: rgb(51, 37, 37);
-        color: var(--black-main);
-        //color: var(--white-main);
-        //color: var(--blue-main);
-        text-decoration: none;
-        //transition: 0.3s;
-    }
+
     li{
         list-style-type: none;
         margin-left: 33px;
     }
-    a:hover{
-        //color: #4452b9;
-        //color: #565656;
-        border-bottom: solid black;
-        transition: 0.1s ease;
+
+    .underline-animation {
+        position: relative;
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
     }
+    
+    .underline-animation::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: black;
+    }
+    
+    .underline-animation:hover::after {
+        position: relative;
+        width: 0;
+        animation: underline 1s;
+    }
+    @keyframes underline {
+      0% {
+          width: 0;
+          left:0;
+      }
+      50% {
+          width: 100%;
+          left: 0;
+      }
+      100% {
+          width: 0;
+          left: 100%;      
+      }
+    }
+
     background: none;
     font-size: 1.55rem;
 }
@@ -154,7 +180,13 @@ nav{
 }
 
 
+.video-wrapper{
+    box-shadow: 0 0px 15px rgba(0,0,0,0.2);
+}
 
+iframe{
+    border-radius: 4px;
+}
 
 @media (min-width: 430px) and (max-width: 913px){
     .header{
@@ -394,6 +426,10 @@ nav{
         display: grid;
         grid-template-columns: 1fr !important;
         grid-template-rows: 1fr 1fr !important;
+
+        h1{
+            font-size: 3.5rem !important;
+        }
     
         .text-wrapper{
             padding: 0rem 1rem !important;
@@ -402,9 +438,6 @@ nav{
             grid-row: 1/2;
             max-width: 624px;
             margin-right: 0rem !important;
-            h1{
-                font-size: 3.5rem !important;
-            }
             p{
                 font-size: 1rem !important;
             }
@@ -630,11 +663,13 @@ nav{
     max-width: 600px;           //can change this
     margin: 0 auto;
     top: 0.5rem;
+    box-shadow: 0 0px 15px rgba(0,0,0,0.2);
 
     .carousel-image{
         width: 100%;
         height: 100%;
         object-fit:cover;
+        border-radius: 3px;
     }
 
     .carousel-track-container{
@@ -1038,15 +1073,24 @@ body.loaded{
 
 
 
-
+.about-us-container{
+    padding-top: 6.5rem;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1{
+        font-size: 4.5rem;
+    }
+}
 
 //About us styling
 
 .about-us{
-    margin-top: 8rem;
     //height: 70.3vh;
     padding: 4rem;
-    padding-top: 9rem;
+    padding-top: 3rem;
     padding-left: 6.2rem;
     font-family: 'Inter', sans-serif;
 
@@ -1057,9 +1101,6 @@ body.loaded{
         grid-column: 1/2;
         max-width: 624px;
         margin-right: 1rem;
-        h1{
-            font-size: 4.5rem;
-        }
         p{
             font-size: 1.17rem;
         }
@@ -1154,8 +1195,10 @@ body.loaded{
     }
 
     .left-slideImg{
-        background-image: url(https://cdn.pixabay.com/photo/2016/03/05/20/00/accountant-1238598_960_720.jpg);
+        background-image: url(https://www.vpngids.nl/wp-content/uploads/colonial-pipeline-stuurt-6000-mensen-een-brief-na-ransomware-aanval-uitgelicht-800x400.jpg);
         background-size: cover;
+        background-position: 50% 10%;
+
         -webkit-animation: fadeInl 2s both;
         -moz-animation: fadeInl 2s both;
         -o-animation: fadeInl 2s both;
@@ -1168,13 +1211,13 @@ body.loaded{
         animation: fadeInr 2s both;
     }
 
-    .right-slideText::after {content: "If you received the letter and if you decide to proceed with getting your rent reduced, Rent Buster NL will present your case to the Landlord and lobby on your behalf for a reduced rent. This is a required step and it does alert the landlord that one of his/her tenants is aware of the disputed rent price. ";}
+    //.right-slideText::after {content: "";}
     //this content thing is causing the bug
 
 
 
     .left-slideImg1{
-        background-image: url(https://cdn.pixabay.com/photo/2016/08/23/12/37/files-1614223_960_720.jpg);
+        background-image: url(https://images.unsplash.com/photo-1541693823712-3892863d6bac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
         background-size: cover;
         -webkit-animation: fadeInr 2.6s both;
         -moz-animation: fadeInr 2.6s both;
@@ -1188,7 +1231,49 @@ body.loaded{
         animation: fadeInl 2.6s both;
     }
 
-    .right-slideText1::after {content: "There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling.  ";}
+    //.right-slideText1::after {content: "There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling.  ";}
+
+
+    .left-slideImg2{
+        background-image: url(https://images.unsplash.com/photo-1583521214690-73421a1829a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+        background-size: cover;
+        -webkit-animation: fadeInl 2s both;
+        -moz-animation: fadeInl 2s both;
+        -o-animation: fadeInl 2s both;
+        animation: fadeInl 2s both;
+
+        width: 120% !important;
+    }
+    .right-slideText2{
+        -webkit-animation: fadeInr 2s both;
+        -moz-animation: fadeInr 2s both;
+        -o-animation: fadeInr 2s both;
+        animation: fadeInr 2s both;
+    }
+
+    //.right-slideText2::after {content: "Rent Buster NL also takes care of any emails, paperwork and representation that the Huurcommissee requires and will serve as an intermediary between you and your landlord to shield you from any acrimonious communication/threats of evictions/etc. We also negotiate on your behalf to ensure that the term of your lease is not adversely affected by your case. ";}
+
+
+    .left-slideImg3{
+        background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);
+        background-size: cover;
+        -webkit-animation: fadeInr 2.6s both;
+        -moz-animation: fadeInr 2.6s both;
+        -o-animation: fadeInr 2.6s both;
+        animation: fadeInr 2.6s both;
+
+        background-position: 50% 10%;
+        width: 144% !important;
+    }
+    .right-slideText3{
+        -webkit-animation: fadeInl 2.6s both;
+        -moz-animation: fadeInl 2.6s both;
+        -o-animation: fadeInl 2.6s both;
+        animation: fadeInl 2.6s both;
+    }
+
+    //.right-slideText3::after {content: "We operate on a no cure, no pay basis. Regarding the fees: Should our case be successful and your rent is reduced and retrospectively back-paid for the months you have stayed, our fee will be the difference between the old rent price and the new one (+ 21% BTW) . No charge will be levied until you receive a definite reduced rental price. Any costs with the Huurcommissee are covered by us. If the rent is not reduced, no charge will be levied.  ";}
+
 
     @-webkit-keyframes fadeInl{
         
@@ -1238,6 +1323,62 @@ body.loaded{
 
 
 
+
+
+
+@keyframes fadeInAccordion{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    // 0%{
+    //     opacity: 0;
+    // }
+    // 100%{
+    //     opacity: 1;
+    // }
+}
+
+.accordion-animation{
+    animation: fadeInAccordion 1.5s both;
+}
+
+
+
+@keyframes fadeInAccordionTop{
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-animationTop{
+    animation: fadeInAccordionTop 1s both;
+}
+
+@keyframes fadeInAccordionBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.accordion-animationBottom{
+    animation: fadeInAccordionBottom 1s both;
+}
 
 .faq{
     display: flex;
@@ -1312,6 +1453,29 @@ body.loaded{
     transform: scale(1.35);
 }
 
+.accordionBtnBig1{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: #000000 solid 2px;
+    outline: none;
+    cursor: pointer;
+    background: #141414;
+    color: #ffffff;
+    text-align: left;
+    transition: background 0.2s;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+}
+
+.accordionBtnBig1::after{
+    position: relative;
+    top: -22px;
+    content: '\25BD';
+    float: right;
+    transform: scale(1.35);
+}
+
 .accordionBtn-active{
     background: #ececec;
     color: black;
@@ -1333,6 +1497,16 @@ body.loaded{
     top: -12px;
     content: '\25B3';
 }
+.accordionBtn-activeBig1::after{
+    position: relative;
+    top: -22px;
+    content: '\25B3';
+}
+.accordionBtn-activeBig1{
+    background: #ececec;
+    color: black;
+    border: #000000 solid 2px;
+}
 
 .accordion-content{
     font-family: 'Inter', sans-serif;
@@ -1353,7 +1527,7 @@ body.loaded{
 
 
 .contact-us{
-    min-height: 100vh;
+    min-height: fit-content;
     padding-top: 1rem;
     padding-bottom: 4rem;
 
@@ -1383,6 +1557,7 @@ body.loaded{
         padding: 32px 32px 18px 32px;
         border-radius: 5px;
         box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        margin-bottom: 3rem;
 
         @media (min-width: 913px){
             grid-template-columns: repeat(2, 1fr);
@@ -1460,4 +1635,77 @@ body.loaded{
             }
         }
     }
+}
+
+
+footer{
+   background-color: rgb(21, 21, 21);
+   padding: 40px 0;
+   padding-bottom: 0px;
+   font-family: "Inter", sans-serif;
+
+   .footer-container{
+    max-width: 1170px;
+    margin: auto;
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-row{
+        display: flex;
+        font-weight: 500;
+        width: 50vw;
+        justify-content: space-between;
+
+        .footer-column{
+            margin-right: 1.5rem;
+            justify-content: space-between;
+            h4{
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: white;
+            }
+            color: white;
+            a{
+                text-decoration: none;
+                color: white;
+            }
+
+            img{
+                width: 50px;
+                transition: 0.1s;
+            }
+            img:hover{
+                transform: scale(1.1);
+                transition: 0.1s ease-in;
+            }
+            p{
+                margin: 8px 0;
+            }
+
+            .social-media{
+                display: flex;
+                flex-direction: row !important;
+                
+                a{
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+   }
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   .footer-document{
+    color: white;
+    text-decoration: none;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    font-size: 0.9rem;
+   }
 }

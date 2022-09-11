@@ -194,7 +194,6 @@ window.onload = function() {
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
-      console.log('int')
       document.querySelectorAll("#firstImg")[0].classList.add("left-slideImg")
       document.querySelectorAll("#firstText")[0].classList.add("right-slideText")
     }
@@ -206,7 +205,6 @@ observer.observe(document.querySelector("#firstText"))
 const observer1 = new IntersectionObserver(entries1 => {
   entries1.forEach(entry1 => {
     if(entry1.isIntersecting){
-      console.log('int111')
       document.querySelectorAll("#secondText")[0].classList.add("right-slideText1")
       document.querySelectorAll("#secondImg")[0].classList.add("left-slideImg1")
     }
@@ -215,10 +213,33 @@ const observer1 = new IntersectionObserver(entries1 => {
 
 observer1.observe(document.querySelector("#secondText"))
 
+const observer2 = new IntersectionObserver(entries2 => {
+  entries2.forEach(entry2 => {
+    if(entry2.isIntersecting){
+      document.querySelectorAll("#thirdImg")[0].classList.add("left-slideImg2")
+      document.querySelectorAll("#thirdText")[0].classList.add("right-slideText2")
+    }
+  })
+})
+
+observer2.observe(document.querySelector("#thirdText"))
+
+const observer3 = new IntersectionObserver(entries2 => {
+  entries2.forEach(entry2 => {
+    if(entry2.isIntersecting){
+      document.querySelectorAll("#fourthText")[0].classList.add("right-slideText3")
+      document.querySelectorAll("#fourthImg")[0].classList.add("left-slideImg3")
+    }
+  })
+})
+
+observer3.observe(document.querySelector("#fourthText"))
+
+
+
 
 
 //faq accordion
-
 document.querySelectorAll('.accordionBtn').forEach(button => {
   button.addEventListener('click', () => {
     const accordionContent = button.nextElementSibling
@@ -242,3 +263,96 @@ document.querySelectorAll('.accordionBtnBig').forEach(button => {
     }
   })
 })
+
+document.querySelectorAll('.accordionBtnBig1').forEach(button => {
+  button.addEventListener('click', () => {
+    const accordionContent = button.nextElementSibling
+    button.classList.toggle('accordionBtn-activeBig1')
+    if (button.classList.contains('accordionBtn-activeBig1')){
+      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+    } else{
+      accordionContent.style.maxHeight = 0
+    }
+  })
+})
+
+
+
+//faq accordion observers
+const accordionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#a1")[0].classList.add("accordion-animationTop")
+    }
+  })
+})
+
+accordionObserver.observe(document.querySelector("#a1"))
+
+
+const accordionObserver1 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#a2")[0].classList.add("accordion-animation")
+    }
+  })
+})
+
+accordionObserver1.observe(document.querySelector("#a2"))
+
+
+const accordionObserver2 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#a3")[0].classList.add("accordion-animation")
+    }
+  })
+})
+
+accordionObserver2.observe(document.querySelector("#a3"))
+
+
+const accordionObserver3 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#a4")[0].classList.add("accordion-animation")
+    }
+  })
+})
+
+accordionObserver3.observe(document.querySelector("#a4"))
+
+
+const accordionObserver4 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#a5")[0].classList.add("accordion-animation")
+    }
+  })
+})
+
+accordionObserver4.observe(document.querySelector("#a5"))
+
+
+const accordionObserver5 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#a6")[0].classList.add("accordion-animation")
+    }
+  })
+})
+
+accordionObserver5.observe(document.querySelector("#a6"))
+
+
+const accordionObserver6 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#a7")[0].classList.add("accordion-animationBottom")
+    }
+  })
+})
+
+accordionObserver6.observe(document.querySelector("#a7"))
+
+

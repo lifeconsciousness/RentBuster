@@ -105,25 +105,73 @@ nav {
 }
 
 .navbar {
-  font-family: "MythbustersFont";
+  font-family: "Inter", sans-serif;
+  font-size: 1rem !important;
+  text-transform: uppercase;
   display: flex;
   margin: 0;
   margin-right: 1.05rem;
-  word-spacing: -4px;
   background: none;
   font-size: 1.55rem;
-}
-.navbar a {
-  color: var(--black-main);
-  text-decoration: none;
 }
 .navbar li {
   list-style-type: none;
   margin-left: 33px;
 }
-.navbar a:hover {
-  border-bottom: solid black;
-  transition: 0.1s ease;
+.navbar .underline-animation {
+  position: relative;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+}
+.navbar .underline-animation::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: black;
+}
+.navbar .underline-animation:hover::after {
+  position: relative;
+  width: 0;
+  -webkit-animation: underline 1s;
+          animation: underline 1s;
+}
+@-webkit-keyframes underline {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+@keyframes underline {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+.video-wrapper {
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+iframe {
+  border-radius: 4px;
 }
 
 @media (min-width: 430px) and (max-width: 913px) {
@@ -318,6 +366,9 @@ nav {
     grid-template-columns: 1fr !important;
     grid-template-rows: 1fr 1fr !important;
   }
+  .about-us h1 {
+    font-size: 3.5rem !important;
+  }
   .about-us .text-wrapper {
     padding: 0rem 1rem !important;
     display: flex;
@@ -325,9 +376,6 @@ nav {
     grid-row: 1/2;
     max-width: 624px;
     margin-right: 0rem !important;
-  }
-  .about-us .text-wrapper h1 {
-    font-size: 3.5rem !important;
   }
   .about-us .text-wrapper p {
     font-size: 1rem !important;
@@ -506,12 +554,14 @@ nav {
   max-width: 600px;
   margin: 0 auto;
   top: 0.5rem;
+  box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
 }
 .carousel .carousel-image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 3px;
 }
 .carousel .carousel-track-container {
   height: 100%;
@@ -745,10 +795,21 @@ body.loaded .fadeInLeft {
   }
 }
 
+.about-us-container {
+  padding-top: 6.5rem;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about-us-container h1 {
+  font-size: 4.5rem;
+}
+
 .about-us {
-  margin-top: 8rem;
   padding: 4rem;
-  padding-top: 9rem;
+  padding-top: 3rem;
   padding-left: 6.2rem;
   font-family: "Inter", sans-serif;
   display: grid;
@@ -758,9 +819,6 @@ body.loaded .fadeInLeft {
   grid-column: 1/2;
   max-width: 624px;
   margin-right: 1rem;
-}
-.about-us .text-wrapper h1 {
-  font-size: 4.5rem;
 }
 .about-us .text-wrapper p {
   font-size: 1.17rem;
@@ -846,8 +904,9 @@ body.loaded .fadeInLeft {
   margin: 0 3rem;
 }
 .hww-container .left-slideImg {
-  background-image: url(https://cdn.pixabay.com/photo/2016/03/05/20/00/accountant-1238598_960_720.jpg);
+  background-image: url(https://www.vpngids.nl/wp-content/uploads/colonial-pipeline-stuurt-6000-mensen-een-brief-na-ransomware-aanval-uitgelicht-800x400.jpg);
   background-size: cover;
+  background-position: 50% 10%;
   -webkit-animation: fadeInl 2s both;
   animation: fadeInl 2s both;
 }
@@ -855,11 +914,8 @@ body.loaded .fadeInLeft {
   -webkit-animation: fadeInr 2s both;
   animation: fadeInr 2s both;
 }
-.hww-container .right-slideText::after {
-  content: "If you received the letter and if you decide to proceed with getting your rent reduced, Rent Buster NL will present your case to the Landlord and lobby on your behalf for a reduced rent. This is a required step and it does alert the landlord that one of his/her tenants is aware of the disputed rent price. ";
-}
 .hww-container .left-slideImg1 {
-  background-image: url(https://cdn.pixabay.com/photo/2016/08/23/12/37/files-1614223_960_720.jpg);
+  background-image: url(https://images.unsplash.com/photo-1541693823712-3892863d6bac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
   background-size: cover;
   -webkit-animation: fadeInr 2.6s both;
   animation: fadeInr 2.6s both;
@@ -868,8 +924,28 @@ body.loaded .fadeInLeft {
   -webkit-animation: fadeInl 2.6s both;
   animation: fadeInl 2.6s both;
 }
-.hww-container .right-slideText1::after {
-  content: "There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling.  ";
+.hww-container .left-slideImg2 {
+  background-image: url(https://images.unsplash.com/photo-1583521214690-73421a1829a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  background-size: cover;
+  -webkit-animation: fadeInl 2s both;
+  animation: fadeInl 2s both;
+  width: 120% !important;
+}
+.hww-container .right-slideText2 {
+  -webkit-animation: fadeInr 2s both;
+  animation: fadeInr 2s both;
+}
+.hww-container .left-slideImg3 {
+  background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);
+  background-size: cover;
+  -webkit-animation: fadeInr 2.6s both;
+  animation: fadeInr 2.6s both;
+  background-position: 50% 10%;
+  width: 144% !important;
+}
+.hww-container .right-slideText3 {
+  -webkit-animation: fadeInl 2.6s both;
+  animation: fadeInl 2.6s both;
 }
 @-webkit-keyframes fadeInl {}
 @keyframes fadeInl {
@@ -892,6 +968,84 @@ body.loaded .fadeInLeft {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+@-webkit-keyframes fadeInAccordion {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fadeInAccordion {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.accordion-animation {
+  -webkit-animation: fadeInAccordion 1.5s both;
+          animation: fadeInAccordion 1.5s both;
+}
+
+@-webkit-keyframes fadeInAccordionTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInAccordionTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.accordion-animationTop {
+  -webkit-animation: fadeInAccordionTop 1s both;
+          animation: fadeInAccordionTop 1s both;
+}
+
+@-webkit-keyframes fadeInAccordionBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInAccordionBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.accordion-animationBottom {
+  -webkit-animation: fadeInAccordionBottom 1s both;
+          animation: fadeInAccordionBottom 1s both;
 }
 
 .faq {
@@ -968,6 +1122,29 @@ body.loaded .fadeInLeft {
   transform: scale(1.35);
 }
 
+.accordionBtnBig1 {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: #000000 solid 2px;
+  outline: none;
+  cursor: pointer;
+  background: #141414;
+  color: #ffffff;
+  text-align: left;
+  transition: background 0.2s;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+}
+
+.accordionBtnBig1::after {
+  position: relative;
+  top: -22px;
+  content: "▽";
+  float: right;
+  transform: scale(1.35);
+}
+
 .accordionBtn-active {
   background: #ececec;
   color: black;
@@ -992,6 +1169,18 @@ body.loaded .fadeInLeft {
   content: "△";
 }
 
+.accordionBtn-activeBig1::after {
+  position: relative;
+  top: -22px;
+  content: "△";
+}
+
+.accordionBtn-activeBig1 {
+  background: #ececec;
+  color: black;
+  border: #000000 solid 2px;
+}
+
 .accordion-content {
   font-family: "Inter", sans-serif;
   overflow: hidden;
@@ -1003,7 +1192,9 @@ body.loaded .fadeInLeft {
 }
 
 .contact-us {
-  min-height: 100vh;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   padding-top: 1rem;
   padding-bottom: 4rem;
 }
@@ -1031,6 +1222,7 @@ body.loaded .fadeInLeft {
   padding: 32px 32px 18px 32px;
   border-radius: 5px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
   --white-bg-new: rgb(243, 243, 243);
   --black-bg-new: #141414;
 }
@@ -1102,4 +1294,68 @@ body.loaded .fadeInLeft {
 .contact-us form .submit input[type=submit]:hover {
   background-color: #e2e2e2;
   color: #000000;
+}
+
+footer {
+  background-color: rgb(21, 21, 21);
+  padding: 40px 0;
+  padding-bottom: 0px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer .footer-container {
+  max-width: 1170px;
+  margin: auto;
+}
+footer .footer-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer .footer-container .footer-row {
+  display: flex;
+  font-weight: 500;
+  width: 50vw;
+  justify-content: space-between;
+}
+footer .footer-container .footer-row .footer-column {
+  margin-right: 1.5rem;
+  justify-content: space-between;
+  color: white;
+}
+footer .footer-container .footer-row .footer-column h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+}
+footer .footer-container .footer-row .footer-column a {
+  text-decoration: none;
+  color: white;
+}
+footer .footer-container .footer-row .footer-column img {
+  width: 50px;
+  transition: 0.1s;
+}
+footer .footer-container .footer-row .footer-column img:hover {
+  transform: scale(1.1);
+  transition: 0.1s ease-in;
+}
+footer .footer-container .footer-row .footer-column p {
+  margin: 8px 0;
+}
+footer .footer-container .footer-row .footer-column .social-media {
+  display: flex;
+  flex-direction: row !important;
+}
+footer .footer-container .footer-row .footer-column .social-media a {
+  margin-right: 0.5rem;
+}
+footer .footer-document {
+  color: white;
+  text-decoration: none;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  font-size: 0.9rem;
 }/*# sourceMappingURL=style.css.map */

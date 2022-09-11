@@ -16,6 +16,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
       rel="stylesheet"
     />
+    
+
   </head>
   <body>
     <header class="header">
@@ -34,11 +36,11 @@
         <!-- Navigation bar -->
         <nav>
           <ul id="navbar" class="navbar" data-visible="false">
-            <li class="active"><a href="#home">Home</a></li>
-            <li class="active"><a href="#about-us">About us</a></li>
-            <li class="active"><a href="#how-we-work">How we work</a></li>
-            <li class="active"><a href="#faq">FAQ</a></li>
-            <li class="active"><a href="#contact-us">Contact us</a></li>
+            <li class="active"><a href="#home" class="underline-animation">Home</a></li>
+            <li class="active"><a href="#about-us" class="underline-animation">About us</a></li>
+            <li class="active"><a href="#how-we-work" class="underline-animation">How we work</a></li>
+            <li class="active"><a href="#faq" class="underline-animation">FAQ</a></li>
+            <li class="active"><a href="#contact-us" class="underline-animation">Contact us</a></li>
           </ul>
         </nav>
       </div>
@@ -59,6 +61,7 @@
       </div>
     </header>
 
+    <!-- Cursor trail -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="goo"
@@ -91,6 +94,8 @@
 
     <main>
       <div class="curve"></div>
+
+
       <!-- HOME SECTION -->
       <div class="home-wrapper">
       <div id="home" class="home anim-container">
@@ -118,9 +123,10 @@
       </div>
 
       <!-- ABOUT US SECTION -->
-      <div id="about-us" class="about-us">
+      <div class="about-us-container"  id="about-us" >
+        <h1>About us</h1>
+      <div class="about-us">
         <div class="text-wrapper">
-          <h1>About us:</h1>
           <p style="margin-bottom: 10px;">
             Rent Buster NL was founded in 2022 to deal with the problem of
             landlords overcharging tenants. The organization aims to seek out
@@ -157,31 +163,25 @@
               <li class="slide current-slide">
                 <img
                   class="carousel-image"
-                  src="img/carousel/javier-m-2Hs8zbwOLDA-unsplash.jpg"
+                  src="https://images.unsplash.com/photo-1459679749680-18eb1eb37418?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                   alt=""
                 />
               </li>
               <li class="slide">
                 <img
                   class="carousel-image"
-                  src="img/carousel/matheo-jbt-3vQXi_i0P4w-unsplash.jpg"
+                  src="https://images.unsplash.com/photo-1583295125721-766a0088cd3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80"
                   alt=""
                 />
               </li>
               <li class="slide">
                 <img
                   class="carousel-image"
-                  src="img/carousel/matheo-jbt-3vQXi_i0P4w-unsplash.jpg"
+                  src="https://images.unsplash.com/photo-1517736996303-4eec4a66bb17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                   alt=""
                 />
               </li>
-              <li class="slide">
-                <img
-                  class="carousel-image"
-                  src="img/carousel/robin-ooode-4ZtYoQavCVI-unsplash.jpg"
-                  alt=""
-                />
-              </li>
+              
             </ul>
           </div>
 
@@ -193,16 +193,16 @@
             <button class="carousel-indicator current-slide"></button>
             <button class="carousel-indicator"></button>
             <button class="carousel-indicator"></button>
-            <button class="carousel-indicator"></button>
           </div>
         </div>
       </div>
+      </div>
+
+      <div class="about-us-2"></div>
 
       <div class="line-animation-container">
         <div class="line"></div>
       </div>
-
-      <div class="about-us-2"></div>
 
       <!-- HOW WE WORK SECTION -->
       <div class="how-we-work" id="how-we-work">
@@ -211,23 +211,23 @@
 
         <div class="picture-and-text">
           <div class="hww-img" id="firstImg"></div>
-          <p class="hww-text " id="firstText"></p>
+          <p class="hww-text " id="firstText">If you received the letter and if you decide to proceed with getting your rent reduced, Rent Buster NL will present your case to the Landlord and lobby on your behalf for a reduced rent. This is a required step and it does alert the landlord that one of his/her tenants is aware of the disputed rent price. </p>
         </div>
 
         <div class="picture-and-text">
-          <p class="hww-text" id="secondText"></p>
+          <p class="hww-text" id="secondText">There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling. </p>
           <div class="hww-img" id="secondImg"></div>
         </div>
 
-        <!-- <div class="picture-and-text">
-          <div class="hww-img thirdImg"></div>
-          <p class="hww-text thirdText "></p>
+        <div class="picture-and-text">
+          <div class="hww-img " id="thirdImg"></div>
+          <p class="hww-text " id="thirdText">Rent Buster NL also takes care of any emails, paperwork and representation that the Huurcommissee requires and will serve as an intermediary between you and your landlord to shield you from any acrimonious communication/threats of evictions/etc. We also negotiate on your behalf to ensure that the term of your lease is not adversely affected by your case.</p>
         </div>
 
         <div class="picture-and-text">
-          <p class="hww-text fourthText"></p>
-          <div class="hww-img fourthImg"></div>
-        </div> -->
+          <p class="hww-text " id="fourthText">We operate on a no cure, no pay basis. Regarding the fees: Should our case be successful and your rent is reduced and retrospectively back-paid for the months you have stayed, our fee will be the difference between the old rent price and the new one (+ 21% BTW) . No charge will be levied until you receive a definite reduced rental price. Any costs with the Huurcommissee are covered by us. If the rent is not reduced, no charge will be levied.</p>
+          <div class="hww-img " id="fourthImg"></div>
+        </div> 
 
         </div>
       </div>
@@ -240,60 +240,60 @@
       <div class="faq" id="faq">
         <h2>FAQ</h1>
         <div class="faq-container">
-          <div class="accordion">
+          <div class="accordion" id="a1">
             <button type="button" class="accordionBtn">I just got a letter. How did you know I am living here and what my rent is?</button>
             <div class="accordion-content">
               <p>The landlord/agency that has rented out the accommodation to you posted advertisements on popular housing websites that I check frequently. Your house/apartment was red-flagged as having suspiciously high rent. I conducted a calculation and determined an approximate maximum rent price that you see in the letter. If the difference between this and the current rent price is within an acceptable level of accuracy, then I send a letter to your address a few weeks after the beginning of the contract. I do not know the name of the tenant or anything about the contract you signed. </p>
             </div>
           </div>
 
-          <div class="accordion">
+          <div class="accordion" id="a2">
             <button type="button" class="accordionBtnBig">I just got a letter from you but I don’t think you sent it to the wrong address. I live in a 20m2 studio, not a 55m2 apartment.</button>
             <div class="accordion-content">
               <p>My apologies. Many ads do not give the house number and sometimes I make mistakes in finding the house letter in multi-room complexes. If someone did recently move into your building, the letter is probably for them. </p>
             </div>
           </div>
 
-          <div class="accordion">
+          <div class="accordion" id="a3">
             <button type="button" class="accordionBtn">How do I know this isn’t a scam?</button>
             <div class="accordion-content">
               <p>Rent Buster NL is a registered company in the Netherlands with a fixed address, website, dutch phone number. I am asking for no upfront fee, assume the financial risk with every rent reduction application and can verify my identity with videocall on request. With the current crisis in renting in the major dutch cities, there are easier methods of scamming people: becoming a makelaar/estate agent is one of them. I could also become an NFT dealer but I would sooner gamble in a burning casino.</p>
             </div>
           </div>
 
-          <div class="accordion">
+          <div class="accordion" id="a4">
             <button type="button" class="accordionBtn">Is there a database that tells me what the max legal rent for place is?</button>
             <div class="accordion-content">
               <p>Unfortunately no, it must be calculated by hand. It varies depending on many factors and changes every year due to fluctuations in the house prices, the layout, the energy rating etc. The gemeente in Rotterdam and Utrecht offer a rudimentary calculator on their websites but they only calculate a possible range of values and only within their respective cities.
                 <br> Links provided:
-                <a href="https://huurprijscalculator.rotterdam.nl/index.html">Rotterdam</a> ,
-                <a href="https://www.huurteam-utrecht.nl/en/rental-price-checker/">Utrecht</a></p>
+                <a href="https://huurprijscalculator.rotterdam.nl/index.html" target="_blank" style="color: cornflowerblue;">Rotterdam</a> ,
+                <a href="https://www.huurteam-utrecht.nl/en/rental-price-checker/" target="_blank" style="color: cornflowerblue;">Utrecht</a></p>
             </div>
           </div>
 
-          <div class="accordion">
-            <button type="button" class="accordionBtnBig">I think I am paying too much for my room/house/apartment but it took me months to find this place and I don’t want to upset the landlord and get kicked out for causing trouble. I would rather pay extra than lose this place</button>
+          <div class="accordion" id="a5">
+            <button type="button" class="accordionBtnBig1">I think I am paying too much for my room/house/apartment but it took me months to find this place and I don’t want to upset the landlord and get kicked out for causing trouble. I would rather pay <br> extra than lose this place</button>
             <div class="accordion-content">
               <p>That is understandable. Finding places to rent in the Netherlands is difficult and it is possible that undertaking this procedure will sour the relationship between you and the landlord. It is up to you to decide whether the financial savings of reduced rent (maybe thousands of euro) are worth the risk that the landlord will not renew your contract. Getting a new tenant is inconvenient and there is no guarantee that the new tenant will be willing to pay the higher original price. Landlords who have been in front of the rent commission multiple times within 3 years pay a higher fee each time they lose the case: facts I make clear to landlords I deal with.
-                <br> Also is only the case IF you have fixed term contract (less than 2 years). If you have an indefinite contract then the landlord will be powerless to evict you for appealing the rent price. You will likely be able to stay there as long as you want. Should the landlord try to evict you, you will have an arsenal of tenant rights to fall back on to prevent your eviction. As long as you keep your nose clean there should be no reason your landlord can evict you and most CERTAINLY not because you exercised your rights as a tenant. 
+                <br style="margin-bottom: 0.7rem;"> Also is only the case IF you have fixed term contract (less than 2 years). If you have an indefinite contract then the landlord will be powerless to evict you for appealing the rent price. You will likely be able to stay there as long as you want. Should the landlord try to evict you, you will have an arsenal of tenant rights to fall back on to prevent your eviction. As long as you keep your nose clean there should be no reason your landlord can evict you and most CERTAINLY not because you exercised your rights as a tenant. 
                 </p>
             </div>
           </div>
 
-          <div class="accordion">
+          <div class="accordion" id="a6">
             <button type="button" class="accordionBtn">Okay, so what is your end in all this?</button>
             <div class="accordion-content">
               <p>I have had personal experience with dealing with bad landlords who overcharge tenants. I don’t like the injustice of the housing market now and I want to do something about it. True, I charge a fee, but only if we are successful: if we lose, I assume the financial costs. I do want to do this full-time and unfortunately, I am not a salaried employee of a rental organization. Operating a business costs money and I do have to pay my own rent and eat. With regard to how much, I take a small portion (1 month difference between the old price and new reduced price including 21% BTW and the rest goes to you along with a permanently reduced rent. Similar organizations take a much larger cut of the settlement in exchange for the same level of risk. </p>
             </div>
           </div>
 
-          <div class="accordion">
+          <div class="accordion" id="a7">
             <button type="button" class="accordionBtn">Why don’t I just go to a Rental organization? Why do I need you at all?</button>
             <div class="accordion-content">
               <p>
                 There are indeed many organizations that can help you with dealing with your landlord. Some of them charge a higher rate for their services. They are also reactionary: They only respond to requests rather than the proactive approach taken by Rent Buster NL in seeking out tenants who don’t suspect they are overpaying.
-                <br> Of course you are perfectly capable of building your own case against your landlord. You can also grow your own food, cut your own hair, repair your own car. These things, like everything, require time and energy to learn how to implement. You will also have to contend with the sometimes messy and bitter interactions with your landlord who probably knows more than you and can bully you with empty threats. You can do this all yourself but it is good to have someone at your back who can advise and help you through it. 
-                <br> In the long term, the money earned will go towards making it possible for me to inform and prevent others from getting cheated on their rent and bring a level of fairness back to the Dutch Housing market. Some of the money was used to pay for the letter that you received.
+                <br style="margin-bottom: 0.7rem;"> Of course you are perfectly capable of building your own case against your landlord. You can also grow your own food, cut your own hair, repair your own car. These things, like everything, require time and energy to learn how to implement. You will also have to contend with the sometimes messy and bitter interactions with your landlord who probably knows more than you and can bully you with empty threats. You can do this all yourself but it is good to have someone at your back who can advise and help you through it. 
+                <br style="margin-bottom: 0.7rem;"> In the long term, the money earned will go towards making it possible for me to inform and prevent others from getting cheated on their rent and bring a level of fairness back to the Dutch Housing market. Some of the money was used to pay for the letter that you received.
 
                 </p>
             </div>
@@ -312,7 +312,7 @@
           <h2>Contact us</h2>
           <p>Fill out the form to bla bla bla</p>
 
-          <form action="https://formsubmit.co/maksimilluminatov@gmail.com" method="POST">
+          <form action="https://formspree.io/f/xoqbjbnv" method="POST">
               <div class="group">
                 <div class="empty-space"></div>
                 <input type="text" name="firstName" id="firstName" placeholder="First name" class="form-element" required>
@@ -350,11 +350,34 @@
 
           </form>
         </div>
+
+        <!-- <div class="social-media"></div> -->
       </div>
     </main>
 
-    <footer>
-      <!-- Some links, useful stuff and link to the data privacy document -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-row">
+          <div class="footer-column">
+            <h4>Contact information</h4>
+            <ul>
+              <li><p>Contact phone:&#10240+31 643599538</p></li>
+              <li><p>Whatsapp:&#10240+31 643599538</p></li>
+              <li><p>Email:&#10240info (at) rentbuster (dot) nl</p></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Social media</h4>
+            <div class="social-media">
+              <a href="https://www.facebook.com/profile.php?id=100085087598391" target="_blank"><img src="https://seeklogo.com/images/F/facebook-icon-circle-logo-09F32F61FF-seeklogo.com.png" alt="facebook-icon" class="facebook-icon"></a>
+              <a href="https://twitter.com/Rent_Buster_NL" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" alt="twitter-icon" class="twitter-icon"></a>
+              <a href="https://www.instagram.com/rent_buster_nl/" target="_blank"><img src="https://icon-library.com/images/instagram-icon/instagram-icon-14.jpg" alt="instagram-icon" class="instagram-icon"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="footer-document">Privacyverklaring - © <script type="text/javascript">document.write( new Date().getFullYear() )</script> RentBusterNL</a>
     </footer>
 
     <script src="./script.js"></script>
