@@ -14,6 +14,18 @@ navbarToggle.addEventListener('click', ()=> {
     }
 })
 
+let bodyElement = document.getElementById("body")
+bodyElement.addEventListener("click", ()=>{
+  const visibility = navbar.getAttribute('data-visible')
+
+  if(visibility === "true"){
+    console.log("navbaropen")
+    navbar.setAttribute('data-visible', false)
+    navbarToggle.setAttribute('aria-expanded', false)
+  } 
+
+})
+
 //language choice button click on mobile
 
 const languageIcon = document.querySelector(".selected-lang")
@@ -264,18 +276,6 @@ document.querySelectorAll('.accordionBtnBig').forEach(button => {
   })
 })
 
-document.querySelectorAll('.accordionBtnBig1').forEach(button => {
-  button.addEventListener('click', () => {
-    const accordionContent = button.nextElementSibling
-    button.classList.toggle('accordionBtn-activeBig1')
-    if (button.classList.contains('accordionBtn-activeBig1')){
-      accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-    } else{
-      accordionContent.style.maxHeight = 0
-    }
-  })
-})
-
 
 
 //faq accordion observers
@@ -355,4 +355,22 @@ const accordionObserver6 = new IntersectionObserver(entries => {
 
 accordionObserver6.observe(document.querySelector("#a7"))
 
+
+
+//navbar closing on scroll
+
+let theEnd = 0
+let navbarElement = document.getElementById("header")
+let navbarButtons = document.querySelectorAll(".active")
+
+
+window.addEventListener("scroll", ()=>{
+  let scrollTop = window.pageXOffset || document.documentElement.scrollTop
+  if(scrollTop > theEnd){
+    navbarElement.style.top = '-70px'
+  } else{
+    navbarElement.style.top = '0'
+  }
+  theEnd = scrollTop
+})
 

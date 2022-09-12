@@ -16,11 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
       rel="stylesheet"
     />
-    
+    <link rel="icon" href="">
 
   </head>
   <body>
-    <header class="header">
+    <header class="header" id = "header">
       <div class="navbar-wrapper">
         <!-- Logo -->
         <a href="#home"
@@ -92,7 +92,7 @@
 
     <div id="cursor"></div>
 
-    <main>
+    <main id="body">
       <div class="curve"></div>
 
 
@@ -130,7 +130,7 @@
           <p style="margin-bottom: 10px;">
             Rent Buster NL was founded in 2022 to deal with the problem of
             landlords overcharging tenants. The organization aims to seek out
-            and <span class="highlight-text">alert new tenants who moved into new apartments</span>/studios/rooms in
+            and <span class="highlight-text">alert new tenants who moved into new apartments</span>/ studios/ rooms in
             the Netherlands<span class="highlight-text"> that they may be overpaying on their rent. </span>
           </p>
           <p style="margin: 0;">
@@ -215,8 +215,9 @@
         </div>
 
         <div class="picture-and-text">
+          <div class="hidden-image1"></div>
           <p class="hww-text" id="secondText">There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling. </p>
-          <div class="hww-img" id="secondImg"></div>
+          <div class="hww-img hide-image" id="secondImg"></div>
         </div>
 
         <div class="picture-and-text">
@@ -225,8 +226,9 @@
         </div>
 
         <div class="picture-and-text">
+          <div class="hidden-image2"></div>
           <p class="hww-text " id="fourthText">We operate on a no cure, no pay basis. Regarding the fees: Should our case be successful and your rent is reduced and retrospectively back-paid for the months you have stayed, our fee will be the difference between the old rent price and the new one (+ 21% BTW) . No charge will be levied until you receive a definite reduced rental price. Any costs with the Huurcommissee are covered by us. If the rent is not reduced, no charge will be levied.</p>
-          <div class="hww-img " id="fourthImg"></div>
+          <div class="hww-img hide-image" id="fourthImg"></div>
         </div> 
 
         </div>
@@ -272,7 +274,7 @@
           </div>
 
           <div class="accordion" id="a5">
-            <button type="button" class="accordionBtnBig1">I think I am paying too much for my room/house/apartment but it took me months to find this place and I don’t want to upset the landlord and get kicked out for causing trouble. I would rather pay <br> extra than lose this place</button>
+            <button type="button" class="accordionBtnBig">I think I am paying too much for my room/house/apartment but it took me months to find this place and I don’t want to upset the landlord and get kicked out for causing trouble. I would rather pay extra than lose this place</button>
             <div class="accordion-content">
               <p>That is understandable. Finding places to rent in the Netherlands is difficult and it is possible that undertaking this procedure will sour the relationship between you and the landlord. It is up to you to decide whether the financial savings of reduced rent (maybe thousands of euro) are worth the risk that the landlord will not renew your contract. Getting a new tenant is inconvenient and there is no guarantee that the new tenant will be willing to pay the higher original price. Landlords who have been in front of the rent commission multiple times within 3 years pay a higher fee each time they lose the case: facts I make clear to landlords I deal with.
                 <br style="margin-bottom: 0.7rem;"> Also is only the case IF you have fixed term contract (less than 2 years). If you have an indefinite contract then the landlord will be powerless to evict you for appealing the rent price. You will likely be able to stay there as long as you want. Should the landlord try to evict you, you will have an arsenal of tenant rights to fall back on to prevent your eviction. As long as you keep your nose clean there should be no reason your landlord can evict you and most CERTAINLY not because you exercised your rights as a tenant. 
@@ -310,7 +312,7 @@
       <div class="contact-us" id="contact-us">
         <div class="contact-form">
           <h2>Contact us</h2>
-          <p>Fill out the form to bla bla bla</p>
+          <p>Fill out the form and we will contact you soon</p>
 
           <form action="https://formspree.io/f/xoqbjbnv" method="POST">
               <div class="group">
@@ -358,12 +360,12 @@
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-row">
-          <div class="footer-column">
+          <div class="footer-column" id="info-footer">
             <h4>Contact information</h4>
             <ul>
-              <li><p>Contact phone:&#10240+31 643599538</p></li>
-              <li><p>Whatsapp:&#10240+31 643599538</p></li>
-              <li><p>Email:&#10240info (at) rentbuster (dot) nl</p></li>
+              <li><p>Contact phone:&#10240<span class="break"></span>+31 643599538</p></li>
+              <li><p>Whatsapp:&#10240<span class="break"></span>+31 643599538</p></li>
+              <li><p>Email:&#10240<span class="break"></span>info(at)rentbuster(dot)nl</p></li>
             </ul>
           </div>
 
