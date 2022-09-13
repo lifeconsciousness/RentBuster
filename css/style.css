@@ -1,12 +1,15 @@
 @charset "UTF-8";
 :root {
-  --black-main: rgb(54, 51, 51);
+  --black-main: #000;
   --white-main: rgb(238, 232, 232);
-  --blue-main: rgb(71, 88, 175);
-  --blue-main-2: rgb(52, 74, 183);
   --transparent-white: rgba(247, 246, 246, 0.962);
   --cursor-size: 14px;
-  --bg: #f1f1f1;
+  --bg: #222222fb;
+}
+
+.dark-theme {
+  --black-main: rgb(238, 232, 232);
+  --white-main: rgb(148, 148, 148);
 }
 
 #cursor {
@@ -122,7 +125,7 @@ nav {
 .navbar .underline-animation {
   position: relative;
   display: inline-block;
-  color: #000;
+  color: var(--black-main);
   text-decoration: none;
 }
 .navbar .underline-animation::after {
@@ -130,7 +133,7 @@ nav {
   display: block;
   width: 0;
   height: 2px;
-  background: black;
+  background: var(--black-main);
 }
 .navbar .underline-animation:hover::after {
   position: relative;
@@ -256,7 +259,7 @@ iframe {
     overflow-x: hidden;
   }
   main {
-    background-color: rgba(228, 227, 227, 0);
+    background-color: var(--white-main);
   }
   .navbar {
     width: 100%;
@@ -282,7 +285,7 @@ iframe {
   .header {
     position: fixed;
     width: 100vw;
-    background-color: var(--transparent-white);
+    background-color: var(--white-main);
     -webkit-backdrop-filter: blur(0.7rem);
             backdrop-filter: blur(0.7rem);
     height: 4rem;
@@ -468,7 +471,7 @@ iframe {
   display: block;
   padding: 7px 8px;
   text-decoration: none;
-  color: var(--black-main);
+  color: #141414;
 }
 
 .lang-menu ul li a::before {
@@ -643,7 +646,7 @@ iframe {
   font-size: 2.8rem;
   max-width: 550px;
   padding: 0 2rem;
-  color: rgb(0, 0, 0);
+  color: var(--black-main);
   opacity: 0.8;
 }
 .text-container-home img {
@@ -860,7 +863,7 @@ body.loaded .fadeInLeft {
   }
 }
 .highlight-text {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--black-main);
 }
 
 .how-we-work {
@@ -1084,7 +1087,7 @@ body.loaded .fadeInLeft {
   outline: none;
   cursor: pointer;
   background: #141414;
-  color: #ffffff;
+  color: var(--white-main);
   text-align: left;
   transition: background 0.2s;
   font-family: "Inter", sans-serif;
@@ -1538,6 +1541,7 @@ footer .footer-document {
 .contact-form p {
   text-align: center;
 }
+
 .contact-form-animation {
   -webkit-animation: fadeInBottomForm 2s both;
           animation: fadeInBottomForm 2s both;
@@ -1584,5 +1588,102 @@ footer .footer-document {
 @media (min-width: 1125px) and (max-width: 1250px) {
   .home {
     padding-left: 2rem;
+  }
+}
+@media (max-width: 913px) {
+  .about-us-container h1 {
+    margin-bottom: 15px !important;
+  }
+}
+@media (min-width: 913px) {
+  .about-us-text-animation {
+    -webkit-animation: text-wrapper-animation 1.6s both;
+            animation: text-wrapper-animation 1.6s both;
+  }
+  @-webkit-keyframes text-wrapper-animation {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes text-wrapper-animation {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .carousel-animation {
+    -webkit-animation: carousel-animation 1.6s both;
+            animation: carousel-animation 1.6s both;
+  }
+  @-webkit-keyframes carousel-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes carousel-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+@media (max-width: 913px) {
+  .about-us-text-animation {
+    -webkit-animation: text-wrapper-animation 2.1s both;
+            animation: text-wrapper-animation 2.1s both;
+  }
+  @-webkit-keyframes text-wrapper-animation {
+    0% {
+      transform: translateY(25px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes text-wrapper-animation {
+    0% {
+      transform: translateY(25px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .carousel-animation {
+    -webkit-animation: carousel-animation 1.6s both;
+            animation: carousel-animation 1.6s both;
+  }
+  @-webkit-keyframes carousel-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(65px);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes carousel-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(65px);
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }/*# sourceMappingURL=style.css.map */

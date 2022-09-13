@@ -1,17 +1,21 @@
 :root{
-    --black-main: rgb(54, 51, 51);
+    --black-main: #000;
     --white-main: rgb(238, 232, 232);
     //--white-main: rgb(245, 243, 243);
-    --blue-main: rgb(71, 88, 175);
-    --blue-main-2: rgb(52, 74, 183);
 
     //--transparent-white: rgba(255, 255, 255, 0.536);
     --transparent-white: rgba(247, 246, 246, 0.962);
 
     --cursor-size: 14px;
-    --bg: #f1f1f1;
+    --bg: #222222fb;
 }
 
+
+.dark-theme{
+    --black-main: rgb(238, 232, 232);
+    //--white-main: #000;
+    --white-main: rgb(148, 148, 148);
+}
   
 #cursor {
     position: fixed;
@@ -138,7 +142,7 @@ nav{
     .underline-animation {
         position: relative;
         display: inline-block;
-        color: #000;
+        color: var(--black-main);
         text-decoration: none;
     }
     
@@ -147,7 +151,7 @@ nav{
         display: block;
         width: 0;
         height: 2px;
-        background: black;
+        background: var(--black-main);
     }
     
     .underline-animation:hover::after {
@@ -174,11 +178,6 @@ nav{
     font-size: 1.55rem;
 }
 
-
-
-*{
-    //outline: 1px solid limegreen !important;
-}
 
 
 .video-wrapper{
@@ -290,7 +289,7 @@ iframe{
     }
     main{
         //padding-top: 3.8rem;                      //CHANGED TRANSPARENT
-        background-color: #e4e3e300;
+        background-color: var(--white-main);
     }
     .navbar{
         width: 100%;
@@ -327,7 +326,7 @@ iframe{
         width: 100vw;
         //background-color: rgb(38, 38, 38);
         //background-color:var(--white-main);
-        background-color: var(--transparent-white);
+        background-color: var(--white-main);
         backdrop-filter: blur(0.7rem);                  //CHANGED TRANSPARENT
         height: 4rem;
         //top: -0.1rem;
@@ -410,9 +409,6 @@ iframe{
                 grid-row: 3/4;
             }
         }
-    }
-    *{
-       // outline: solid green;
     }
 
     .anim-container{
@@ -568,7 +564,7 @@ iframe{
     display: block;
     padding: 7px 8px;
     text-decoration: none;
-    color:var(--black-main)
+    color: #141414;
 }
 
 .lang-menu ul li a::before{
@@ -777,7 +773,7 @@ iframe{
         max-width: 550px;
         padding: 0 2rem;
         //color: rgb(255, 255, 255);
-        color: rgb(0, 0, 0);
+        color: var(--black-main);
         //text-transform: lowercase;
         opacity: 0.8;
     }
@@ -1154,7 +1150,7 @@ body.loaded{
     // color: white;
     //border: 2px solid white
 
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--black-main);
     //text-decoration: underline;
 }
 
@@ -1422,7 +1418,8 @@ body.loaded{
     outline: none;
     cursor: pointer;
     background: #141414;
-    color: #ffffff;
+    //color: #ffffff;
+    color: var(--white-main);
     text-align: left;
     transition: background 0.2s;
     font-family: 'Inter', sans-serif;
@@ -1940,9 +1937,6 @@ footer{
     p{
         text-align: center;
     }
-    form{
-        //animation: fadeInBottomForm 2s both;
-    }
 }
 
 .contact-form-animation{
@@ -1990,3 +1984,80 @@ footer{
         padding-left: 2rem;
     }
 }
+
+
+
+
+@media (max-width: 913px){
+    .about-us-container{
+        h1{
+            margin-bottom: 15px !important;
+        }
+    }
+}
+
+
+
+@media (min-width: 913px){
+    .about-us-text-animation{
+        animation: text-wrapper-animation 1.6s both;
+    }
+    
+    @keyframes text-wrapper-animation{
+        0%{
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    
+    .carousel-animation{
+        animation: carousel-animation 1.6s both;
+    }
+    
+    @keyframes carousel-animation{
+        0%{
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    
+}
+@media (max-width: 913px){
+    .about-us-text-animation{
+        animation: text-wrapper-animation 2.1s both;
+    }
+    
+    @keyframes text-wrapper-animation{
+        0%{
+            transform: translateY(25px);
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    
+    .carousel-animation{
+        animation: carousel-animation 1.6s both;
+    }
+    
+    @keyframes carousel-animation{
+        0%{
+            opacity: 0;
+            transform: translateY(65px);
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    
+}
+
+
+

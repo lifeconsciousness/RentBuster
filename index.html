@@ -16,10 +16,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="">
-
+    <link rel="icon" href="/favicon.ico">
   </head>
-  <body>
+  <body class="dark-theime">
     <header class="header" id = "header">
       <div class="navbar-wrapper">
         <!-- Logo -->
@@ -103,12 +102,12 @@
           <h1 class="animated fadeIn1">If your rent is high</h1>
           <h1 class="animated fadeIn2">In your neighbourhood</h1>
           <h1 class="animated fadeIn3">Who you gonna call?</h1>
-          <img class="animated fadeInLeft" src="/img/RentBuster logo without background.png" alt="rentbuster logo">
+          <img class="animated fadeInLeft" src="./img/RentBuster logo without background.png" alt="rentbuster logo">
           <!-- <h2>RENT BUSTER!</h2> -->
           <!-- <img class="animated fadeInLeft" src="/img/RentBuster logo without background.png" alt="rentbuster logo"> -->
         </div>
+        
         <div class="video-wrapper">
-          <!-- Maybe make video responsive using media queries -->
           <iframe
             width="560"
             height="315"
@@ -119,6 +118,7 @@
             allowfullscreen
           ></iframe>
         </div>
+        
       </div>
       </div>
 
@@ -126,8 +126,8 @@
       <div class="about-us-container"  id="about-us" >
         <h1>About us</h1>
       <div class="about-us">
-        <div class="text-wrapper">
-          <p style="margin-bottom: 10px;">
+        <div class="text-wrapper" id="text-wrapper">
+          <p style="margin-bottom: 10px; margin-top: 7px;">
             Rent Buster NL was founded in 2022 to deal with the problem of
             landlords overcharging tenants. The organization aims to seek out
             and <span class="highlight-text">alert new tenants who moved into new apartments</span>/ studios/ rooms in
@@ -142,7 +142,7 @@
             rely on most tenant’s ignorance of the law or fear of losing their
             home to get away with this.
           </p>
-          <p style="margin-top: 10px;">
+          <p style="margin-top: 10px; margin-bottom: 0;">
             Rent Buster NL aims to <span class="highlight-text">help these
             tenants get out from under this overpricing.</span> If you received a
             letter from us, then you most likely are overpaying. Check out our
@@ -345,7 +345,7 @@
               </div>
 
               <br>
-              
+
               <div class="submit">
                 <input type="submit" value="Send">
               </div>
@@ -379,7 +379,7 @@
           </div>
         </div>
       </div>
-      <a href="#" class="footer-document">Privacyverklaring - © <script type="text/javascript">document.write( new Date().getFullYear() )</script> RentBusterNL</a>
+      <a href="/Privacyverklaring.pdf" target="_blank" class="footer-document">Privacyverklaring - © <script type="text/javascript">document.write( new Date().getFullYear() )</script> RentBusterNL</a>
     </footer>
 
     <script src="./script.js"></script>

@@ -367,6 +367,27 @@ const observerForm = new IntersectionObserver(entries => {
 
 observerForm.observe(document.querySelector("#form"))
 
+
+const observerTextAboutUs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#text-wrapper")[0].classList.add("about-us-text-animation")
+    }
+  })
+})
+
+observerTextAboutUs.observe(document.querySelector("#text-wrapper"))
+
+const observerCarousel = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll(".carousel")[0].classList.add("carousel-animation")
+    }
+  })
+})
+
+observerCarousel.observe(document.querySelector(".carousel"))
+
 //navbar closing on scroll
 
 let theEnd = 0
@@ -384,3 +405,15 @@ window.addEventListener("scroll", ()=>{
   theEnd = scrollTop
 })
 
+
+
+//dark theme toggle
+let icon = document.getElementById("moon");
+  icon.onclick = function(){
+      document.body.classList.toggle("dark-theme");   
+      if(document.body.classList.contains("dark-theme")){
+          icon.src = "/img/sun.png";
+      }else{
+          icon.src = "/img/moon.png";
+      }     
+  }
