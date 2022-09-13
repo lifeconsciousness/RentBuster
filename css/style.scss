@@ -211,10 +211,10 @@ iframe{
     .video-wrapper{
         margin-top: rem !important;
         //grid-row: 3/4;
-        width: 90%;
+        width: 90% !important;
         height: 0;
         
-        padding-bottom: 50.625%;
+        padding-bottom: 50.625% !important;
         position: relative;
 
         iframe{
@@ -393,10 +393,12 @@ iframe{
         .video-wrapper{
             margin-top: 3rem;
             grid-row: 2/3;
-            width: 70%;
+            // width: 60% !important;
+            // padding-bottom: 33.75% !important;
+            // width: 70%;
+            // padding-bottom: 39.375%;
+
             height: 0;
-            
-            padding-bottom: 39.375%;
             position: relative;
     
             iframe{
@@ -426,7 +428,8 @@ iframe{
     
         display: grid;
         grid-template-columns: 1fr !important;
-        grid-template-rows: 1fr 1fr !important;
+        grid-template-rows: 1fr 0.5fr !important;
+        margin-bottom: 2rem !important;
 
         h1{
             font-size: 3.5rem !important;
@@ -761,6 +764,7 @@ iframe{
 
 
 //Home section text
+
 
 .text-container-home{
     height: 70%;
@@ -1257,12 +1261,13 @@ body.loaded{
 
     .left-slideImg3{
         background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);
-        background-size: cover;
+
         -webkit-animation: fadeInr 2.6s both;
         -moz-animation: fadeInr 2.6s both;
         -o-animation: fadeInr 2.6s both;
         animation: fadeInr 2.6s both;
 
+        background-size: cover;
         background-position: 50% 10%;
         width: 144% !important;
     }
@@ -1387,6 +1392,7 @@ body.loaded{
     align-items: center;
     justify-content: center;
     height: fit-content;
+    padding-bottom: 3rem;
 
     h2{
         padding-top: 1rem;
@@ -1506,6 +1512,7 @@ body.loaded{
         padding-right: 32px;
         
     }
+
     h2{
         font-family: sans-serif;
         font-size: 5rem;
@@ -1679,9 +1686,13 @@ footer{
    }
 }
 
+.hidden-image1{
+    display: none;
+}
 
-
-
+.hidden-image2{
+    display: none;
+}
 @media (max-width: 913px){
     .about-us-container{
         margin-top: 0;
@@ -1716,6 +1727,7 @@ footer{
         h1{
             font-size: 3rem;
             padding-bottom: 2rem;
+            padding-top: 3rem;
         }
         .picture-and-text{
             display: flex;
@@ -1723,16 +1735,68 @@ footer{
             p{
                 margin-left: 0.5rem !important;
                 margin-right: 0.5rem !important;
-                font-size: 1rem !important;
+                margin-top: 1rem !important;
             }
 
             .hww-img{
                 margin: 0 0.5rem !important;
                 transform: scale(0.9) !important;
             }
+            #firstImg{
+                max-width: 200px !important;
+            }
+            #firstText{
+                font-size: 1.05rem !important;
+            }
+            #secondText{
+                font-size: 1.05rem !important;
+            }
+            #thirdImg{
+                max-width: 200px !important;
+            }
+            #thirdText{
+                font-size: 1.05rem !important;
+            }
+            #fourthText{
+                font-size: 1.05rem !important;
+            }
+        }
+    }
+    .hww-container{
+        padding-left: 2.2rem !important;
+        padding-right: 2.2rem !important;
+    }
+
+    .hidden-image1{
+        max-width: 200px !important;
+        display: block;
+        background-size: cover;
+        background-position: 50% 10%;
+        background-image: url(https://images.unsplash.com/photo-1541693823712-3892863d6bac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    }
+    .hidden-image2{
+        max-width: 200px !important;
+        display: block;
+        background-color: black;
+        background-size: cover;
+        background-position: 50% 10%;
+      
+        background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);
+    }
+
+    
+    @keyframes fadeInImg{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
         }
     }
 
+    .hide-image{
+        display: none;
+    }
 
     .faq{
         h2{
@@ -1875,5 +1939,54 @@ footer{
 .contact-form{
     p{
         text-align: center;
+    }
+    form{
+        //animation: fadeInBottomForm 2s both;
+    }
+}
+
+.contact-form-animation{
+    animation: fadeInBottomForm 2s both;
+}
+
+@keyframes fadeInBottomForm{
+    0%{
+        //transform: translateY(50px);
+        transform: scale(1.15);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        //transform: translateY(0px);
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 505px) and (max-width: 913px){
+    .video-wrapper{
+        margin-top: rem !important;
+        //grid-row: 3/4;
+        height: 0;
+        
+
+        width: 50% !important;
+        padding-bottom: 28.125% !important;
+        position: relative;
+
+        iframe{
+            position: absolute;
+            width: 100%;
+            height: 100%;   
+        }
+        .line-animation{
+            grid-row: 3/4;
+        }
+    }
+}
+
+
+@media (min-width: 1125px) and (max-width: 1250px){
+    .home{
+        padding-left: 2rem;
     }
 }

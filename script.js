@@ -357,6 +357,16 @@ accordionObserver6.observe(document.querySelector("#a7"))
 
 
 
+const observerForm = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll("#form")[0].classList.add("contact-form-animation")
+    }
+  })
+})
+
+observerForm.observe(document.querySelector("#form"))
+
 //navbar closing on scroll
 
 let theEnd = 0
