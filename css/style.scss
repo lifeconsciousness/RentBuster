@@ -350,7 +350,7 @@ iframe{
     .mobile-navbar-toggle{
         display: block;
         position: absolute;
-        background: url("/img/Hamburger_icon_white.svg");
+        background: url("../img/Hamburger_icon_white.svg");
         background-repeat: no-repeat;
         background-size: 100%;
         width: 3rem;
@@ -378,7 +378,7 @@ iframe{
     }
 
     .mobile-navbar-toggle[aria-expanded = "true"]{
-        background: url("/img/VisualEditor_-_Icon_-_Close_-_white.svg");
+        background: url("../img/VisualEditor_-_Icon_-_Close_-_white.svg");
         background-repeat: no-repeat;
         background-size: 100%;
         width: 4rem;
@@ -2063,7 +2063,6 @@ h2{
     
 }
 
-
 .theme-toggle{
     position: fixed;
     right: 0;
@@ -2076,7 +2075,7 @@ h2{
         transition: 0.15s;
     }
     img:active{
-        scale: (0.5);
+        scale: (0.8);
         transition: 0.15s ease-in;
     }
     
