@@ -419,6 +419,7 @@ let navbarButtons = document.querySelectorAll(".active")
 let moon = document.querySelector('#theme-toggle')
 
 
+
 window.addEventListener("scroll", ()=>{
   let scrollTop = window.pageXOffset || document.documentElement.scrollTop
   if(scrollTop > theEnd){
@@ -435,23 +436,50 @@ window.addEventListener("scroll", ()=>{
 
 //dark theme toggle
 let icon = document.getElementById("moon");
+let iconNavbar = document.getElementById("moon-navbar");
 
   icon.onclick = function(){
       document.body.classList.toggle("dark-theme");   
       if(document.body.classList.contains("dark-theme")){
           icon.src = "/img/sun.png";
+          iconNavbar.src = "/img/sun.png";
       }else{
           icon.src = "/img/moon.png";
+          iconNavbar.src = "/img/moon.png";
       }     
   }
-
-let iconNavbar = document.getElementById("moon-navbar");
 
   iconNavbar.onclick = function(){
       document.body.classList.toggle("dark-theme");   
       if(document.body.classList.contains("dark-theme")){
           iconNavbar.src = "/img/sun.png";
+          icon.src = "/img/sun.png";
       }else{
           iconNavbar.src = "/img/moon.png";
+          icon.src = "/img/moon.png";
       }     
   }
+// let icon = document.getElementById("moon");
+// let iconNavbar = document.getElementById("moon-navbar");
+
+//   icon.onclick = function(){
+//       document.body.classList.toggle("dark-theme");   
+//       if(document.body.classList.contains("dark-theme")){
+//           icon.src = "./img/sun.png";
+//           iconNavbar.src = "./img/sun.png";
+//       }else{
+//           icon.src = "./img/moon.png";
+//           iconNavbar.src = "./img/moon.png";
+//       }     
+//   }
+
+//   iconNavbar.onclick = function(){
+//       document.body.classList.toggle("dark-theme");   
+//       if(document.body.classList.contains("dark-theme")){
+//           iconNavbar.src = "./img/sun.png";
+//           icon.src = "./img/sun.png";
+//       }else{
+//           iconNavbar.src = "./img/moon.png";
+//           icon.src = "./img/moon.png";
+//       }     
+//   }

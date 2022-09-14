@@ -1440,37 +1440,24 @@ body.loaded{
     transition: background 0.2s;
     font-family: 'Inter', sans-serif;
     font-size: 1.1rem;
+    //text-align: justify;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p{
+        margin: 0;
+        //margin-right: 20px;
+    }
 }
 
 .accordionBtn::after{
     position: relative;
-    top: -2px;
+    margin-left: 15px;
     content: '\25BD';
     float: right;
     transform: scale(1.35);
-}
 
-.accordionBtnBig{
-    display: block;
-    width: 100%;
-    padding: 15px;
-    border: var(--black-main) solid 2px;
-    outline: none;
-    cursor: pointer;
-    background: var(--black-main);
-    color: var(--white-main);
-    text-align: left;
-    transition: background 0.2s;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-}
-
-.accordionBtnBig::after{
-    position: relative;
-    top: -12px;
-    content: '\25BD';
-    float: right;
-    transform: scale(1.35);
 }
 
 .accordionBtn-active{
@@ -1484,16 +1471,7 @@ body.loaded{
     content: '\25B3';
 }
 
-.accordionBtn-activeBig{
-    background: var(--white-main);
-    color: var(--black-main);
-    border: var(--black-main) solid 2px;
-}
-.accordionBtn-activeBig::after{
-    position: relative;
-    top: -12px;
-    content: '\25B3';
-}
+
 
 .accordion-content{
     font-family: 'Inter', sans-serif;
@@ -1616,7 +1594,7 @@ body.loaded{
                 transition: 0.3s;
 
                 &:hover{
-                    background-color: #e2e2e2;
+                    background-color: #dadada;
                     color: #000000;
                 }
             }
@@ -1695,7 +1673,7 @@ footer{
     text-decoration: none;
     padding-top: 40px;
     padding-bottom: 20px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
    }
 }
 
@@ -2094,7 +2072,14 @@ h2{
 
     img{
         width: 40px;
+        cursor: pointer;
+        transition: 0.15s;
     }
+    img:active{
+        scale: (0.5);
+        transition: 0.15s ease-in;
+    }
+    
     transition: 0.2s;
 }
 
@@ -2116,6 +2101,7 @@ h2{
 
     img{
         width: 40px;
+        cursor: pointer;
     }
 }
 
@@ -2141,4 +2127,12 @@ h2{
     .accordionBtn{
         font-size: 1rem !important;
     }
+}
+
+.credit{
+    border-bottom: solid 1px var(--white-main);
+    color: var(--white-main);
+    font-size: 0.75rem;
+    margin-bottom: 12px;
+    opacity: 0.8;
 }

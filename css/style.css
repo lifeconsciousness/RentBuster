@@ -1098,34 +1098,17 @@ body.loaded .fadeInLeft {
   transition: background 0.2s;
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.accordionBtn p {
+  margin: 0;
 }
 
 .accordionBtn::after {
   position: relative;
-  top: -2px;
-  content: "▽";
-  float: right;
-  transform: scale(1.35);
-}
-
-.accordionBtnBig {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  border: var(--black-main) solid 2px;
-  outline: none;
-  cursor: pointer;
-  background: var(--black-main);
-  color: var(--white-main);
-  text-align: left;
-  transition: background 0.2s;
-  font-family: "Inter", sans-serif;
-  font-size: 1.1rem;
-}
-
-.accordionBtnBig::after {
-  position: relative;
-  top: -12px;
+  margin-left: 15px;
   content: "▽";
   float: right;
   transform: scale(1.35);
@@ -1140,18 +1123,6 @@ body.loaded .fadeInLeft {
 .accordionBtn-active::after {
   position: relative;
   top: -4px;
-  content: "△";
-}
-
-.accordionBtn-activeBig {
-  background: var(--white-main);
-  color: var(--black-main);
-  border: var(--black-main) solid 2px;
-}
-
-.accordionBtn-activeBig::after {
-  position: relative;
-  top: -12px;
   content: "△";
 }
 
@@ -1266,7 +1237,7 @@ body.loaded .fadeInLeft {
   transition: 0.3s;
 }
 .contact-us form .submit input[type=submit]:hover {
-  background-color: #e2e2e2;
+  background-color: #dadada;
   color: #000000;
 }
 
@@ -1332,7 +1303,7 @@ footer .footer-document {
   text-decoration: none;
   padding-top: 40px;
   padding-bottom: 20px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 .hidden-image1 {
@@ -1713,6 +1684,12 @@ h2 {
 }
 .theme-toggle img {
   width: 40px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.theme-toggle img:active {
+  scale: 0.5;
+  transition: 0.15s ease-in;
 }
 
 @media (max-width: 913px) {
@@ -1731,6 +1708,7 @@ h2 {
 }
 #theme-toggle-navbar img {
   width: 40px;
+  cursor: pointer;
 }
 
 .fadeInImg {
@@ -1762,4 +1740,11 @@ h2 {
   .accordionBtn {
     font-size: 1rem !important;
   }
+}
+.credit {
+  border-bottom: solid 1px var(--white-main);
+  color: var(--white-main);
+  font-size: 0.75rem;
+  margin-bottom: 12px;
+  opacity: 0.8;
 }/*# sourceMappingURL=style.css.map */
