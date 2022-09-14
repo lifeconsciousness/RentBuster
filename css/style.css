@@ -5,11 +5,15 @@
   --transparent-white: rgba(247, 246, 246, 0.962);
   --cursor-size: 14px;
   --bg: #222222fb;
+  --indicator-light-black: rgba(0, 0, 0, 0.389);
+  --indicator-dark-black: rgba(0, 0, 0, 0.785);
 }
 
 .dark-theme {
   --black-main: rgb(238, 232, 232);
-  --white-main: rgb(148, 148, 148);
+  --white-main: rgb(15, 14, 14);
+  --indicator-light-black: rgba(171, 170, 170, 0.389);
+  --indicator-dark-black: rgba(238, 238, 238, 0.851);
 }
 
 #cursor {
@@ -88,7 +92,7 @@ body {
   width: 100vw;
   height: 3.6rem;
   display: flex;
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px var(--black-main);
   transition: 0.2s ease-in;
   z-index: 999;
 }
@@ -595,6 +599,7 @@ iframe {
 }
 .carousel .carouselBtn img {
   width: 30px;
+  outline-color: var(--black-main);
 }
 .carousel .carouselBtn:active {
   transition: 0.1s ease-in;
@@ -619,18 +624,18 @@ iframe {
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  background: rgba(0, 0, 0, 0.389);
+  background: var(--indicator-light-black);
   margin: 0 5px;
   cursor: pointer;
 }
 .carousel .carousel-indicator.current-slide {
-  background-color: rgba(0, 0, 0, 0.785);
+  background-color: var(--indicator-dark-black);
 }
 
 .curve {
   position: absolute;
   height: 92.7vh;
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px var(--black-main);
   width: 100%;
   border-bottom-left-radius: 0rem;
 }
@@ -839,7 +844,7 @@ body.loaded .fadeInLeft {
   transform: translateZ(-50%);
   width: 87%;
   height: 2px;
-  background: linear-gradient(90deg, #000000 0%, #000000 70%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, var(--black-main) 0%, var(--black-main) 70%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
   background-size: 25px;
   -webkit-animation: animateLine 0.5s linear infinite;
           animation: animateLine 0.5s linear infinite;
@@ -904,6 +909,7 @@ body.loaded .fadeInLeft {
   font-family: "Inter", sans-serif;
   font-size: 1.17rem;
   margin: 0 3rem;
+  color: var(--black-main);
 }
 .hww-container .left-slideImg {
   background-image: url(https://www.vpngids.nl/wp-content/uploads/colonial-pipeline-stuurt-6000-mensen-een-brief-na-ransomware-aanval-uitgelicht-800x400.jpg);
@@ -1083,10 +1089,10 @@ body.loaded .fadeInLeft {
   display: block;
   width: 100%;
   padding: 15px;
-  border: #000000 solid 2px;
+  border: var(--black-main) solid 2px;
   outline: none;
   cursor: pointer;
-  background: #141414;
+  background: var(--black-main);
   color: var(--white-main);
   text-align: left;
   transition: background 0.2s;
@@ -1106,11 +1112,11 @@ body.loaded .fadeInLeft {
   display: block;
   width: 100%;
   padding: 15px;
-  border: #000000 solid 2px;
+  border: var(--black-main) solid 2px;
   outline: none;
   cursor: pointer;
-  background: #141414;
-  color: #ffffff;
+  background: var(--black-main);
+  color: var(--white-main);
   text-align: left;
   transition: background 0.2s;
   font-family: "Inter", sans-serif;
@@ -1126,9 +1132,9 @@ body.loaded .fadeInLeft {
 }
 
 .accordionBtn-active {
-  background: #ececec;
-  color: black;
-  border: #000000 solid 2px;
+  background: var(--white-main);
+  color: var(--black-main);
+  border: var(--black-main) solid 2px;
 }
 
 .accordionBtn-active::after {
@@ -1138,9 +1144,9 @@ body.loaded .fadeInLeft {
 }
 
 .accordionBtn-activeBig {
-  background: #ececec;
-  color: black;
-  border: #000000 solid 2px;
+  background: var(--white-main);
+  color: var(--black-main);
+  border: var(--black-main) solid 2px;
 }
 
 .accordionBtn-activeBig::after {
@@ -1155,8 +1161,8 @@ body.loaded .fadeInLeft {
   max-height: 0;
   transition: max-height 0.2s;
   padding: 0 15px;
-  background: #1a1a1a;
-  color: white;
+  background: var(--black-main);
+  color: var(--white-main);
 }
 
 .contact-us {
@@ -1265,7 +1271,7 @@ body.loaded .fadeInLeft {
 }
 
 footer {
-  background-color: rgb(21, 21, 21);
+  background-color: var(--black-main);
   padding: 40px 0;
   padding-bottom: 0px;
   font-family: "Inter", sans-serif;
@@ -1292,16 +1298,16 @@ footer .footer-container .footer-row .footer-column {
   font-size: 0.95rem;
   margin-right: 1.5rem;
   justify-content: space-between;
-  color: white;
+  color: var(--white-main);
 }
 footer .footer-container .footer-row .footer-column h4 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: white;
+  color: var(--white-main);
 }
 footer .footer-container .footer-row .footer-column a {
   text-decoration: none;
-  color: white;
+  color: var(--white-main);
 }
 footer .footer-container .footer-row .footer-column img {
   width: 50px;
@@ -1322,7 +1328,7 @@ footer .footer-container .footer-row .footer-column .social-media a {
   margin-right: 0.5rem;
 }
 footer .footer-document {
-  color: white;
+  color: var(--white-main);
   text-decoration: none;
   padding-top: 40px;
   padding-bottom: 20px;
@@ -1414,7 +1420,6 @@ footer .footer-document {
   .hidden-image2 {
     max-width: 200px !important;
     display: block;
-    background-color: black;
     background-size: cover;
     background-position: 50% 10%;
     background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);
@@ -1526,8 +1531,19 @@ footer .footer-document {
     padding-right: 4.3rem !important;
   }
 }
+.about-us {
+  color: var(--black-main);
+}
 .about-us .text-wrapper p {
   text-align: justify;
+}
+
+h1 {
+  color: var(--black-main) !important;
+}
+
+h2 {
+  color: var(--black-main) !important;
 }
 
 .picture-and-text p {
@@ -1540,6 +1556,7 @@ footer .footer-document {
 
 .contact-form p {
   text-align: center;
+  color: var(--black-main);
 }
 
 .contact-form-animation {
@@ -1685,5 +1702,64 @@ footer .footer-document {
     100% {
       opacity: 1;
     }
+  }
+}
+.theme-toggle {
+  position: fixed;
+  right: 0;
+  margin-right: 1.09rem;
+  top: 65px;
+  transition: 0.2s;
+}
+.theme-toggle img {
+  width: 40px;
+}
+
+@media (max-width: 913px) {
+  #theme-toggle {
+    display: none;
+  }
+  #theme-toggle-navbar {
+    display: block !important;
+  }
+  #theme-toggle-navbar img {
+    margin-left: 2rem;
+  }
+}
+#theme-toggle-navbar {
+  display: none;
+}
+#theme-toggle-navbar img {
+  width: 40px;
+}
+
+.fadeInImg {
+  -webkit-animation: fadeInImgAnimation 3.67s both;
+          animation: fadeInImgAnimation 3.67s both;
+}
+
+@-webkit-keyframes fadeInImgAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInImgAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 426px) {
+  .accordionBtn {
+    font-size: 1rem !important;
+  }
+  .accordionBtn {
+    font-size: 1rem !important;
   }
 }/*# sourceMappingURL=style.css.map */

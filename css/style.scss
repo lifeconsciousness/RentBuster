@@ -8,14 +8,28 @@
 
     --cursor-size: 14px;
     --bg: #222222fb;
+
+    --indicator-light-black: rgba(0, 0, 0, 0.389);
+    --indicator-dark-black: rgba(0, 0, 0, 0.785);
 }
 
 
 .dark-theme{
-    --black-main: rgb(238, 232, 232);
+    //--black-main: rgb(238, 232, 232); //test colors
+    //--white-main: rgb(148, 148, 148);
+
+    //--black-main: #141414;
+    //--black-main: #1a1a1a;
     //--white-main: #000;
-    --white-main: rgb(148, 148, 148);
+    //--white-main: #ececec;
+
+    --black-main: rgb(238, 232, 232); //test colors
+    --white-main: rgb(15, 14, 14);
+
+    --indicator-light-black: rgba(171, 170, 170, 0.389);
+    --indicator-dark-black: rgba(238, 238, 238, 0.851);
 }
+    
   
 #cursor {
     position: fixed;
@@ -99,7 +113,7 @@ body{
     width: 100vw;
     height: 3.6rem;
     display: flex;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px var(--black-main);
     transition: 0.2s ease-in;
 
     img{
@@ -704,6 +718,7 @@ iframe{
 
         img{
             width: 30px;
+            outline-color: var(--black-main);
         }
         transition: 0.1s;
     }
@@ -733,13 +748,13 @@ iframe{
             border-radius: 50%;
             width: 20px;
             height: 20px;
-            background: rgba(0, 0, 0, 0.389);
+            background: var(--indicator-light-black);
             margin: 0 5px;
             cursor: pointer;
         }
     }
     .carousel-indicator.current-slide{
-        background-color: rgba(0, 0, 0, 0.785);
+        background-color: var(--indicator-dark-black);
     }
 }
 
@@ -753,7 +768,7 @@ iframe{
 .curve{
     position: absolute;
     height: 92.7vh;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px var(--black-main);
     width: 100%;
     border-bottom-left-radius: 0rem;
 }
@@ -1127,7 +1142,7 @@ body.loaded{
     width: 87%;
     //width: 70%;
     height: 2px;
-    background: linear-gradient(90deg,#000000 0%, 	#000000 70%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(90deg, var(--black-main) 0%, var(--black-main) 70%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, 0) 100%);
     background-size: 25px;
     animation: animateLine 0.5s linear infinite;
 }
@@ -1192,6 +1207,7 @@ body.loaded{
             font-family: 'Inter', sans-serif;
             font-size: 1.17rem;
             margin: 0 3rem;
+            color: var(--black-main);
         }
     }
 
@@ -1414,10 +1430,10 @@ body.loaded{
     display: block;
     width: 100%;
     padding: 15px;
-    border: #000000 solid 2px;
+    border: var(--black-main) solid 2px;
     outline: none;
     cursor: pointer;
-    background: #141414;
+    background: var(--black-main);
     //color: #ffffff;
     color: var(--white-main);
     text-align: left;
@@ -1438,11 +1454,11 @@ body.loaded{
     display: block;
     width: 100%;
     padding: 15px;
-    border: #000000 solid 2px;
+    border: var(--black-main) solid 2px;
     outline: none;
     cursor: pointer;
-    background: #141414;
-    color: #ffffff;
+    background: var(--black-main);
+    color: var(--white-main);
     text-align: left;
     transition: background 0.2s;
     font-family: 'Inter', sans-serif;
@@ -1458,9 +1474,9 @@ body.loaded{
 }
 
 .accordionBtn-active{
-    background: #ececec;
-    color: black;
-    border: #000000 solid 2px;
+    background: var(--white-main);
+    color: var(--black-main);
+    border: var(--black-main) solid 2px;
 }
 .accordionBtn-active::after{
     position: relative;
@@ -1469,9 +1485,9 @@ body.loaded{
 }
 
 .accordionBtn-activeBig{
-    background: #ececec;
-    color: black;
-    border: #000000 solid 2px;
+    background: var(--white-main);
+    color: var(--black-main);
+    border: var(--black-main) solid 2px;
 }
 .accordionBtn-activeBig::after{
     position: relative;
@@ -1488,8 +1504,8 @@ body.loaded{
     //background: #eeeeee;
     //border: #000000 solid 1px;
 
-    background: #1a1a1a;
-    color: white;
+    background: var(--black-main);
+    color: var(--white-main);
 }
 
 
@@ -1507,7 +1523,6 @@ body.loaded{
         margin: 0 auto;
         padding-left: 32px;
         padding-right: 32px;
-        
     }
 
     h2{
@@ -1611,7 +1626,8 @@ body.loaded{
 
 
 footer{
-   background-color: rgb(21, 21, 21);
+   background-color: var(--black-main);
+   //background-color: rgb(21, 21, 21);
    padding: 40px 0;
    padding-bottom: 0px;
    font-family: "Inter", sans-serif;
@@ -1639,12 +1655,12 @@ footer{
             h4{
                 font-size: 1.4rem;
                 font-weight: 600;
-                color: white;
+                color: var(--white-main);
             }
-            color: white;
+            color: var(--white-main);
             a{
                 text-decoration: none;
-                color: white;
+                color: var(--white-main);
             }
 
             img{
@@ -1675,7 +1691,7 @@ footer{
    align-items: center;
 
    .footer-document{
-    color: white;
+    color: var(--white-main);
     text-decoration: none;
     padding-top: 40px;
     padding-bottom: 20px;
@@ -1774,7 +1790,6 @@ footer{
     .hidden-image2{
         max-width: 200px !important;
         display: block;
-        background-color: black;
         background-size: cover;
         background-position: 50% 10%;
       
@@ -1921,7 +1936,17 @@ footer{
             text-align: justify;
         }
     }
+    color: var(--black-main);
 }
+
+h1{
+    color: var(--black-main) !important;
+}
+h2{
+    color: var(--black-main) !important;
+}
+
+
 
 .picture-and-text{
     p{
@@ -1936,6 +1961,7 @@ footer{
 .contact-form{
     p{
         text-align: center;
+        color: var(--black-main);
     }
 }
 
@@ -2060,4 +2086,59 @@ footer{
 }
 
 
+.theme-toggle{
+    position: fixed;
+    right: 0;
+    margin-right: 1.09rem;
+    top: 65px;
 
+    img{
+        width: 40px;
+    }
+    transition: 0.2s;
+}
+
+@media (max-width: 913px){
+    #theme-toggle{
+        display: none;
+    }
+    #theme-toggle-navbar{
+        display: block !important;
+
+        img{
+            margin-left: 2rem;
+        }
+    }
+}
+
+#theme-toggle-navbar{
+    display: none;
+
+    img{
+        width: 40px;
+    }
+}
+
+
+.fadeInImg{
+    animation: fadeInImgAnimation 3.67s both;
+}
+
+
+@keyframes fadeInImgAnimation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media (max-width: 426px){
+    .accordionBtn{
+        font-size: 1rem !important;
+    }
+    .accordionBtn{
+        font-size: 1rem !important;
+    }
+}

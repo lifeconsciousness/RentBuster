@@ -388,19 +388,45 @@ const observerCarousel = new IntersectionObserver(entries => {
 
 observerCarousel.observe(document.querySelector(".carousel"))
 
-//navbar closing on scroll
 
+
+const observerHiddenImg = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll(".hidden-image1")[0].classList.add("fadeInImg")
+    }
+  })
+})
+
+observerHiddenImg.observe(document.querySelector(".hidden-image1"))
+
+const observerHiddenImg1 = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      document.querySelectorAll(".hidden-image2")[0].classList.add("fadeInImg")
+    }
+  })
+})
+
+observerHiddenImg1.observe(document.querySelector(".hidden-image2"))
+
+
+
+//navbar closing on scroll
 let theEnd = 0
 let navbarElement = document.getElementById("header")
 let navbarButtons = document.querySelectorAll(".active")
+let moon = document.querySelector('#theme-toggle')
 
 
 window.addEventListener("scroll", ()=>{
   let scrollTop = window.pageXOffset || document.documentElement.scrollTop
   if(scrollTop > theEnd){
     navbarElement.style.top = '-70px'
+    moon.style.right = '-60px'
   } else{
     navbarElement.style.top = '0'
+    moon.style.right = '0px'
   }
   theEnd = scrollTop
 })
@@ -409,11 +435,23 @@ window.addEventListener("scroll", ()=>{
 
 //dark theme toggle
 let icon = document.getElementById("moon");
+
   icon.onclick = function(){
       document.body.classList.toggle("dark-theme");   
       if(document.body.classList.contains("dark-theme")){
           icon.src = "/img/sun.png";
       }else{
           icon.src = "/img/moon.png";
+      }     
+  }
+
+let iconNavbar = document.getElementById("moon-navbar");
+
+  iconNavbar.onclick = function(){
+      document.body.classList.toggle("dark-theme");   
+      if(document.body.classList.contains("dark-theme")){
+          iconNavbar.src = "/img/sun.png";
+      }else{
+          iconNavbar.src = "/img/moon.png";
       }     
   }
