@@ -427,25 +427,6 @@ iframe {
   right: 0.1rem;
 }
 
-.selected-lang {
-  cursor: pointer;
-  font-family: "Inter", sans-serif;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  line-height: 1.55;
-  margin-bottom: 0.4rem;
-}
-
-.selected-lang::before {
-  content: "";
-  display: block;
-  height: 22.5px;
-  background-image: url(https://countryflagsapi.com/png/gb);
-  background-size: 100%;
-  width: 2.8rem;
-}
-
 .lang-menu ul {
   margin: 0;
   padding: 0;
@@ -1678,7 +1659,7 @@ h2 {
 .theme-toggle {
   position: fixed;
   right: 0;
-  margin-right: 1.09rem;
+  margin-right: 1.05rem;
   top: 65px;
   transition: 0.2s;
 }
@@ -1747,4 +1728,10 @@ h2 {
   font-size: 0.75rem;
   margin-bottom: 12px;
   opacity: 0.8;
+}
+
+@media (min-width: 422px) and (max-width: 913px) {
+  .home {
+    margin-bottom: 4rem !important;
+  }
 }/*# sourceMappingURL=style.css.map */

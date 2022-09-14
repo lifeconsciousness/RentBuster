@@ -17,6 +17,30 @@
       rel="stylesheet"
     />
     <link rel="icon" href="/favicon.ico">
+
+    <style>
+      .selected-lang{
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        width: 55px;
+        margin-bottom: 0.4rem;
+      }
+      
+      .selected-lang::before{
+          content: '';
+          display: block;
+          width: 32px;
+          height: 22.5px;
+          background-image: url(https://countryflagsapi.com/png/ua);
+          background-size: 80%;
+          width: 2.8rem;
+      }
+    </style>
+
   </head>
   <body class="dark-thoeme">
     <header class="header" id = "header">
@@ -36,10 +60,10 @@
         <nav>
           <ul id="navbar" class="navbar" data-visible="false">
             <li class="active"><a href="#home" class="underline-animation">Головна</a></li>
-            <li class="active"><a href="#about-us" class="underline-animation">About us</a></li>
-            <li class="active"><a href="#how-we-work" class="underline-animation">How we work</a></li>
-            <li class="active"><a href="#faq" class="underline-animation">FAQ</a></li>
-            <li class="active"><a href="#contact-us" class="underline-animation">Contact us</a></li>
+            <li class="active"><a href="#about-us" class="underline-animation">Про нас</a></li>
+            <li class="active"><a href="#how-we-work" class="underline-animation">Зниження ціни оренди</a></li>
+            <li class="active"><a href="#faq" class="underline-animation">Часті питання</a></li>
+            <li class="active"><a href="#contact-us" class="underline-animation">Контакти</a></li>
             <div id="theme-toggle-navbar">
               <img src="../img/moon.png" alt="moon" class="moon" id="moon-navbar">
             </div>
@@ -53,12 +77,12 @@
         <div class="selected-lang"></div>
         <!-- List of languages -->
         <ul id="languages">
-          <li><a href="/translatedPages/indexNL.html" id="nl">Dutch</a></li>
+          <li><a href="../translatedPages/indexNL.html" id="nl">Dutch</a></li>
           <li><a href="../index.html" id="en">English</a></li>
-          <li><a href="/translatedPages/indexGE.html" id="ge">German</a></li>
-          <li><a href="/translatedPages/indexFR.html" id="fr">French</a></li>
+          <li><a href="../translatedPages/indexGE.html" id="ge">German</a></li>
+          <li><a href="../translatedPages/indexFR.html" id="fr">French</a></li>
           <li>
-            <a href="/translatedPages/indexUA.html" id="ua">Ukrainian</a>
+            <a href="./translatedPages/indexUA.html" id="ua">Ukrainian</a>
           </li>
         </ul>
       </div>
@@ -105,9 +129,9 @@
       <div class="home-wrapper">
       <div id="home" class="home anim-container">
         <div class="text-container-home">
-          <h1 class="animated fadeIn1">If your rent is high</h1>
-          <h1 class="animated fadeIn2">In your neighbourhood</h1>
-          <h1 class="animated fadeIn3">Who you gonna call?</h1>
+          <h1 class="animated fadeIn1" style="text-align: center;">Якщо в тебе дорога оренда</h1>
+          <!-- <h1 class="animated fadeIn2">In your neighbourhood</h1> -->
+          <h1 class="animated fadeIn3">Кому ти зателефонуєш?</h1>
           <img class="animated fadeInLeft" src="../img/RentBuster logo without background.png" alt="rentbuster logo">
           <!-- <h2>RENT BUSTER!</h2> -->
           <!-- <img class="animated fadeInLeft" src="/img/RentBuster logo without background.png" alt="rentbuster logo"> -->
@@ -130,29 +154,28 @@
 
       <!-- ABOUT US SECTION -->
       <div class="about-us-container" id="about-us">
-        <h1>About us</h1>
+        <h1>Про нас</h1>
       <div class="about-us">
         <div class="text-wrapper" id="text-wrapper">
           <p style="margin-bottom: 10px; margin-top: 7px;">
-            Rent Buster NL was founded in 2022 to deal with the problem of
-            landlords overcharging tenants. The organization aims to seek out
-            and <span class="highlight-text">alert new tenants who moved into new apartments</span>/ studios/ rooms in
-            the Netherlands<span class="highlight-text"> that they may be overpaying on their rent. </span>
+            Rent Buster NL була заснована в 2022 році для вирішення проблеми
+            орендодавців, які завищують плату за оренду житла. Організація спрямована на пошук
+            та <span class="highlight-text">попередження людей, які переїхали в нове житло</span>
+            в Нідерландах<span class="highlight-text">, що вони можуть переплачувати за оренду. </span>
           </p>
           <p style="margin: 0;">
-            While there may be a massive shortage of housing in major cities, a large
-            portion of the rental market is subject to strict price controls to
-            ensure basic housing is affordable. <span class="highlight-text">Landlords and estate agents
-                regularly ignore these price controls and grossly inflate the price</span>
-            of accommodation to turn a higher profit sometimes up to 200%. They
-            rely on most tenant’s ignorance of the law or fear of losing their
-            home to get away with this.
+            Незважаючи на те, що у великих містах може спостерігатися значний дефіцит житла, значна
+            частина ринку оренди житла підлягає суворому контролю за цінами, щоб
+            забезпечення доступності базового житла. <span class="highlight-text">Орендодавці та агенти з нерухомості
+              регулярно ігнорують ці заходи контролю за цінами та значно завищують ціни</span>
+              житла для отримання більшого прибутку, іноді до 200%. Вони
+              покладаються на незнання більшості орендарів законів або страх втратити житло, щоб вийти сухими з води.
           </p>
           <p style="margin-top: 10px; margin-bottom: 0;">
-            Rent Buster NL aims to <span class="highlight-text">help these
-            tenants get out from under this overpricing.</span> If you received a
-            letter from us, then you most likely are overpaying. Check out our
-            FAQ for more information or contact us for a free consultation.
+            Rent Buster NL має на меті <span class="highlight-text">допомогти цим орендарям
+              орендарям змінити цю завищену ціну.</span> Якщо ви отримали від нас
+              від нас, то, швидше за все, ви переплачуєте. Ознайомтеся з нашими
+              FAQ для отримання додаткової інформації або зверніться до нас за безкоштовною консультацією.
           </p>
         </div>
 
@@ -213,28 +236,28 @@
       <!-- HOW WE WORK SECTION -->
       <div class="how-we-work" id="how-we-work">
         <div class="hww-container ">
-          <h1>How we work</h1>
+          <h1>Як ми працюємо</h1>
 
         <div class="picture-and-text">
           <div class="hww-img" id="firstImg"></div>
-          <p class="hww-text " id="firstText">If you received the letter and if you decide to proceed with getting your rent reduced, Rent Buster NL will present your case to the Landlord and lobby on your behalf for a reduced rent. This is a required step and it does alert the landlord that one of his/her tenants is aware of the disputed rent price. </p>
+          <p class="hww-text " id="firstText">Якщо Ви отримали лист і вирішили продовжити процес зниження орендної плати, Rent Buster NL представить Вашу справу орендодавцю і буде лобіювати від Вашого імені зниження орендної плати. Це необхідний крок, який попередить орендодавця про те, що один з його/її орендарів знає про спірну ціну орендної плати. </p>
         </div>
 
         <div class="picture-and-text">
           <!-- <img src="/img/left-arrow-next.svg" class="hidden-image1" alt=""> -->
           <div class="hidden-image1 hww-img"></div>
-          <p class="hww-text" id="secondText">There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling. </p>
+          <p class="hww-text" id="secondText">Існує необхідний період очікування, перш ніж справа може бути передана на розгляд в судовий орган, і в той же час ви повинні платити орендну плату. Rent Buster NL проведе більш точну оцінку орендної плати за цей час, якщо це буде необхідно, якщо існує вузька різниця між ціною орендної плати та граничною межею орендної плати. </p>
           <div class="hww-img hide-image" id="secondImg"></div>
         </div>
 
         <div class="picture-and-text">
           <div class="hww-img " id="thirdImg"></div>
-          <p class="hww-text " id="thirdText">Rent Buster NL also takes care of any emails, paperwork and representation that the Huurcommissee requires and will serve as an intermediary between you and your landlord to shield you from any acrimonious communication/threats of evictions/etc. We also negotiate on your behalf to ensure that the term of your lease is not adversely affected by your case.</p>
+          <p class="hww-text " id="thirdText">Rent Buster NL також піклується про будь-які електронні листи, документи та представництво, які вимагає судовий комісар, і буде служити посередником між Вами і Вашим орендодавцем, щоб захистити Вас від будь-якого гострого спілкування / погроз виселення / і т.д. Ми також ведемо переговори від Вашого імені, щоб гарантувати, що Ваша справа не вплине негативно на термін Вашої оренди.</p>
         </div>
 
         <div class="picture-and-text">
           <div class="hidden-image2 hww-img"></div>
-          <p class="hww-text " id="fourthText">We operate on a no cure, no pay basis. Regarding the fees: Should our case be successful and your rent is reduced and retrospectively back-paid for the months you have stayed, our fee will be the difference between the old rent price and the new one (+ 21% BTW) . No charge will be levied until you receive a definite reduced rental price. Any costs with the Huurcommissee are covered by us. If the rent is not reduced, no charge will be levied.</p>
+          <p class="hww-text " id="fourthText">Ми працюємо за принципом "не лікуємо, не платимо". Щодо гонорару: Якщо наша справа буде успішною і Ваша орендна плата буде знижена і заднім числом повернута за місяці, в яких Ви проживали, наш гонорар становитиме різницю між старою ціною оренди і новою (+ 21% BTW). Плата не стягується до тих пір, поки ви не отримаєте певну знижену ціну оренди. Будь-які витрати з Huurcommissee покриваються нами. Якщо оренда не буде знижена, плата не стягується.</p>
           <div class="hww-img hide-image" id="fourthImg"></div>
         </div> 
 
@@ -248,62 +271,62 @@
       <!-- If you want to justify text in questions find .accordionBtn in scss file and uncomment text-align: justify -->
       <!-- FAQ SECTION -->
       <div class="faq" id="faq">
-        <h2>FAQ</h1>
+        <h2>Часті питання</h1>
         <div class="faq-container">
           <div class="accordion" id="a1">
-            <button type="button" class="accordionBtn"><p> I just got a letter. How did you know I am living here and what my rent is?</p></button>
+            <button type="button" class="accordionBtn"><p>Я щойно отримав листа. Як ви дізналися, що я тут живу і яка в мене оренда?</p></button>
             <div class="accordion-content">
-              <p>The landlord/agency that has rented out the accommodation to you posted advertisements on popular housing websites that I check frequently. Your house/apartment was red-flagged as having suspiciously high rent. I conducted a calculation and determined an approximate maximum rent price that you see in the letter. If the difference between this and the current rent price is within an acceptable level of accuracy, then I send a letter to your address a few weeks after the beginning of the contract. I do not know the name of the tenant or anything about the contract you signed. </p>
+              <p>Орендодавець/агентство, яке здало Вам житло, розмістило оголошення на популярних веб-сайтах з продажу житла, які я часто перевіряю. Ваш будинок/квартира був позначений червоним прапорцем як такий, що має підозріло високу орендну плату. Я провів розрахунок і визначив приблизну максимальну ціну оренди, яку Ви бачите в листі. Якщо різниця між нею і поточною ціною оренди знаходиться в межах прийнятного рівня точності, то через кілька тижнів після початку дії договору я надсилаю на Вашу адресу лист. Я не знаю ні імені орендаря, ні нічого про договір, який Ви підписали. </p>
             </div>
           </div>
 
           <div class="accordion" id="a2">
-            <button type="button" class="accordionBtn">I just got a letter from you but I don’t think you sent it to the wrong address. I live in a 20m2 studio, not a 55m2 apartment.</button>
+            <button type="button" class="accordionBtn">Я отримав від Вас листа, але не думаю, що Ви відправили його не на ту адресу. Я живу в студії площею 20 м2, а не в квартирі 55 м2.</button>
             <div class="accordion-content">
-              <p>My apologies. Many ads do not give the house number and sometimes I make mistakes in finding the house letter in multi-room complexes. If someone did recently move into your building, the letter is probably for them. </p>
+              <p>Приношу свої вибачення. У багатьох оголошеннях не вказується номер будинку і іноді я помиляюся в знаходженні літери будинку в багатоквартирних комплексах. Якщо хтось нещодавно заселився у ваш будинок, то лист, ймовірно, для нього. </p>
             </div>
           </div>
 
           <div class="accordion" id="a3">
-            <button type="button" class="accordionBtn"><p>How do I know this isn’t a scam?</p></button>
+            <button type="button" class="accordionBtn"><p>Як дізнатися, що це не шахрайство?</p></button>
             <div class="accordion-content">
-              <p>Rent Buster NL is a registered company in the Netherlands with a fixed address, website, dutch phone number. I am asking for no upfront fee, assume the financial risk with every rent reduction application and can verify my identity with videocall on request. With the current crisis in renting in the major dutch cities, there are easier methods of scamming people: becoming a makelaar/estate agent is one of them. I could also become an NFT dealer but I would sooner gamble in a burning casino.</p>
+              <p>Rent Buster NL - зареєстрована компанія в Нідерландах з фіксованою адресою, веб-сайтом, голландським номером телефону. Я не прошу ніякої передоплати, беру на себе фінансовий ризик при кожній заявці на зниження орендної плати і можу підтвердити свою особу за допомогою відеодзвінка за запитом. В умовах нинішньої кризи на ринку оренди житла у великих голландських містах існують більш легкі методи обману людей: стати маклером / агентом з нерухомості - один з них. Я також міг би стати дилером NFT, але я скоріше зіграю в азартні ігри в палаючому казино.</p>
             </div>
           </div>
 
           <div class="accordion" id="a4">
-            <button type="button" class="accordionBtn">Is there a database that tells me what the max legal rent for place is?</button>
+            <button type="button" class="accordionBtn">Чи існує база даних, яка підкаже мені, яка максимальна законна орендна плата за житло?</button>
             <div class="accordion-content">
-              <p>Unfortunately no, it must be calculated by hand. It varies depending on many factors and changes every year due to fluctuations in the house prices, the layout, the energy rating etc. The gemeente in Rotterdam and Utrecht offer a rudimentary calculator on their websites but they only calculate a possible range of values and only within their respective cities.
-                <br> Links provided:
-                <a href="https://huurprijscalculator.rotterdam.nl/index.html" target="_blank" style="color: cornflowerblue;">Rotterdam</a> ,
-                <a href="https://www.huurteam-utrecht.nl/en/rental-price-checker/" target="_blank" style="color: cornflowerblue;">Utrecht</a></p>
+              <p>На жаль, ні, її потрібно розраховувати вручну. Вона залежить від багатьох факторів і змінюється щороку через коливання цін на житло, планування, енергетичного рейтингу тощо. Гементе в Роттердамі та Утрехті пропонують елементарний калькулятор на своїх веб-сайтах, але він розраховує лише можливий діапазон значень і лише в межах своїх міст.
+                <br> Посилання:
+                <a href="https://huurprijscalculator.rotterdam.nl/index.html" target="_blank" style="color: cornflowerblue;">Роттердам</a> ,
+                <a href="https://www.huurteam-utrecht.nl/en/rental-price-checker/" target="_blank" style="color: cornflowerblue;">Утрехт</a></p>
             </div>
           </div>
 
           <div class="accordion" id="a5">
-            <button type="button" class="accordionBtn">I think I am paying too much for my room/house/apartment but it took me months to find this place and I don’t want to upset the landlord and get kicked out for causing trouble. I would rather pay extra than lose this place</button>
+            <button type="button" class="accordionBtn">Я вважаю, що плачу занадто багато за свою кімнату/будинок/квартиру, але я місяцями шукав це місце, і я не хочу засмучувати власника і бути вигнаним за те, що створюю проблеми. Я краще доплачу, ніж втрачу це місце</button>
             <div class="accordion-content">
-              <p>That is understandable. Finding places to rent in the Netherlands is difficult and it is possible that undertaking this procedure will sour the relationship between you and the landlord. It is up to you to decide whether the financial savings of reduced rent (maybe thousands of euro) are worth the risk that the landlord will not renew your contract. Getting a new tenant is inconvenient and there is no guarantee that the new tenant will be willing to pay the higher original price. Landlords who have been in front of the rent commission multiple times within 3 years pay a higher fee each time they lose the case: facts I make clear to landlords I deal with.
-                <br style="margin-bottom: 0.7rem;"> Also is only the case IF you have fixed term contract (less than 2 years). If you have an indefinite contract then the landlord will be powerless to evict you for appealing the rent price. You will likely be able to stay there as long as you want. Should the landlord try to evict you, you will have an arsenal of tenant rights to fall back on to prevent your eviction. As long as you keep your nose clean there should be no reason your landlord can evict you and most CERTAINLY not because you exercised your rights as a tenant. 
+              <p>Це цілком зрозуміло. Знайти житло в Нідерландах досить складно, і не виключено, що проведення цієї процедури зіпсує відносини між Вами і орендодавцем. Вам вирішувати, чи варта фінансова економія від зниження орендної плати (можливо, тисячі євро) ризику того, що орендодавець не продовжить з вами договір. Шукати нового орендаря незручно, і немає ніяких гарантій, що новий орендар буде готовий платити більш високу початкову ціну. Орендодавці, які були перед комісією з орендної плати кілька разів протягом 3 років, платять вищу плату кожного разу, коли вони програють справу: факти, які я доводжу до відома орендодавців, з якими я маю справу.
+                <br style="margin-bottom: 0.7rem;"> Також це стосується лише тих випадків, коли у Вас строковий договір (менше 2 років). Якщо у Вас безстроковий договір, то орендодавець не матиме права виселити Вас за оскарження орендної плати. Ви, швидше за все, зможете залишатися там стільки, скільки захочете. Якщо ж орендодавець спробує вас виселити, у вас буде цілий арсенал прав орендаря, якими ви можете скористатися, щоб запобігти виселенню. До тих пір, поки Ви тримаєте ніс чистим, у орендодавця не повинно бути причин, щоб виселити Вас, і вже точно не через те, що Ви скористалися своїми правами орендаря. 
                 </p>
             </div>
           </div>
 
           <div class="accordion" id="a6">
-            <button type="button" class="accordionBtn">Okay, so what is your end in all this?</button>
+            <button type="button" class="accordionBtn">Гаразд, а який ваш інтерес у всьому цьому?</button>
             <div class="accordion-content">
-              <p>I have had personal experience with dealing with bad landlords who overcharge tenants. I don’t like the injustice of the housing market now and I want to do something about it. True, I charge a fee, but only if we are successful: if we lose, I assume the financial costs. I do want to do this full-time and unfortunately, I am not a salaried employee of a rental organization. Operating a business costs money and I do have to pay my own rent and eat. With regard to how much, I take a small portion (1 month difference between the old price and new reduced price including 21% BTW and the rest goes to you along with a permanently reduced rent. Similar organizations take a much larger cut of the settlement in exchange for the same level of risk. </p>
+              <p>У мене був особистий досвід спілкування з недобросовісними орендодавцями, які завищували плату за оренду житла. Мені не подобається несправедливість, яка зараз існує на ринку житла, і я хочу з цим щось зробити. Так, я беру гонорар, але тільки в разі успіху: якщо ми програємо, фінансові витрати я беру на себе. Я хочу займатися цим на повну ставку і, на жаль, я не є найманим працівником орендної організації. Ведення бізнесу коштує грошей, і мені потрібно платити за оренду житла і харчуватися. Що стосується суми, то я беру невелику частину (1 місяць різниці між старою ціною і новою зниженою ціною, включаючи 21% BTW), а решта йде вам разом з постійно зниженою орендною платою. Аналогічні організації беруть набагато більшу частку від поселення в обмін на такий же рівень ризику. </p>
             </div>
           </div>
 
           <div class="accordion" id="a7">
-            <button type="button" class="accordionBtn">Why don’t I just go to a Rental organization? Why do I need you at all?</button>
+            <button type="button" class="accordionBtn">Чому я не можу просто звернутися в іншу організацію? Навіщо ви мені взагалі потрібні?</button>
             <div class="accordion-content">
               <p>
-                There are indeed many organizations that can help you with dealing with your landlord. Some of them charge a higher rate for their services. They are also reactionary: They only respond to requests rather than the proactive approach taken by Rent Buster NL in seeking out tenants who don’t suspect they are overpaying.
-                <br style="margin-bottom: 0.7rem;"> Of course you are perfectly capable of building your own case against your landlord. You can also grow your own food, cut your own hair, repair your own car. These things, like everything, require time and energy to learn how to implement. You will also have to contend with the sometimes messy and bitter interactions with your landlord who probably knows more than you and can bully you with empty threats. You can do this all yourself but it is good to have someone at your back who can advise and help you through it. 
-                <br style="margin-bottom: 0.7rem;"> In the long term, the money earned will go towards making it possible for me to inform and prevent others from getting cheated on their rent and bring a level of fairness back to the Dutch Housing market. Some of the money was used to pay for the letter that you received.
+                Дійсно, існує багато організацій, які можуть допомогти Вам у вирішенні проблем з орендодавцем. Деякі з них беруть за свої послуги високу плату. Вони також є реакційними: Вони лише реагують на запити, а не застосовують проактивний підхід, який використовує Rent Buster NL, шукаючи орендарів, які не підозрюють, що переплачують.
+                <br style="margin-bottom: 0.7rem;"> Звичайно, Ви цілком здатні побудувати власну справу проти Вашого орендодавця. Ви також можете самі вирощувати собі їжу, самі стригтися, самі ремонтувати свій автомобіль. Ці речі, як і все інше, потребують часу та енергії, щоб навчитися їх реалізовувати. Вам також доведеться боротися з іноді заплутаними і гіркими відносинами з Вашим орендодавцем, який, ймовірно, знає більше, ніж Ви, і може залякувати Вас порожніми погрозами. Ви можете зробити все це самостійно, але добре мати когось поруч, хто може дати пораду і допомогти Вам пройти через це. 
+                <br style="margin-bottom: 0.7rem;"> У довгостроковій перспективі зароблені гроші підуть на те, щоб дати мені можливість інформувати та запобігати обману інших щодо орендної плати, а також повернути рівень справедливості на голандський ринок житла. Частина грошей була використана для оплати листа, який ви отримали.
 
                 </p>
             </div>
@@ -319,42 +342,42 @@
       <!-- CONTACT US SECTION -->
       <div class="contact-us" id="contact-us">
         <div class="contact-form">
-          <h2>Contact us</h2>
-          <p>Fill out the form and we will contact you soon</p>
+          <h2>Зв'язатися з нами</h2>
+          <p>Заповніть форму і ми зв'яжемося з вами найближчим часом. Після відправлення вас перенесе на сторінку з капчею для запобігання спаму</p>
 
           <form action="https://formspree.io/f/xoqbjbnv" method="POST" id="form">
               <div class="group">
                 <div class="empty-space"></div>
-                <input type="text" name="firstName" id="firstName" placeholder="First name" class="form-element" required>
+                <input type="text" name="firstName" id="firstName" placeholder="Ім'я" class="form-element" required>
               </div>
               
               <div class="group">
                 <div class="empty-space"></div>
-                <input type="text" name="secondName" id="secondName" placeholder="Second name" class="form-element" required>
+                <input type="text" name="secondName" id="secondName" placeholder="Прізвище" class="form-element" required>
               </div>
 
               <div class="group">
                 <div class="empty-space"></div>
-                <input type="email" name="email" id="email" placeholder="Email" class="form-element" required>
+                <input type="email" name="email" id="email" placeholder="Електронна пошта" class="form-element" required>
               </div>
 
               <div class="group">
                 <div class="empty-space"></div>
-                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone number" class="form-element" required>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Номер телефону" class="form-element" required>
               </div>
 
 
               <div class="full">
                 <div class="group">
                   <div class="empty-space-big"></div>
-                <textarea name="message" id="message" class="form-element" placeholder="Your message" spellcheck="false"></textarea>
+                <textarea name="message" id="message" class="form-element" placeholder="Ваше повідомлення" spellcheck="false"></textarea>
                 </div>
               </div>
 
               <br>
 
               <div class="submit">
-                <input type="submit" value="Send">
+                <input type="submit" value="Надіслати">
               </div>
 
           </form>
@@ -368,16 +391,16 @@
       <div class="footer-container">
         <div class="footer-row">
           <div class="footer-column" id="info-footer">
-            <h4>Contacts</h4>
+            <h4>Контакти</h4>
             <ul>
-              <li><p>Contact phone:&#10240<span class="break"></span>+31 643599538</p></li>
+              <li><p>Телефон:&#10240<span class="break"></span>+31 643599538</p></li>
               <li><p>Whatsapp:&#10240<span class="break"></span>+31 643599538</p></li>
-              <li><p>Email:&#10240<span class="break"></span>info(at)rentbuster(dot)nl</p></li>
+              <li><p>Електронна пошта:&#10240<span class="break"></span>info(собачка)rentbuster(крапка)nl</p></li>
             </ul>
           </div>
 
           <div class="footer-column">
-            <h4>Social media</h4>
+            <h4>Соціальні мережі</h4>
             <div class="social-media">
               <a href="https://www.facebook.com/profile.php?id=100085087598391" target="_blank"><img src="https://seeklogo.com/images/F/facebook-icon-circle-logo-09F32F61FF-seeklogo.com.png" alt="facebook-icon" class="facebook-icon"></a>
               <a href="https://twitter.com/Rent_Buster_NL" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" alt="twitter-icon" class="twitter-icon"></a>
@@ -389,6 +412,34 @@
       <a href="/Privacyverklaring.pdf" target="_blank" class="footer-document">Privacyverklaring - © <script type="text/javascript">document.write( new Date().getFullYear() )</script> RentBusterNL</a>
       <a href="https://lifeconsciousness.github.io/Contact_page/" target="_blank" class="credit">Made by Maksym Tovstolis</a>
     </footer>
+
+    <script>
+      //dark theme toggle
+      let icon = document.getElementById("moon");
+      let iconNavbar = document.getElementById("moon-navbar");
+
+        icon.onclick = function(){
+            document.body.classList.toggle("dark-theme");   
+            if(document.body.classList.contains("dark-theme")){
+                icon.src = "../img/sun.png";
+                iconNavbar.src = "../img/sun.png";
+            }else{
+                icon.src = "../img/moon.png";
+                iconNavbar.src = "../img/moon.png";
+            }     
+        }
+
+        iconNavbar.onclick = function(){
+            document.body.classList.toggle("dark-theme");   
+            if(document.body.classList.contains("dark-theme")){
+                iconNavbar.src = "../img/sun.png";
+                icon.src = "../img/sun.png";
+            }else{
+                iconNavbar.src = "../img/moon.png";
+                icon.src = "../img/moon.png";
+            }     
+        }
+    </script>
 
     <script src="../script.js"></script>
   </body>

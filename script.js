@@ -434,55 +434,5 @@ window.addEventListener("scroll", ()=>{
 
 
 
-//dark theme toggle
-
-let icon = document.getElementById("moon");
-let iconNavbar = document.getElementById("moon-navbar");
-
-  icon.onclick = function(){
-      document.body.classList.toggle("dark-theme");   
-      if(document.body.classList.contains("dark-theme")){
-          icon.src = "/translatedPages/sun.png";
-          iconNavbar.src = "/translatedPages/sun.png";
-      }else{
-          icon.src = "/translatedPages/moon.png";
-          iconNavbar.src = "/translatedPages/moon.png";
-      }     
-  }
-
-  iconNavbar.onclick = function(){
-      document.body.classList.toggle("dark-theme");   
-      if(document.body.classList.contains("dark-theme")){
-          iconNavbar.src = "/translatedPages/sun.png";
-          icon.src = "/translatedPages/sun.png";
-      }else{
-          iconNavbar.src = "/translatedPages/moon.png";
-          icon.src = "/translatedPages/moon.png";
-      }     
-  }
 
 
-// let icon = document.getElementById("moon");
-// let iconNavbar = document.getElementById("moon-navbar");
-
-//   icon.onclick = function(){
-//       document.body.classList.toggle("dark-theme");   
-//       if(document.body.classList.contains("dark-theme")){
-//           icon.src = "../img/sun.png";
-//           iconNavbar.src = "../img/sun.png";
-//       }else{
-//           icon.src = "../img/moon.png";
-//           iconNavbar.src = "../img/moon.png";
-//       }     
-//   }
-
-//   iconNavbar.onclick = function(){
-//       document.body.classList.toggle("dark-theme");   
-//       if(document.body.classList.contains("dark-theme")){
-//           iconNavbar.src = "../img/sun.png";
-//           icon.src = "../img/sun.png";
-//       }else{
-//           iconNavbar.src = "../img/moon.png";
-//           icon.src = "../img/moon.png";
-//       }     
-//   }

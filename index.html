@@ -17,6 +17,30 @@
       rel="stylesheet"
     />
     <link rel="icon" href="/favicon.ico">
+
+    <style>
+      .selected-lang{
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        width: 55px;
+        margin-bottom: 0.4rem;
+      }
+
+      .selected-lang::before{
+          content: '';
+          display: block;
+          width: 32px;
+          height: 22.5px;
+          background-image: url(https://countryflagsapi.com/png/gb);
+          background-size: 100%;
+          width: 2.8rem;
+      }
+    </style>
+
   </head>
   <body class="dark-thoeme">
     <header class="header" id = "header">
@@ -41,7 +65,7 @@
             <li class="active"><a href="#faq" class="underline-animation">FAQ</a></li>
             <li class="active"><a href="#contact-us" class="underline-animation">Contact us</a></li>
             <div id="theme-toggle-navbar">
-              <img src="./img/moon.png" alt="moon" class="moon" id="moon-navbar">
+              <img src="./translatedPages/moon.png" alt="moon" class="moon" id="moon-navbar">
             </div>
 
           </ul>
@@ -53,12 +77,12 @@
         <div class="selected-lang"></div>
         <!-- List of languages -->
         <ul id="languages">
-          <li><a href="/translatedPages/indexNL.html" id="nl">Dutch</a></li>
+          <li><a href="./translatedPages/indexNL.html" id="nl">Dutch</a></li>
           <li><a href="./index.html" id="en">English</a></li>
-          <li><a href="/translatedPages/indexGE.html" id="ge">German</a></li>
-          <li><a href="/translatedPages/indexFR.html" id="fr">French</a></li>
+          <li><a href="./translatedPages/indexGE.html" id="ge">German</a></li>
+          <li><a href="./translatedPages/indexFR.html" id="fr">French</a></li>
           <li>
-            <a href="/translatedPages/indexUA.html" id="ua">Ukrainian</a>
+            <a href="./translatedPages/indexUA.html" id="ua">Ukrainian</a>
           </li>
         </ul>
       </div>
@@ -98,7 +122,7 @@
     <main id="body">
       <div class="curve"></div>
       <div class="theme-toggle" id="theme-toggle">
-        <img src="./img/moon.png" alt="moon" class="moon" id="moon">
+        <img src="./translatedPages/moon.png" alt="moon" class="moon" id="moon">
       </div>
 
       <!-- HOME SECTION -->
@@ -320,7 +344,7 @@
       <div class="contact-us" id="contact-us">
         <div class="contact-form">
           <h2>Contact us</h2>
-          <p>Fill out the form and we will contact you soon</p>
+          <p>Fill out the form and we will contact you soon. After submission you will be redirected to a page with a captcha to prevent spam</p>
 
           <form action="https://formspree.io/f/xoqbjbnv" method="POST" id="form">
               <div class="group">
@@ -390,6 +414,33 @@
       <a href="https://lifeconsciousness.github.io/Contact_page/" target="_blank" class="credit">Made by Maksym Tovstolis</a>
     </footer>
 
+    <script>
+      //dark theme toggle
+      let icon = document.getElementById("moon");
+      let iconNavbar = document.getElementById("moon-navbar");
+
+        icon.onclick = function(){
+            document.body.classList.toggle("dark-theme");   
+            if(document.body.classList.contains("dark-theme")){
+                icon.src = "./translatedPages/sun.png";
+                iconNavbar.src = "./translatedPages/sun.png";
+            }else{
+                icon.src = "./translatedPages/moon.png";
+                iconNavbar.src = "./translatedPages/moon.png";
+            }     
+        }
+
+        iconNavbar.onclick = function(){
+            document.body.classList.toggle("dark-theme");   
+            if(document.body.classList.contains("dark-theme")){
+                iconNavbar.src = "./translatedPages/sun.png";
+                icon.src = "./translatedPages/sun.png";
+            }else{
+                iconNavbar.src = "./translatedPages/moon.png";
+                icon.src = "./translatedPages/moon.png";
+            }     
+        }
+    </script>
     <script src="./script.js"></script>
   </body>
 </html>
