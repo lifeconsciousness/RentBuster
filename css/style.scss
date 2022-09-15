@@ -459,7 +459,9 @@ iframe{
     }
 }
 
-
+.text-wrapper{
+    opacity: 0;
+}
 
 @media (min-width: 913px){
     .home{
@@ -501,12 +503,20 @@ iframe{
             margin-left: 5%;
         }
     }
+
 }
 
 
+@media (max-width: 913px){
+    #french-hww{
+        font-size: 3rem !important;
+    }
+}
 
-
-
+.french-hww{
+    font-size: 4rem !important;
+    text-align: center;
+}
 
 
 
@@ -645,7 +655,9 @@ iframe{
 
 
 
-
+.carousel{
+    opacity: 0;
+}
 
 //image carousel styling
 
@@ -747,6 +759,7 @@ iframe{
 
 .curve{
     position: absolute;
+    height: 92.7vh;
     height: 92.7vh;
     border-bottom: solid 2px var(--black-main);
     width: 100%;
@@ -1145,7 +1158,7 @@ body.loaded{
     // color: white;
     //border: 2px solid white
 
-    border-bottom: 2px solid var(--black-main);
+    //border-bottom: 2px solid var(--black-main);
     //text-decoration: underline;
 }
 
@@ -1200,18 +1213,37 @@ body.loaded{
         -moz-animation: fadeInl 2s both;
         -o-animation: fadeInl 2s both;
         animation: fadeInl 2s both;
+        opacity: 1;
     }
     .right-slideText{
         -webkit-animation: fadeInr 2s both;
         -moz-animation: fadeInr 2s both;
         -o-animation: fadeInr 2s both;
         animation: fadeInr 2s both;
+        opacity: 1;
     }
 
     //.right-slideText::after {content: "";}
     //this content thing is causing the bug
 
-
+    #thirdText{
+        opacity: 0;
+    }
+    #thirdImg{
+        opacity: 0;
+    }
+    #secondImg{
+        opacity: 0;
+    }
+    #secondText{
+        opacity: 0;
+    }
+    #firstText{
+        opacity: 0;
+    }
+    #firstImg{
+        opacity: 0;
+    }
 
     .left-slideImg1{
         background-image: url(https://images.unsplash.com/photo-1541693823712-3892863d6bac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
@@ -1220,12 +1252,14 @@ body.loaded{
         -moz-animation: fadeInr 2.6s both;
         -o-animation: fadeInr 2.6s both;
         animation: fadeInr 2.6s both;
+        opacity: 1;
     }
     .right-slideText1{
         -webkit-animation: fadeInl 2.6s both;
         -moz-animation: fadeInl 2.6s both;
         -o-animation: fadeInl 2.6s both;
         animation: fadeInl 2.6s both;
+        opacity: 1;
     }
 
     //.right-slideText1::after {content: "There is a required waiting period before a case can be brought before the Huurcommissee and in the meantime, you must pay your rent. Rent Buster NL will perform a more accurate rent evaluation in the meantime if it is necessary in case there is a narrow margin between the rent price and the rent ceiling.  ";}
@@ -1238,6 +1272,7 @@ body.loaded{
         -moz-animation: fadeInl 2s both;
         -o-animation: fadeInl 2s both;
         animation: fadeInl 2s both;
+        opacity: 1;
 
         width: 120% !important;
     }
@@ -1246,10 +1281,14 @@ body.loaded{
         -moz-animation: fadeInr 2s both;
         -o-animation: fadeInr 2s both;
         animation: fadeInr 2s both;
+        opacity: 1;
     }
 
     //.right-slideText2::after {content: "Rent Buster NL also takes care of any emails, paperwork and representation that the Huurcommissee requires and will serve as an intermediary between you and your landlord to shield you from any acrimonious communication/threats of evictions/etc. We also negotiate on your behalf to ensure that the term of your lease is not adversely affected by your case. ";}
 
+    #fourthImg{
+        opacity: 0;
+    }
 
     .left-slideImg3{
         background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);
@@ -1262,12 +1301,18 @@ body.loaded{
         background-size: cover;
         background-position: 50% 10%;
         width: 144% !important;
+        opacity: 1;
     }
     .right-slideText3{
         -webkit-animation: fadeInl 2.6s both;
         -moz-animation: fadeInl 2.6s both;
         -o-animation: fadeInl 2.6s both;
         animation: fadeInl 2.6s both;
+        opacity: 1;
+    }
+
+    #fourthText{
+        opacity: 0;
     }
 
     //.right-slideText3::after {content: "We operate on a no cure, no pay basis. Regarding the fees: Should our case be successful and your rent is reduced and retrospectively back-paid for the months you have stayed, our fee will be the difference between the old rent price and the new one (+ 21% BTW) . No charge will be levied until you receive a definite reduced rental price. Any costs with the Huurcommissee are covered by us. If the rent is not reduced, no charge will be levied.  ";}
@@ -1343,9 +1388,12 @@ body.loaded{
 }
 
 .accordion-animation{
+    opacity: 1;
     animation: fadeInAccordion 1.7s both;
 }
-
+.accordion{
+    opacity: 0;
+}
 
 
 @keyframes fadeInAccordionTop{
@@ -1359,10 +1407,6 @@ body.loaded{
     }
 }
 
-.accordion-animationTop{
-    animation: fadeInAccordionTop 1s both;
-}
-
 @keyframes fadeInAccordionBottom{
     0%{
         opacity: 1;
@@ -1374,7 +1418,12 @@ body.loaded{
     }
 }
 
+#a7{
+    opacity: 0;
+}
+
 .accordion-animationBottom{
+    opacity: 1;
     animation: fadeInAccordionBottom 1s both;
 }
 
@@ -1923,7 +1972,12 @@ h2{
     }
 }
 
+#form{
+    opacity: 0;
+}
+
 .contact-form-animation{
+    opacity: 1;
     animation: fadeInBottomForm 2s both;
 }
 
@@ -1984,6 +2038,7 @@ h2{
 
 @media (min-width: 913px){
     .about-us-text-animation{
+        opacity: 1;
         animation: text-wrapper-animation 1.6s both;
     }
     
@@ -1998,6 +2053,7 @@ h2{
     }
     
     .carousel-animation{
+        opacity: 1;
         animation: carousel-animation 1.6s both;
     }
     
@@ -2014,6 +2070,7 @@ h2{
 }
 @media (max-width: 913px){
     .about-us-text-animation{
+        opacity: 1;
         animation: text-wrapper-animation 2.1s both;
     }
     
@@ -2028,6 +2085,7 @@ h2{
     }
     
     .carousel-animation{
+        opacity: 1;
         animation: carousel-animation 1.6s both;
     }
     
@@ -2121,3 +2179,41 @@ h2{
         margin-bottom: 4rem !important;
     }
 }
+
+@media (max-width: 350px){
+    footer{
+        .footer-row{
+            width: 100vw !important;
+        }
+
+        .footer-column{
+            margin-right: 0rem !important;
+        }
+
+        #info-footer{
+            margin-right: 0rem !important;
+            margin-left: 0.7rem !important;
+        }
+
+        img{
+            width: 32px !important;
+        }
+
+        h4{
+            font-size: 1.1rem !important;
+        }
+        p{
+            font-size: 0.8rem !important;
+        }
+        .break::before{
+            content: "\a";
+            white-space: pre;
+        }
+        .footer-document{
+            margin-top: 1rem !important;
+            font-size: 0.8rem !important;
+        }
+    }
+}
+
+

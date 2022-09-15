@@ -282,7 +282,7 @@ document.querySelectorAll('.accordionBtnBig').forEach(button => {
 const accordionObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
-      document.querySelectorAll("#a1")[0].classList.add("accordion-animationTop")
+      document.querySelectorAll("#a1")[0].classList.add("accordion-animation")
     }
   })
 })

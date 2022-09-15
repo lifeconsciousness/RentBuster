@@ -416,8 +416,16 @@
 
     <script>
       //dark theme toggle
-      let icon = document.getElementById("moon");
-      let iconNavbar = document.getElementById("moon-navbar");
+      let icon = document.getElementById("moon")
+      let iconNavbar = document.getElementById("moon-navbar")
+      let whiteOrBlack = true
+
+      if(whiteOrBlack){
+        document.body.classList.remove("dark-theme");   
+      }
+      else{
+        document.body.classList.add("dark-theme");
+      }
 
         icon.onclick = function(){
             document.body.classList.toggle("dark-theme");   
