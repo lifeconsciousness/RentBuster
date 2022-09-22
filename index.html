@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="./favicon.ico">
 
     <style>
       .selected-lang{
@@ -141,7 +141,7 @@
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/QpymO9SQIQo"
+            src=""
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -414,41 +414,36 @@
       <a href="https://lifeconsciousness.github.io/Contact_page/" target="_blank" class="credit">Made by Maksym Tovstolis</a>
     </footer>
 
+    <script src="./script.js"></script>
+
     <script>
       //dark theme toggle
       let icon = document.getElementById("moon")
       let iconNavbar = document.getElementById("moon-navbar")
-      let whiteOrBlack = true
 
-      if(whiteOrBlack){
-        document.body.classList.remove("dark-theme");   
+      icon.onclick = function(){
+        document.body.classList.toggle("dark-theme");   
+        if(document.body.classList.contains("dark-theme")){
+          icon.src = "./translatedPages/sun.png";
+          iconNavbar.src = "./translatedPages/sun.png";
+        }else{
+          icon.src = "./translatedPages/moon.png";
+          iconNavbar.src = "./translatedPages/moon.png";
+        }     
       }
-      else{
-        document.body.classList.add("dark-theme");
+
+      iconNavbar.onclick = function(){
+        document.body.classList.toggle("dark-theme");   
+        if(document.body.classList.contains("dark-theme")){
+          iconNavbar.src = "./translatedPages/sun.png";
+          icon.src = "./translatedPages/sun.png";
+        }else{
+          iconNavbar.src = "./translatedPages/moon.png";
+          icon.src = "./translatedPages/moon.png";
+        }     
       }
 
-        icon.onclick = function(){
-            document.body.classList.toggle("dark-theme");   
-            if(document.body.classList.contains("dark-theme")){
-                icon.src = "./translatedPages/sun.png";
-                iconNavbar.src = "./translatedPages/sun.png";
-            }else{
-                icon.src = "./translatedPages/moon.png";
-                iconNavbar.src = "./translatedPages/moon.png";
-            }     
-        }
-
-        iconNavbar.onclick = function(){
-            document.body.classList.toggle("dark-theme");   
-            if(document.body.classList.contains("dark-theme")){
-                iconNavbar.src = "./translatedPages/sun.png";
-                icon.src = "./translatedPages/sun.png";
-            }else{
-                iconNavbar.src = "./translatedPages/moon.png";
-                icon.src = "./translatedPages/moon.png";
-            }     
-        }
     </script>
-    <script src="./script.js"></script>
+    
   </body>
 </html>

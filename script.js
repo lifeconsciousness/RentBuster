@@ -22,7 +22,12 @@ bodyElement.addEventListener("click", ()=>{
     console.log("navbaropen")
     navbar.setAttribute('data-visible', false)
     navbarToggle.setAttribute('aria-expanded', false)
-  } 
+  }
+  
+  if(langListToggle){
+    document.getElementById("languages").style.display = "none";
+    langListToggle = false
+  }
 
 })
 
