@@ -386,7 +386,7 @@ iframe {
   }
 }
 .text-wrapper {
-  opacity: 0;
+  opacity: 1;
 }
 
 @media (min-width: 913px) {
@@ -546,10 +546,6 @@ iframe {
 }
 
 .carousel {
-  opacity: 0;
-}
-
-.carousel {
   position: relative;
   height: 65%;
   width: 90%;
@@ -661,7 +657,7 @@ iframe {
 }
 
 .text-wrapper {
-  opacity: 0;
+  opacity: 1;
 }
 
 body.loaded .text-wrapper {
@@ -1036,10 +1032,6 @@ body.loaded .fadeInLeft {
   opacity: 1;
   -webkit-animation: fadeInAccordion 1.7s both;
           animation: fadeInAccordion 1.7s both;
-}
-
-.accordion {
-  opacity: 0;
 }
 
 @-webkit-keyframes fadeInAccordionTop {

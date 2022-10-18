@@ -445,7 +445,8 @@ iframe{
 }
 
 .text-wrapper{
-    opacity: 0;
+    //opacity: 0;
+    opacity: 1;
 }
 
 @media (min-width: 913px){
@@ -637,11 +638,9 @@ iframe{
 
 
 
-
-
-
 .carousel{
-    opacity: 0;
+    //opacity: 0;
+    //opacity: 1;
 }
 
 //image carousel styling
@@ -783,7 +782,8 @@ iframe{
 }
 
 .text-wrapper{
-    opacity: 0;
+    //opacity: 0;
+    opacity: 1;
 }
 
 body.loaded{
@@ -1375,7 +1375,7 @@ body.loaded{
     animation: fadeInAccordion 1.7s both;
 }
 .accordion{
-    opacity: 0;
+    //opacity: 0;
 }
 
 
