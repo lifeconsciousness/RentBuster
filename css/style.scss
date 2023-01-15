@@ -54,6 +54,7 @@ h1 {
     font-family: var(--sans-serif-font);
     //text-transform: uppercase;
     user-select: none;
+    text-align: center;
 }
   
 .goo {
@@ -107,6 +108,81 @@ body{
         //margin-left: 0.5rem;
     }
     z-index: 999;
+}
+@media(max-width: 333px){
+    .header{
+        img{
+            width: 8em;
+            height: 2em;
+        }
+    }
+    .text-container-home{
+        h1{
+            font-size: 1.2rem !important;
+        }
+    }
+
+
+
+
+    .home{
+        position: initial !important;
+        padding-top: 29% !important;
+        height: 100vh !important;
+
+    }
+    .header{
+        img{
+            margin-left: 5%;
+        }
+    }
+    .video-wrapper{
+        margin-top: rem !important;
+        //grid-row: 3/4;
+        width: 90% !important;
+        height: 0;
+        
+        padding-bottom: 50.625% !important;
+        position: relative;
+
+        iframe{
+            position: absolute;
+            width: 100%;
+            height: 100%;   
+        }
+        .line-animation{
+            grid-row: 3/4;
+        }
+    }
+    .text-container-home{
+        position: relative;
+        left: 0rem !important;
+        top: 0rem !important;
+        margin-bottom: 2rem;
+        //flex-wrap: wrap;
+        height: fit-content !important;
+        h1{
+            font-size: 1.2rem !important;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        img{
+            //display: none;
+            //margin-top: 1.4rem !important;
+            //margin-bottom: 2rem !important;
+            position: relative;
+            width: 15rem !important;
+            height: 4rem !important;
+            // width: 22em;
+            // height: 5.5rem;
+            //top: 1.2rem !important;
+            right: 0.04rem !important;
+            left: 0rem !important;
+        }
+    }
+    .anim-container{
+        height: 100vh !important;
+    }
 }
 
 .navbar-wrapper{
@@ -177,9 +253,9 @@ nav{
 
 
 
-.video-wrapper{
-    box-shadow: 0 0px 15px rgba(0,0,0,0.2);
-}
+// .video-wrapper{
+//     box-shadow: 0 0px 15px rgba(0,0,0,0.2);
+// }
 
 iframe{
     border-radius: 4px;
@@ -192,11 +268,12 @@ iframe{
         }
     }
 }
-@media (max-width: 430px){
+@media (max-width: 430px) and (min-width: 333px){
     .home{
         position: initial !important;
         padding-top: 29% !important;
         height: 100vh !important;
+        
 
     }
     .header{
@@ -309,7 +386,7 @@ iframe{
     }
 
     .navbar[data-visible = "true"]{
-        transform: translateX(50%);
+        transform: translateX(35%);
     }
 
     .header{
@@ -444,6 +521,16 @@ iframe{
     }
 }
 
+@media(max-width: 350px){
+    .home{
+        height: 100vh;
+        padding-top: 17vh !important;
+    }
+}
+    
+
+
+
 .text-wrapper{
     //opacity: 0;
     opacity: 1;
@@ -504,6 +591,9 @@ iframe{
     text-align: center;
 }
 
+@media (max-width: 333px){
+    
+}
 
 
 
@@ -557,44 +647,44 @@ iframe{
     color: #141414;
 }
 
+.lang-menu ul li a:hover{
+    background-color: #e4e3e3;
+    border-radius: 5px;
+}
 .lang-menu ul li a::before{
     content: '';
     display: inline-block;
     height: 21px;
     vertical-align: middle;
     margin-right: 10px;
-    background-image: url(https://countryflagsapi.com/png/gb);
+    background-image: url(https://www.worldometers.info/img/flags/uk-flag.gif);
     background-size: 100%;
     width: 2rem;
 }
 
-.lang-menu ul li a:hover{
-    background-color: #e4e3e3;
-    border-radius: 5px;
-}
-
 #nl:before{
-    background-image: url(https://countryflagsapi.com/png/nl);
+    background-image: url(https://www.worldometers.info/img/flags/nl-flag.gif);
 }
 
 #en:before{
-    background-image: url(https://countryflagsapi.com/png/gb);
+    background-image: url(https://www.worldometers.info/img/flags/uk-flag.gif);
     background-position: center;
     background-size: 125%;
 }
 
 #ge:before{
-    background-image: url(https://countryflagsapi.com/png/de);
+    background-image: url(https://www.worldometers.info/img/flags/small/tn_gm-flag.gif);
     height: 19px;
 }
 
 #fr:before{
-    background-image: url(https://countryflagsapi.com/png/fr);
+    background-image: url(https://www.worldometers.info/img/flags/small/tn_fr-flag.gif);
 }
 
 #ua:before{
-    background-image: url(https://countryflagsapi.com/png/ua);
+    background-image: url(https://www.worldometers.info/img/flags/small/tn_up-flag.gif);
 }
+
 
 
 
@@ -638,11 +728,6 @@ iframe{
 
 
 
-.carousel{
-    //opacity: 0;
-    //opacity: 1;
-}
-
 //image carousel styling
 
 .carousel{
@@ -654,6 +739,10 @@ iframe{
     margin: 0 auto;
     top: 0.5rem;
     box-shadow: 0 0px 15px rgba(0,0,0,0.2);
+
+    @media(max-width: 913px){
+        margin-top: 1rem;
+    }
 
     .carousel-image{
         width: 100%;
@@ -741,14 +830,14 @@ iframe{
 
 
 
-.curve{
-    position: absolute;
-    height: 92.7vh;
-    height: 92.7vh;
-    border-bottom: solid 2px var(--black-main);
-    width: 100%;
-    border-bottom-left-radius: 0rem;
-}
+// .curve{
+//     position: absolute;
+//     height: 92.7vh;
+//     height: 92.7vh;
+//     border-bottom: solid 2px var(--black-main);
+//     width: 100%;
+//     border-bottom-left-radius: 0rem;
+// }
 
 
 //Home section text
@@ -796,7 +885,7 @@ body.loaded{
             display: block;
         }
     }
-    @-webkit-keyframes videoFromRight{
+    @keyframes videoFromRight{
         0%{
             opacity: 0;
         }
@@ -1134,15 +1223,29 @@ body.loaded{
     }
 }
 
-.highlight-text{
-    // background-color: #232323d3;
-    // padding: 0 3px;
-    //border-radius: 15px;
-    // color: white;
-    //border: 2px solid white
-
-    //border-bottom: 2px solid var(--black-main);
-    //text-decoration: underline;
+#thirdText{
+    opacity: 0;
+}
+#thirdImg{
+    opacity: 0;
+}
+#secondImg{
+    opacity: 0;
+}
+#secondText{
+    opacity: 0;
+}
+#firstText{
+    opacity: 0;
+}
+#firstImg{
+    opacity: 0;
+}
+#fourthText{
+    opacity: 0;
+}
+#fourthImg{
+    opacity: 0;
 }
 
 .how-we-work{
@@ -1197,6 +1300,8 @@ body.loaded{
         -o-animation: fadeInl 2s both;
         animation: fadeInl 2s both;
         opacity: 1;
+        width: 150% !important;
+
     }
     .right-slideText{
         -webkit-animation: fadeInr 2s both;
@@ -1209,39 +1314,24 @@ body.loaded{
     //.right-slideText::after {content: "";}
     //this content thing is causing the bug
 
-    #thirdText{
-        opacity: 0;
-    }
-    #thirdImg{
-        opacity: 0;
-    }
-    #secondImg{
-        opacity: 0;
-    }
-    #secondText{
-        opacity: 0;
-    }
-    #firstText{
-        opacity: 0;
-    }
-    #firstImg{
-        opacity: 0;
-    }
+    
 
     .left-slideImg1{
         background-image: url(https://images.unsplash.com/photo-1541693823712-3892863d6bac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
         background-size: cover;
-        -webkit-animation: fadeInr 2.6s both;
-        -moz-animation: fadeInr 2.6s both;
-        -o-animation: fadeInr 2.6s both;
-        animation: fadeInr 2.6s both;
+        -webkit-animation: fadeInr 2.2s both;
+        -moz-animation: fadeInr 2.2s both;
+        -o-animation: fadeInr 2.2s both;
+        animation: fadeInr 2.2s both;
         opacity: 1;
+        width: 150% !important;
+
     }
     .right-slideText1{
-        -webkit-animation: fadeInl 2.6s both;
-        -moz-animation: fadeInl 2.6s both;
-        -o-animation: fadeInl 2.6s both;
-        animation: fadeInl 2.6s both;
+        -webkit-animation: fadeInl 2.2s both;
+        -moz-animation: fadeInl 2.2s both;
+        -o-animation: fadeInl 2.2s both;
+        animation: fadeInl 2.2s both;
         opacity: 1;
     }
 
@@ -1257,7 +1347,7 @@ body.loaded{
         animation: fadeInl 2s both;
         opacity: 1;
 
-        width: 120% !important;
+        width: 150% !important;
     }
     .right-slideText2{
         -webkit-animation: fadeInr 2s both;
@@ -1269,46 +1359,60 @@ body.loaded{
 
     //.right-slideText2::after {content: "Rent Buster NL also takes care of any emails, paperwork and representation that the Huurcommissee requires and will serve as an intermediary between you and your landlord to shield you from any acrimonious communication/threats of evictions/etc. We also negotiate on your behalf to ensure that the term of your lease is not adversely affected by your case. ";}
 
-    #fourthImg{
-        opacity: 0;
-    }
-
     .left-slideImg3{
         background-image: url(https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);
 
-        -webkit-animation: fadeInr 2.6s both;
-        -moz-animation: fadeInr 2.6s both;
-        -o-animation: fadeInr 2.6s both;
-        animation: fadeInr 2.6s both;
+        -webkit-animation: fadeInr 2.2s both;
+        -moz-animation: fadeInr 2.2s both;
+        -o-animation: fadeInr 2.2s both;
+        animation: fadeInr 2.2s both;
 
         background-size: cover;
         background-position: 50% 10%;
-        width: 144% !important;
+        width: 100% !important;
         opacity: 1;
     }
     .right-slideText3{
-        -webkit-animation: fadeInl 2.6s both;
-        -moz-animation: fadeInl 2.6s both;
-        -o-animation: fadeInl 2.6s both;
-        animation: fadeInl 2.6s both;
+        -webkit-animation: fadeInl 2.2s both;
+        -moz-animation: fadeInl 2.2s both;
+        -o-animation: fadeInl 2.2s both;
+        animation: fadeInl 2.2s both;
         opacity: 1;
     }
 
-    #fourthText{
-        opacity: 0;
-    }
 
     //.right-slideText3::after {content: "We operate on a no cure, no pay basis. Regarding the fees: Should our case be successful and your rent is reduced and retrospectively back-paid for the months you have stayed, our fee will be the difference between the old rent price and the new one (+ 21% BTW) . No charge will be levied until you receive a definite reduced rental price. Any costs with the Huurcommissee are covered by us. If the rent is not reduced, no charge will be levied.  ";}
 
 
     @-webkit-keyframes fadeInl{
-        
+        0%{
+            opacity: 0;
+            transform: translateX(-160px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     @-moz-keyframes fadeInl{
-        
+        0%{
+            opacity: 0;
+            transform: translateX(-160px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     @-o-keyframes fadeInl{
-        
+        0%{
+            opacity: 0;
+            transform: translateX(-160px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     
     @keyframes fadeInl{
@@ -1326,13 +1430,34 @@ body.loaded{
 
 
     @-webkit-keyframes fadeInr{
-        
+        0%{
+            opacity: 0;
+            transform: translateX(160px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     @-moz-keyframes fadeInr{
-        
+        0%{
+            opacity: 0;
+            transform: translateX(160px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     @-o-keyframes fadeInr{
-        
+        0%{
+            opacity: 0;
+            transform: translateX(160px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     
     @keyframes fadeInr{
@@ -1373,9 +1498,6 @@ body.loaded{
 .accordion-animation{
     opacity: 1;
     animation: fadeInAccordion 1.7s both;
-}
-.accordion{
-    //opacity: 0;
 }
 
 
@@ -1562,6 +1684,11 @@ body.loaded{
             font-family: "Inter", sans-serif;
             font-size: 1.05rem;
         }
+        @media(max-width: 353px){
+            .form-element{
+                font-size: .8rem;
+            }
+        }
 
         textarea{
             resize: none;
@@ -1667,11 +1794,17 @@ footer{
             }
 
             .social-media{
+                width: 100%;
                 display: flex;
                 flex-direction: row !important;
-                
+                flex-wrap: wrap;
                 a{
                     margin-right: 0.5rem;
+                }
+            }
+            @media(max-width: 320px){
+                .social-media{
+                    justify-content: center;
                 }
             }
         }
@@ -2154,11 +2287,10 @@ h2{
 }
 
 .credit{
-    border-bottom: solid 1px var(--white-main);
     color: var(--white-main);
-    font-size: 0.65rem;
-    margin-bottom: 12px;
-    opacity: 0.7;
+    font-size: 0.5rem;
+    margin-bottom: 8px;
+    opacity: 0.6;
 }
 
 @media (min-width: 422px) and (max-width: 913px){
@@ -2168,39 +2300,41 @@ h2{
 }
 
 @media (max-width: 350px){
-    footer{
-        .footer-row{
-            width: 100vw !important;
-        }
+    // footer{
+    //     .footer-row{
+    //         width: 100vw !important;
+    //     }
 
-        .footer-column{
-            margin-right: 0rem !important;
-        }
+    //     .footer-column{
+    //         margin-right: 0rem !important;
+    //     }
 
-        #info-footer{
-            margin-right: 0rem !important;
-            margin-left: 0.7rem !important;
-        }
+    //     #info-footer{
+    //         margin-right: 0rem !important;
+    //         margin-left: 0.7rem !important;
+    //     }
 
-        img{
-            width: 32px !important;
-        }
+    //     img{
+    //         width: 32px !important;
+    //     }
 
-        h4{
-            font-size: 1.1rem !important;
-        }
-        p{
-            font-size: 0.8rem !important;
-        }
-        .break::before{
-            content: "\a";
-            white-space: pre;
-        }
-        .footer-document{
-            margin-top: 1rem !important;
-            font-size: 0.8rem !important;
-        }
+    //     h4{
+    //         font-size: 1.1rem !important;
+    //     }
+    //     p{
+    //         font-size: 0.8rem !important;
+    //     }
+    //     .break::before{
+    //         content: "\a";
+    //         white-space: pre;
+    //     }
+    //     .footer-document{
+    //         margin-top: 1rem !important;
+    //         font-size: 0.8rem !important;
+    //     }
+    // }
+    .social-media{
+        margin: 0 auto;
     }
 }
-
 
