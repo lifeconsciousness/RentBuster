@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <!-- Description that will appear in the list of websites in search-->
+    <meta name="description" content="" />
+    <meta
+      name="keywords"
+      content="rent, rent reduction, low rental cost, service costs, rent Netherlands, rent Nederland, rent price, "
+    />
+    <title>Rent Buster</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.ico">
+
+    <style>
+      .selected-lang{
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        line-height: 1.55;
+        width: 55px;
+        margin-bottom: 0.4rem;
+      }
+      
+      .selected-lang::before{
+          content: '';
+          display: block;
+          width: 32px;
+          height: 22.5px;
+          background-image: url(https://www.worldometers.info/img/flags/nl-flag.gif);
+          background-size: 76%;
+          width: 2.8rem;
+      }
+    </style>
+
+  </head>
+  <body class="dark-thoeme">
+    <header class="header" id = "header">
+      <div class="navbar-wrapper">
+        <!-- Logo -->
+        <a href="#home"
+          ><img
+            src="../img/LOGO_cropped.png"
+            alt="RentBuster logo"
+        /></a>
+
+        <!-- Navbar button for mobile -->
+        <button class="mobile-navbar-toggle" aria-expanded="false"></button>
+        <div class="button-bg"></div>
+
+        <!-- Navigation bar -->
+        <nav>
+          <ul id="navbar" class="navbar" data-visible="false">
+            <li class="active"><a href="#home" class="underline-animation">Home</a></li>
+            <li class="active"><a href="#about-us" class="underline-animation">Over ons</a></li>
+            <li class="active"><a href="#how-we-work" class="underline-animation">Hoe wij werken</a></li>
+            <li class="active"><a href="#faq" class="underline-animation">FAQ</a></li>
+            <li class="active"><a href="#contact-us" class="underline-animation">Contacteer ons</a></li>
+            <div id="theme-toggle-navbar">
+              <img src="../img/moon.png" alt="moon" class="moon" id="moon-navbar">
+            </div>
+
+          </ul>
+        </nav>
+      </div>
+
+      <div class="lang-menu">
+        <!-- Language button-flag icon -->
+        <div class="selected-lang"></div>
+        <!-- List of languages -->
+        <ul id="languages">
+          <li><a href="../translatedPages/indexNL.html" id="nl">Dutch</a></li>
+          <li><a href="../index.html" id="en">English</a></li>
+          <li><a href="../translatedPages/indexGE.html" id="ge">German</a></li>
+          <li><a href="../translatedPages/indexFR.html" id="fr">French</a></li>
+          <li>
+            <a href="../translatedPages/indexUA.html" id="ua">Ukrainian</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Cursor trail -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="goo"
+      version="1.1"
+      width="100%"
+    >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="6"
+            result="blur"
+          ></feGaussianBlur>
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
+            result="goo"
+          ></feColorMatrix>
+          <feComposite
+            in="SourceGraphic"
+            in2="goo"
+            operator="atop"
+          ></feComposite>
+        </filter>
+      </defs>
+    </svg>
+
+    <div id="cursor"></div>
+
+    <main id="body">
+      <div class="curve"></div>
+      <div class="theme-toggle" id="theme-toggle">
+        <img src="../img/moon.png" alt="moon" class="moon" id="moon">
+      </div>
+
+      <!-- HOME SECTION -->
+      <div class="home-wrapper">
+      <div id="home" class="home anim-container">
+        <div class="text-container-home">
+          <h1 class="animated fadeIn1">If the rent's too high,</h1>
+          <h1 class="animated fadeIn2">In the neighbourhood,</h1>
+          <h1 class="animated fadeIn3">Who you gonna call?</h1>
+          <img class="animated fadeInLeft" src="../img/LOGO_cropped.png" alt="rentbuster logo">
+          <!-- <h2>RENT BUSTER!</h2> -->
+          <!-- <img class="animated fadeInLeft" src="/img/RentBuster logo without background.png" alt="rentbuster logo"> -->
+        </div>
+        
+        <div class="video-wrapper">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/xwSltGbK46E"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        
+      </div>
+      </div>
+
+      <!-- ABOUT US SECTION -->
+      <!-- if you want to underline text put it inside span class highlight-text like below -->
+      <div class="about-us-container" id="about-us">
+        <h1>Over ons</h1>
+      <div class="about-us">
+        <div class="text-wrapper" id="text-wrapper">
+          <p style="margin-bottom: 10px; margin-top: 7px;">
+            Rent Buster NL is opgericht in 2022 als reactie op de Nederlandse woningnood en de stijging van de huurprijzen. Wij zoeken en waarschuwen huurders die in nieuwe appartementen/studio's/kamers in Nederland zijn getrokken dat hun verhuurder hen mogelijk te veel rekent.  </span>
+          </p>
+          <p style="margin: 0;">
+            Er mag dan een enorm tekort aan woningen zijn in de grote steden, een groot deel van de huurmarkt is onderworpen aan strikte prijscontroles om ervoor te zorgen dat basiswoningen betaalbaar zijn. Verhuurders en vastgoedmakelaars negeren deze prijscontroles regelmatig en drijven de prijzen van woningen sterk op. Huurders zijn vaak niet op de hoogte van hun recht op huurvermindering/terugbetaling of zijn te bang om actie te ondernemen uit angst voor uitzetting. 
+          </p>
+          <p style="margin-top: 10px; margin-bottom: 0;">
+            Rent Buster NL wil zoveel mogelijk van deze huurders informeren en helpen. Heb je een brief van ons ontvangen, dan betaal je waarschijnlijk te veel. Bekijk onze FAQ voor meer informatie of neem contact met ons op voor een gratis adviesgesprek.
+          </p>
+        </div>
+
+        <!-- This is the image slider. To add a new picture you neen to
+        copy li(list item) with class slide and change the path to the picture.
+        Also you need to create another button (carousel indicator) -->
+        <div class="carousel">
+          <button class="carouselBtn carouselBtn-left">
+            <img src="../img/left-arrow-next.svg" alt="left-arrow-next" />
+          </button>
+
+          <div class="carousel-track-container">
+            <ul class="carousel-track">
+              <li class="slide current-slide">
+                <img
+                  class="carousel-image"
+                  src="https://images.unsplash.com/photo-1459679749680-18eb1eb37418?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+                  alt=""
+                />
+              </li>
+              <li class="slide">
+                <img
+                  class="carousel-image"
+                  src="https://images.unsplash.com/photo-1583295125721-766a0088cd3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80"
+                  alt=""
+                />
+              </li>
+              <li class="slide">
+                <img
+                  class="carousel-image"
+                  src="https://images.unsplash.com/photo-1517736996303-4eec4a66bb17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+                  alt=""
+                />
+              </li>
+              
+            </ul>
+          </div>
+
+          <button class="carouselBtn carouselBtn-right">
+            <img src="../img/right-arrow-next.svg" alt="right-arrow-next" />
+          </button>
+
+          <div class="carousel-nav">
+            <button class="carousel-indicator current-slide"></button>
+            <button class="carousel-indicator"></button>
+            <button class="carousel-indicator"></button>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="about-us-2"></div>
+
+      <div class="line-animation-container">
+        <div class="line"></div>
+      </div>
+
+      <!-- HOW WE WORK SECTION -->
+      <div class="how-we-work" id="how-we-work">
+        <div class="hww-container ">
+          <h1>Hoe wij werken</h1>
+
+        <div class="picture-and-text">
+          <div class="hww-img" id="firstImg"></div>
+          <p class="hww-text " id="firstText">Als u een brief van RentBuster heeft ontvangen en ervan overtuigd bent dat u mogelijk te veel betaalt, zal Rent Buster NL uw zaak voorleggen aan de verhuurder en namens u onderhandelen over een lagere huurprijs. Dit is in sommige gevallen geen vereiste stap maar het is nuttig om een diplomatieke oplossing te zoeken alvorens de Huurcommissie te benaderen.p>
+        </div>
+
+        <div class="picture-and-text">
+          <!-- <img src="/img/left-arrow-next.svg" class="hidden-image1" alt=""> -->
+          <div class="hidden-image1 hww-img"></div>
+          <p class="hww-text" id="secondText"> Indien de verhuurder niet reageert op ons verzoek of indien u het niet eens bent met zijn/haar tegenbod, zullen wij de zaak voortzetten bij de Huurcommissie. Rent Buster draagt zorg voor het papierwerk/kosten bij de Huurcommissie en houdt u op de hoogte van de ontwikkelingen..</p>
+          <div class="hww-img hide-image" id="secondImg"></div>
+        </div>
+
+        <div class="picture-and-text">
+          <div class="hww-img " id="thirdImg"></div>
+          <p class="hww-text " id="thirdText">Hoewel ik mijn best doe om de juiste geschatte huurprijs te bepalen voorafgaand aan onze contactmail, kan het eerst nodig zijn om een onafhankelijke meting/taxatie van uw appartement/kamer/studio uit te voeren om de huurprijs nauwkeurig te berekenen, vooral als het dicht bij de liberalisatiegrens ligt. Ik zal ook uw contract moeten bekijken om de aanvraag af te ronden.</p>
+        </div>
+
+        <div class="picture-and-text">
+          <div class="hidden-image2 hww-img"></div>
+          <p class="hww-text " id="fourthText">In geval van een gunstige uitspraak van de Huurcommissie zal de verhuurder verplicht zijn uw huurprijs te verlagen en u het door u teveel betaalde bedrag sinds het begin van uw contract/aanvraag terug te betalen.</p>
+          <div class="hww-img hide-image" id="fourthImg"></div>
+        </div> 
+
+        </div>
+      </div>
+
+      <div class="line-animation-container">
+        <div class="line"></div>
+      </div> 
+
+      <!-- If you want to justify text in questions find .accordionBtn in scss file and uncomment text-align: justify -->
+      <!-- FAQ SECTION -->
+      <div class="faq" id="faq">
+        <h2>FAQ</h1>
+        <div class="faq-container">
+          <div class="accordion" id="a1">
+            <button type="button" class="accordionBtn"><p> Ik heb net een brief gekregen. Hoe ben je erachter gekomen dat ik hier woon en wat mijn huur is? Dit overvalt me nogal.</p></button>
+            <div class="accordion-content">
+              <p>De verhuurder/instantie die de woning aan u heeft verhuurd, heeft advertenties geplaatst op populaire woonwebsites die ik regelmatig bekijk. Uw woning/appartement werd aangemerkt als een woning met een verdacht hoge huurprijs. Ik heb een berekening uitgevoerd en bij benadering een maximale huurprijs bepaald die u in de brief ziet. Als het verschil tussen deze en de huidige huurprijs binnen een aanvaardbare nauwkeurigheid valt, stuur ik enkele weken na aanvang van het contract een brief naar uw adres. Ik weet niet de naam van de huurder of iets over het contract dat u ondertekend heeft.</p>
+            </div>
+          </div>
+
+          <div class="accordion" id="a2">
+            <button type="button" class="accordionBtn">Ik heb net een brief van je gekregen, maar ik denk dat je hem naar het verkeerde adres hebt gestuurd. Ik woon in een studio van 20m2, niet in een appartement van 55m2.</button>
+            <div class="accordion-content">
+              <p>Hiervoor mijn excuses. Veel advertenties geven niet het huisnummer en soms maak ik fouten bij het vinden van de  huisbrief in complexen met meerdere kamers. Als iemand onlangs in uw gebouw is komen wonen, is de brief waarschijnlijk voor hem of haar bestemd.</p>
+            </div>
+          </div>
+
+          <div class="accordion" id="a3">
+            <button type="button" class="accordionBtn"><p>Hoe weet ik dat dit geen oplichterij is?</p></button>
+            <div class="accordion-content">
+              <p>Rent Buster NL is een geregistreerd bedrijf in Nederland (KvK nummer: 87138840), gevestigd in Arnhem met een Nederlandse bankrekening en telefoonnummer. Ik bied een gratis consult aan via een videogesprek. U bent niet verplicht iets te ondertekenen/betalen en u kunt op elk moment weglopen.</p>
+            </div>
+          </div>
+
+          <div class="accordion" id="a4">
+            <button type="button" class="accordionBtn">Is er een database die me vertelt wat de maximale wettelijke huur is voor een adres?</button>
+            <div class="accordion-content">
+              <p>Helaas niet, het moet met de hand worden berekend. Het varieert afhankelijk van vele factoren en verandert elk jaar door schommelingen in de huizenprijzen, de indeling, de energiewaarde enz. De gemeenten Rotterdam en Utrecht bieden een rudimentaire calculator op hun websites, maar zij berekenen alleen een mogelijke bandbreedte van waarden en alleen binnen hun respectievelijke steden.
+                <br> Verstrekte links:
+                <a href="https://huurprijscalculator.rotterdam.nl/index.html" target="_blank" style="color: cornflowerblue;">Rotterdam</a> ,
+                <a href="https://www.huurteam-utrecht.nl/en/rental-price-checker/" target="_blank" style="color: cornflowerblue;">Utrecht</a></p>
+            </div>
+          </div>
+
+          <div class="accordion" id="a5">
+            <button type="button" class="accordionBtn">Ik denk dat ik te veel betaal voor mijn kamer/huis/appartement, maar het heeft me maanden gekost om deze plek te vinden en ik wil de huisbaas niet boos maken en eruit geschopt worden omdat ik problemen veroorzaak. Ik betaal liever extra dan dat ik deze plek kwijtraak. Wat gebeurt er als ik een klacht indien?</button>
+            <div class="accordion-content">
+              <p>Dat is begrijpelijk. Het is moeilijk om in Nederland huurwoningen te vinden en het is mogelijk dat deze procedure de relatie tussen u en de verhuurder verzuurt. Het is aan u om te beslissen of de financiële besparingen van verminderde huur (misschien wel duizenden euro's) het risico waard zijn dat de verhuurder uw contract niet zal verlengen. Een nieuwe huurder vinden is lastig en er is geen garantie dat de nieuwe huurder bereid zal zijn de hogere oorspronkelijke prijs te betalen. Verhuurders die binnen 3 jaar meerdere keren voor de Huurcommissie zijn geweest, betalen elke keer dat ze de zaak verliezen een hogere vergoeding.
+Dat is ook alleen het geval als u een contract voor bepaalde tijd hebt (minder dan 2 jaar) en u langer wilt blijven. Als u een contract voor bepaalde tijd hebt en u weet zeker dat u aan het einde daarvan wilt vertrekken, dan loopt u geen extra risico op uitzetting. Als u een contract van onbepaalde duur hebt, kan de verhuurder u er niet uitzetten omdat u in beroep gaat tegen de huurprijs. U kunt er waarschijnlijk zo lang blijven als u wilt. Mocht de verhuurder proberen u eruit te zetten, dan heeft u een arsenaal aan huurdersrechten om op terug te vallen om uw uitzetting te voorkomen.</p>
+            </div>
+          </div>
+
+          <div class="accordion" >
+            <button type="button" class="accordionBtn">Oké, dus wat is jouw doel in dit alles?</button>
+            <div class="accordion-content">
+              <p> Ik heb persoonlijke ervaring met slechte verhuurders die huurders te veel laten betalen. Ik zie niet graag dat mensen worden uitgebuit en ik wil er iets aan doen. Ik werk op donaties van succesvolle zaken en zaken kosten geld. Ik wil dit fulltime doen en helaas ben ik geen werknemer in loondienst van een verhuurorganisatie. Een zaak runnen en brieven versturen kost geld en ik moet mijn eigen huur en eten betalen. Wat betreft hoeveel, dat is geheel aan u. Als ik succesvol ben, bespaar ik u misschien duizenden euro's per jaar. U kunt beslissen hoeveel mijn diensten u waard zijn. Vergelijkbare organisaties, zoals Bumarang, eisen een groot deel van de afrekening in ruil voor dezelfde dienst. </p>
+            </div>
+          </div>
+
+          <div class="accordion" >
+            <button type="button" class="accordionBtn">Waarom ga ik niet gewoon naar een verhuurorganisatie? Waarom heb ik jou überhaupt nodig?</button>
+            <div class="accordion-content">
+              <p>Er zijn inderdaad veel organisaties die u kunnen helpen bij de omgang met uw huisbaas. Sommige rekenen een hoger tarief voor hun diensten. Ze zijn ook reactionair: ze reageren alleen op verzoeken in plaats van de proactieve aanpak van Rent Buster NL bij het zoeken naar huurders die niet weten dat ze te veel betalen.
+
+                </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="line-animation-container">
+        <div class="line"></div>
+      </div>
+
+      <!-- CONTACT US SECTION -->
+      <div class="contact-us" id="contact-us">
+        <div class="contact-form">
+          <h2>Contacteer ons</h2>
+          <p>Vul het formulier in en wij nemen spoedig contact met u op. Na het indienen wordt u doorgestuurd naar een pagina met een captcha om spam te voorkomen.</p>
+
+          <form action="https://formspree.io/f/xoqbjbnv" method="POST" id="form">
+              <div class="group">
+                <div class="empty-space"></div>
+                <input type="text" name="firstName" id="firstName" placeholder="Voornaam" class="form-element" required>
+              </div>
+              
+              <div class="group">
+                <div class="empty-space"></div>
+                <input type="text" name="secondName" id="secondName" placeholder="Tweede naam" class="form-element" required>
+              </div>
+
+              <div class="group">
+                <div class="empty-space"></div>
+                <input type="email" name="email" id="email" placeholder="E-mail" class="form-element" required>
+              </div>
+
+              <div class="group">
+                <div class="empty-space"></div>
+                <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Telefoonnummer" class="form-element" required>
+              </div>
+
+
+              <div class="full">
+                <div class="group">
+                  <div class="empty-space-big"></div>
+                <textarea name="message" id="message" class="form-element" placeholder="Uw bericht" spellcheck="false"></textarea>
+                </div>
+              </div>
+
+              <br>
+
+              <div class="submit">
+                <input type="submit" value="Dien in">
+              </div>
+
+          </form>
+        </div>
+
+        <!-- <div class="social-media"></div> -->
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-row">
+          <div class="footer-column" id="info-footer">
+            <h4>Contacten</h4>
+            <ul>
+              <li><p>Contact telefoon:&#10240<span class="break"></span>+31 627160022</p></li>
+              <li><p>Whatsapp:&#10240<span class="break"></span>+31 627160022</p></li>
+              <li><p>E-mail:&#10240<span class="break"></span>info(at)rentbuster(dot)nl</p></li>
+			  <li><p>KvK:&#10240<span class="break"></span>87138840</p></li>
+			  <li><p>Bank Account number:&#10240<span class="break"></span>NL80INGB0755908910</p></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Sociale media</h4>
+            <div class="social-media">
+              <a href="https://www.facebook.com/profile.php?id=100085087598391" target="_blank"><img src="https://seeklogo.com/images/F/facebook-icon-circle-logo-09F32F61FF-seeklogo.com.png" alt="facebook-icon" class="facebook-icon"></a>
+              <a href="https://twitter.com/Rent_Buster_NL" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png" alt="twitter-icon" class="twitter-icon"></a>
+              <a href="https://www.reddit.com/r/Rentbusters/" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_reddit-512.png" alt="reddit-icon" class="reddit-icon"></a>
+			  <a href="https://www.youtube.com/channel/UCjg0X1ZwTVahyRfkCr2OkNg" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/395_Youtube_logo-512.png" alt="youtube-icon" class="youtube-icon"></a>
+			  <a href="https://www.instagram.com/rent_buster_nl/" target="_blank"><img src="https://icon-library.com/images/instagram-icon/instagram-icon-14.jpg" alt="instagram-icon" class="instagram-icon"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/Privacyverklaring.pdf" target="_blank" class="footer-document">Privacyverklaring - © <script type="text/javascript">document.write( new Date().getFullYear() )</script> RentBusterNL</a>
+      <!-- <a href="https://lifeconsciousness.github.io/Contact_page/" target="_blank" class="credit">Made by Maksym Tovstolis</a> -->
+    </footer>
+
+    <script>
+      //dark theme toggle
+      let icon = document.getElementById("moon");
+      let iconNavbar = document.getElementById("moon-navbar");
+
+        icon.onclick = function(){
+            document.body.classList.toggle("dark-theme");   
+            if(document.body.classList.contains("dark-theme")){
+                icon.src = "../img/sun.png";
+                iconNavbar.src = "../img/sun.png";
+            }else{
+                icon.src = "../img/moon.png";
+                iconNavbar.src = "../img/moon.png";
+            }     
+        }
+
+        iconNavbar.onclick = function(){
+            document.body.classList.toggle("dark-theme");   
+            if(document.body.classList.contains("dark-theme")){
+                iconNavbar.src = "../img/sun.png";
+                icon.src = "../img/sun.png";
+            }else{
+                iconNavbar.src = "../img/moon.png";
+                icon.src = "../img/moon.png";
+            }     
+        }
+    </script>
+
+    <script src="../script.js"></script>
+    <script src="../js/carousel.js"></script>
+    <script src="../js/cursor.js"></script>
+    <script src="../js/navbar.js"></script>
+  </body>
+</html>
