@@ -140,6 +140,28 @@ document.querySelectorAll(`.accordion`).forEach(accordion => accordionObserver.o
 
 
 
+//articles functionality
+
+const articles = document.querySelectorAll(`.article`)
+const readMores = document.querySelectorAll(`.read-more`)
+const closeButtons = document.querySelectorAll(`.close-button`)
+
+let navbarElement1 = document.getElementById("header")
+let moon1 = document.querySelector('#theme-toggle')
+
+
+readMores.forEach((readMore, index) => readMore.addEventListener(`click`,()=>{
+  articles[index].classList.remove(`blog-post`)
+  articles[index].classList.add(`article-expanded`)
+
+  navbarElement1.style.top = '-70px'
+  moon1.style.right = '-60px'
+}))
+
+closeButtons.forEach((button, index) => button.addEventListener(`click`,()=>{
+  articles[index].classList.remove(`article-expanded`)
+  articles[index].classList.add(`blog-post`)
+}))
 
 
 
