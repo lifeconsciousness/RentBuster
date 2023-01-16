@@ -15,6 +15,7 @@
 }
 
 @import './blog';
+@import './latest-news-message';
 
 
 .dark-theme{
@@ -213,8 +214,11 @@ nav{
         list-style-type: none;
         margin-left: 25px;
     }
-    li:nth-child(6){
-        margin-left: 20px !important;
+    @media(min-width:913px){
+
+        li:nth-child(6){
+            margin-left: 20px !important;
+        }
     }
 
     .underline-animation {
@@ -360,6 +364,18 @@ iframe{
 }
 
 //making website responsive on a small devices
+
+@media(max-width: 1060px){
+    .about-us{
+        display: grid;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 0.5fr !important;
+
+        .carousel{
+            margin-left: 0;
+        }
+    }
+}
 
 @media (max-width: 913px){
     html, body {
@@ -1207,6 +1223,12 @@ body.loaded{
     justify-content: center;
     margin: 4rem 0 0 0;
 }
+.line-animation-container-first{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 10rem 0 0 0;
+}
 
 .line{
     content: '';
@@ -1298,18 +1320,16 @@ body.loaded{
             color: var(--black-main);
         }
     }
-    @media(max-width: 913px){
+    @media(max-width: 913px) and (min-width: 502px){
         .picture-and-text:nth-child(2){
-            align-items: flex-start;
-        }
-        .picture-and-text:nth-child(3){
-            align-items: flex-end;
+            .hww-img{
+                order: 1;
+            }
         }
         .picture-and-text:nth-child(4){
-            align-items: flex-start;
-        }
-        .picture-and-text:nth-child(5){
-            align-items: flex-end;
+            .hww-img{
+                order: 1;
+            }
         }
     }
 
@@ -1392,7 +1412,7 @@ body.loaded{
 
         background-size: cover;
         background-position: 50% 10%;
-        width: 100% !important;
+        width: 150% !important;
         opacity: 1;
     }
     .right-slideText3{
@@ -1853,6 +1873,13 @@ footer{
 .hidden-image2{
     display: none;
 }
+
+@media(max-width: 500px){
+    .picture-and-text{
+        flex-direction: column !important;
+    }
+}
+
 @media (max-width: 913px){
     .about-us-container{
         margin-top: 0;
@@ -1891,7 +1918,7 @@ footer{
         }
         .picture-and-text{
             display: flex;
-            flex-direction: column !important;
+            // flex-direction: column !important;
             p{
                 margin-left: 0.5rem !important;
                 margin-right: 0.5rem !important;
@@ -2360,4 +2387,5 @@ h2{
         margin: 0 auto;
     }
 }
+
 

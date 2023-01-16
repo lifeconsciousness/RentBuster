@@ -1,5 +1,5 @@
 .blog{
-    min-height: 100vh; 
+    min-height: 85vh; 
     // background-color: beige;
     padding: 1.5rem;
     padding-top: 4rem;
@@ -15,7 +15,7 @@
     h1{
         font-size: 3rem;
         flex-basis: 100%;
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
     }
     
     @media(min-width: 913px){
@@ -25,7 +25,7 @@
         h1{
             font-size: 5rem;
             flex-basis: 100%;
-            margin-bottom: 2rem;
+            margin-bottom: 0rem;
         }
     }
 }
@@ -48,16 +48,30 @@
 // }
 
 .blog-post{
-    height: 30rem;
+    min-height: 30rem;
     max-width: 20rem;
     width: 100%;
     // background-color: white;
     border: 1px solid var(--black-main);
+    transition: all .3s;
 
     p{
         margin: 0;
     }
-
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // display: grid;
+}
+@media(max-width:333px){
+    .blog-post{
+        height: 20rem !important;
+    }
+}
+@media(max-width:913px){
+    .blog-post{
+        min-height: 30rem !important;
+    }
 }
 
 .close-button{
@@ -67,19 +81,22 @@
 .post-img{
     width: 100%;
     object-fit: cover;
-    height: 40%;
+    // height: 40%;
     object-position: bottom;
     border-bottom:  1px solid var(--black-main);
+    aspect-ratio: 16/9;
+    min-height: 30%;
 }
 
 .post-name{
     padding: 1rem 2rem;
     margin: 0;
     font-family: sans-serif;
+    font-size: 1.3rem;
 }
 @media(max-width:913px){
     .post-name{
-        font-size: 2rem !important;
+        font-size: 1.4rem;
     }
 }
 
@@ -91,22 +108,36 @@
 
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 8;
+    -webkit-line-clamp: 7;
     -webkit-box-orient: vertical;
+}
+@media(max-width:333px){
+    .post-text{
+        font-size: 14px;
+    }
+    .post-name{
+        font-size: 19px;
+    }
 }
 
 .read-more{
     padding: 0 2rem;
-    position: relative;
+    // position: relative;
+    margin: 1rem 0;
     top: 1rem;
+    display: block;
     font-family: sans-serif;
     cursor: pointer;
+    // margin-top: 30%;
 }
 .read-more:hover{
     text-decoration: underline;
 }
 
-
+.blog-post:hover{
+    scale: 1.02;
+    transition: all .5s;
+}
 
 
 
@@ -122,7 +153,7 @@
     background-color: var(--white-main);
     overflow-y: scroll;
 
-    animation: appearSmoothly .36s ease-in-out;
+    animation: appearSmoothly .65s ease-in-out !important;
 
     .close-button{
         display: block;
@@ -193,15 +224,98 @@
             height: 25%;
         }
     }
+    @media(max-width: 380px){
+        .post-name{
+            text-align: center;
+            font-size: 1.8rem;
+        }
+    }
+    
 }
 
 @keyframes appearSmoothly{
     0%{
-        transform: translateY(80px);
-        opacity: .5;
+        scale: 1.07;
+        transform: translateX(-180px);
+        // opacity: .5;
+    }
+    60%{
+        scale: 1.07;
+        transform: translateX(0px);
     }
     100%{
-        opacity: 1;
-        transform: translateY(0px);
+        scale: 1;
+        // opacity: 1;
     }
+}
+
+
+.slideLeft{
+    animation: slideFromLeft 1s forwards;
+}
+
+@keyframes slideFromLeft{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.blog-post{
+    opacity: 0;
+}
+.blog-post:nth-child(3){
+    animation-delay: .2s;
+}
+.blog-post:nth-child(4){
+    animation-delay: .4s;
+}
+.blog-post:nth-child(5){
+    animation-delay: 0s;
+}
+.blog-post:nth-child(6){
+    animation-delay: .2s;
+}
+.blog-post:nth-child(7){
+    animation-delay: .4s;
+}
+.blog-post:nth-child(8){
+    animation-delay: 0s;
+}
+.blog-post:nth-child(9){
+    animation-delay: .2s;
+}
+.blog-post:nth-child(10){
+    animation-delay: .4s;
+}
+.blog-post:nth-child(11){
+    animation-delay: 0s;
+}
+.blog-post:nth-child(12){
+    animation-delay: .2s;
+}
+.blog-post:nth-child(13){
+    animation-delay: .4s;
+}
+.blog-post:nth-child(14){
+    animation-delay: 0s;
+}
+.blog-post:nth-child(15){
+    animation-delay: .2s;
+}
+.blog-post:nth-child(16){
+    animation-delay: .4s;
+}
+.blog-post:nth-child(17){
+    animation-delay: 0s;
+}
+.blog-post:nth-child(18){
+    animation-delay: .2s;
+}
+.blog-post:nth-child(19){
+    animation-delay: .4s;
 }

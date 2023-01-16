@@ -126,17 +126,30 @@ const observerCarousel = new IntersectionObserver(entries => {
 observerCarousel.observe(document.querySelector(".text-wrapper"))
 
 
-//faq animation
+//blog animation
 
-const accordionObserver = new IntersectionObserver(entries => {
+const observerBlog = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
-      entry.target.classList.add(`fadeInAccordion`)
+      entry.target.classList.add(`slideLeft`)
     }
   })
 })
 
-document.querySelectorAll(`.accordion`).forEach(accordion => accordionObserver.observe(accordion))
+document.querySelectorAll(".article").forEach(article => observerBlog.observe(article))
+
+
+//faq animation
+
+// const accordionObserver = new IntersectionObserver(entries => {
+//   entries.forEach(entry => {
+//     if(entry.isIntersecting){
+//       entry.target.classList.add(`fadeInAccordion`)
+//     }
+//   })
+// })
+
+// document.querySelectorAll(`.accordion`).forEach(accordion => accordionObserver.observe(accordion))
 
 
 
