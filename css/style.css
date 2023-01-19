@@ -620,10 +620,6 @@ h1 {
   scroll-behavior: smooth;
 }
 
-@font-face {
-  font-family: "MythbustersFont";
-  src: url(./fonts/MythBusters.ttf);
-}
 .mobile-navbar-toggle {
   display: none;
 }
@@ -2559,4 +2555,17 @@ h2 {
   .social-media {
     margin: 0 auto;
   }
+}
+#consent-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  opacity: 1;
+  background-color: var(--black-main);
+  transition: opacity 0.8s ease;
+}
+#consent-popup p {
+  color: var(--white-main);
 }/*# sourceMappingURL=style.css.map */

@@ -1,3 +1,32 @@
+// cookies consent
+
+// const storageType = localStorage
+// const consentPropertyName = 'rb_concent'
+// const video = document.querySelector(`iframe`)
+
+// video.src = ``
+
+// const shouldShowPopup = () => !storageType.getItem(consentPropertyName)
+// const saveToStorage = () => storageType.setItem(consentPropertyName, true)
+
+// const consentPopup = document.querySelector(`#consent-popup`)
+// const acceptBtn = document.querySelector(`#accept`)
+
+// const acceptFn = e =>{
+//   saveToStorage(storageType)
+//   consentPopup.style.opacity = 0
+//   video.src = `https://www.youtube-nocookie.com/embed/xwSltGbK46E`
+// }
+
+// acceptBtn.addEventListener(`click`, acceptFn)
+
+// if(shouldShowPopup()){
+//   consentPopup.style.opacity = 1
+//   console.log(`show`)
+// } else{
+//   consentPopup.style.opacity = 0
+// }
+
 
 //activation of animation on scroll
 
