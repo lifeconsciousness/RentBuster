@@ -1,6 +1,7 @@
 //navigation bar toggle on phone devises
 const navbar = document.querySelector('.navbar')
 const navbarToggle = document.querySelector('.mobile-navbar-toggle')
+let isOpen = false
 
 navbarToggle.addEventListener('click', ()=> {
     const visibility = navbar.getAttribute('data-visible')
@@ -8,9 +9,11 @@ navbarToggle.addEventListener('click', ()=> {
     if(visibility === "false"){
         navbar.setAttribute('data-visible', true)
         navbarToggle.setAttribute('aria-expanded', true)
+        isOpen = true
     } else{
         navbar.setAttribute('data-visible', false)
         navbarToggle.setAttribute('aria-expanded', false)
+        isOpen = false
     }
 })
 
@@ -64,8 +67,10 @@ let moon = document.querySelector('#theme-toggle')
 window.addEventListener("scroll", ()=>{
   let scrollTop = window.pageXOffset || document.documentElement.scrollTop
   if(scrollTop > theEnd){
-    navbarElement.style.top = '-70px'
-    moon.style.right = '-60px'
+    if(!isOpen){
+      navbarElement.style.top = '-70px'
+      moon.style.right = '-60px'
+    }
   } else{
     navbarElement.style.top = '0'
     moon.style.right = '0px'

@@ -40,7 +40,8 @@
 
             path{
                 // fill: rgb(172, 63, 223);
-                fill: rgb(0, 0, 0);
+                // fill: rgb(0, 0, 0);
+                fill: var(--black-main);
             }
         }
     }
@@ -62,7 +63,7 @@
 }
 
 .appearing-anim{
-    animation: appearSmooth 9s forwards;
+    animation: appearSmooth 10.5s forwards;
 }
 
 @keyframes appearSmooth{
@@ -70,7 +71,7 @@
         opacity: 0;
         scale: 1.1;
     }
-    70%{
+    80%{
         opacity: 0;
         scale: 1.1;
     }

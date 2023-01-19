@@ -8,8 +8,9 @@
   --indicator-light-black: rgba(0, 0, 0, 0.389);
   --indicator-dark-black: rgba(0, 0, 0, 0.785);
   --sans-serif-font: sans-serif;
-  --white-transparent: rgba(231, 230, 230, 0.5);
+  --white-transparent: var(--white-main);
   --burger-icon: url("../img/Hamburger_icon_white.svg");
+  --close-btn-color: url("../img/VisualEditor_-_Icon_-_Close_-_black.svg");
 }
 
 .blog {
@@ -52,7 +53,7 @@
 
 @media (max-width: 333px) {
   .blog-post {
-    height: 20rem !important;
+    height: 10rem !important;
   }
 }
 @media (max-width: 913px) {
@@ -95,6 +96,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
+  color: var(--black-main);
 }
 
 @media (max-width: 333px) {
@@ -112,6 +114,7 @@
   display: block;
   font-family: sans-serif;
   cursor: pointer;
+  color: var(--black-main);
 }
 
 .read-more:hover {
@@ -347,6 +350,22 @@
           animation-delay: 0.4s;
 }
 
+.space-between {
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 290px) {
+  .blog-post {
+    height: 1rem;
+  }
+  .space-between {
+    height: 100%;
+  }
+}
 .latest-news {
   position: absolute;
   top: 91vh;
@@ -382,7 +401,7 @@
   opacity: 0.7;
 }
 .particles .particle svg path {
-  fill: rgb(0, 0, 0);
+  fill: var(--black-main);
 }
 
 @-webkit-keyframes scale {
@@ -409,8 +428,8 @@
   }
 }
 .appearing-anim {
-  -webkit-animation: appearSmooth 9s forwards;
-          animation: appearSmooth 9s forwards;
+  -webkit-animation: appearSmooth 10.5s forwards;
+          animation: appearSmooth 10.5s forwards;
 }
 
 @-webkit-keyframes appearSmooth {
@@ -418,7 +437,7 @@
     opacity: 0;
     scale: 1.1;
   }
-  70% {
+  80% {
     opacity: 0;
     scale: 1.1;
   }
@@ -433,7 +452,7 @@
     opacity: 0;
     scale: 1.1;
   }
-  70% {
+  80% {
     opacity: 0;
     scale: 1.1;
   }
@@ -447,8 +466,12 @@
   --white-main: rgb(15, 14, 14);
   --indicator-light-black: rgba(171, 170, 170, 0.389);
   --indicator-dark-black: rgba(238, 238, 238, 0.851);
-  --white-transparent: rgba(26, 26, 26, 0.493);
+  --white-transparent: rgb(26, 26, 26);
   --burger-icon: url("../img/Hamburger_icon_black.svg");
+  --close-btn-color: url("../img/VisualEditor_-_Icon_-_Close_-_white.svg");
+}
+.dark-theme .latest-news {
+  color: white;
 }
 
 #cursor {
@@ -750,7 +773,15 @@ iframe {
     grid-template-rows: 1fr 0.5fr !important;
   }
   .about-us .carousel {
-    margin-left: 0;
+    margin-left: auto !important;
+  }
+  .about-us .text-wrapper {
+    padding-bottom: 0 !important;
+  }
+}
+@media (max-width: 1060px) and (min-width: 913px) {
+  .about-us .carousel {
+    margin-left: 10px !important;
   }
 }
 @media (max-width: 913px) {
@@ -772,9 +803,8 @@ iframe {
     z-index: 16;
     transform: translateX(100%);
     transition: transform 280ms ease-out;
+    border-left: var(--black-main) 2px solid;
     background: var(--white-transparent);
-    -webkit-backdrop-filter: blur(0.5rem);
-            backdrop-filter: blur(0.5rem);
   }
   .navbar li {
     margin-bottom: 0.8rem;
@@ -804,6 +834,8 @@ iframe {
     z-index: 17;
     border: 0;
     height: 10vh;
+    cursor: pointer;
+    height: 50px;
   }
   .button-bg {
     display: block;
@@ -814,9 +846,10 @@ iframe {
     right: -0.23rem;
     top: auto;
     z-index: 7;
+    cursor: pointer;
   }
   .mobile-navbar-toggle[aria-expanded=true] {
-    background: url("../img/VisualEditor_-_Icon_-_Close_-_white.svg");
+    background: var(--close-btn-color);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 4rem;
@@ -881,6 +914,14 @@ iframe {
   }
   .about-us .text-wrapper p {
     font-size: 1rem !important;
+  }
+  .about-us .carousel {
+    transform: translateY(-70px);
+  }
+}
+@media (max-width: 913px) and (max-width: 670px) {
+  .about-us .carousel {
+    transform: translateY(0px);
   }
 }
 @media (max-width: 350px) {
@@ -1058,6 +1099,7 @@ iframe {
   margin: 0 auto;
   top: 0.5rem;
   box-shadow: 0 0px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
 }
 @media (max-width: 913px) {
   .carousel {
@@ -1453,12 +1495,14 @@ body.loaded .fadeInLeft {
   height: auto;
   aspect-ratio: 1;
   border-radius: 1.5%;
+  opacity: 0;
 }
 .hww-container .picture-and-text .hww-text {
   font-family: "Inter", sans-serif;
   font-size: 1.17rem;
   margin: 0 3rem;
   color: var(--black-main);
+  opacity: 0;
 }
 @media (max-width: 913px) and (min-width: 502px) {
   .hww-container .picture-and-text:nth-child(2) .hww-img {
@@ -1514,13 +1558,30 @@ body.loaded .fadeInLeft {
   animation: fadeInr 2.2s both;
   background-size: cover;
   background-position: 50% 10%;
-  width: 150% !important;
   opacity: 1;
 }
 .hww-container .right-slideText3 {
   -webkit-animation: fadeInl 2.2s both;
   animation: fadeInl 2.2s both;
   opacity: 1;
+}
+@media (max-width: 913px) and (min-width: 500px) {
+  .hww-container .right-slideText {
+    -webkit-animation: fadeInl 2s both;
+    animation: fadeInl 2s both;
+  }
+  .hww-container .right-slideText1 {
+    -webkit-animation: fadeInr 2s both;
+    animation: fadeInr 2s both;
+  }
+  .hww-container .right-slideText2 {
+    -webkit-animation: fadeInl 2s both;
+    animation: fadeInl 2s both;
+  }
+  .hww-container .right-slideText3 {
+    -webkit-animation: fadeInr 2s both;
+    animation: fadeInr 2s both;
+  }
 }
 @-webkit-keyframes fadeInl {
   0% {
@@ -2220,6 +2281,17 @@ h2 {
     -webkit-animation: carousel-animation 1.6s both;
             animation: carousel-animation 1.6s both;
   }
+}
+@media (min-width: 913px) and (max-width: 913px) {
+  .carousel-animation {
+    -webkit-animation: none;
+            animation: none;
+  }
+  .carousel {
+    opacity: 1;
+  }
+}
+@media (min-width: 913px) {
   @-webkit-keyframes carousel-animation {
     0% {
       opacity: 0;
@@ -2242,8 +2314,11 @@ h2 {
 @media (max-width: 913px) {
   .about-us-text-animation {
     opacity: 1;
-    -webkit-animation: text-wrapper-animation 2.1s both;
-            animation: text-wrapper-animation 2.1s both;
+    -webkit-animation: none;
+            animation: none;
+  }
+  .text-wrapper {
+    opacity: 1;
   }
   @-webkit-keyframes text-wrapper-animation {
     0% {
@@ -2312,7 +2387,7 @@ h2 {
     display: block !important;
   }
   #theme-toggle-navbar img {
-    margin-left: 2rem;
+    margin-left: 1.4rem;
   }
 }
 #theme-toggle-navbar {

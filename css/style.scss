@@ -10,23 +10,32 @@
     --indicator-dark-black: rgba(0, 0, 0, 0.785);
 
     --sans-serif-font: sans-serif;
-    --white-transparent: rgba(231, 230, 230, 0.5);
+    // --white-transparent: rgba(231, 230, 230, 0.5);
+    --white-transparent: var(--white-main);
     --burger-icon: url("../img/Hamburger_icon_white.svg");
+    --close-btn-color: url("../img/VisualEditor_-_Icon_-_Close_-_black.svg");
 }
 
 @import './blog';
 @import './latest-news-message';
+@import './loader';
 
 
 .dark-theme{
     --black-main: rgb(238, 232, 232); 
     --white-main: rgb(15, 14, 14);
-
+    
     --indicator-light-black: rgba(171, 170, 170, 0.389);
     --indicator-dark-black: rgba(238, 238, 238, 0.851);
-
-    --white-transparent: rgba(26, 26, 26, 0.493);
+    
+    --white-transparent: rgb(26, 26, 26);
     --burger-icon: url("../img/Hamburger_icon_black.svg");
+    --close-btn-color: url("../img/VisualEditor_-_Icon_-_Close_-_white.svg");
+
+
+    .latest-news{
+        color: white;
+    }
 }
     
   
@@ -90,6 +99,11 @@ body{
     max-width: 100%;
     overflow-x: hidden;
     margin: 0;
+
+    // background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23cdcccf' fill-opacity='0.65' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
+    // background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23dcdbde' fill-opacity='0.65' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
 }
 
 .header{
@@ -372,7 +386,17 @@ iframe{
         grid-template-rows: 1fr 0.5fr !important;
 
         .carousel{
-            margin-left: 0;
+            margin-left: auto !important;
+        }
+        .text-wrapper{
+            padding-bottom: 0 !important;
+        }
+    }
+}
+@media(max-width: 1060px) and(min-width:913px){
+    .about-us{
+        .carousel{
+            margin-left: 10px !important;
         }
     }
 }
@@ -400,10 +424,11 @@ iframe{
         z-index: 16;
         transform: translateX(100%);
         transition: transform 280ms ease-out;
+        border-left: var(--black-main) 2px solid;
         //background: 
 
         background: var(--white-transparent);
-        backdrop-filter: blur(0.5rem);
+        // backdrop-filter: blur(0.5rem);
     }
 
     .navbar[data-visible = "true"]{
@@ -446,6 +471,8 @@ iframe{
         z-index: 17;
         border: 0;
         height: 10vh;
+        cursor: pointer;
+        height: 50px;
     }
 
     .button-bg{
@@ -458,10 +485,12 @@ iframe{
         right: -0.23rem;
         top: auto;
         z-index: 7;
+        cursor: pointer;
     }
 
     .mobile-navbar-toggle[aria-expanded = "true"]{
-        background: url("../img/VisualEditor_-_Icon_-_Close_-_white.svg");
+        background: var(--close-btn-color);
+
         background-repeat: no-repeat;
         background-size: 100%;
         width: 4rem;
@@ -540,6 +569,14 @@ iframe{
                 font-size: 1rem !important;
             }
         }
+        .carousel{
+            transform: translateY(-70px);
+        }
+        @media(max-width: 670px){
+            .carousel{
+                transform: translateY(0px);
+            }
+        }
     }
 }
 
@@ -551,10 +588,8 @@ iframe{
 }
     
 
-
-
 .text-wrapper{
-    //opacity: 0;
+    // opacity: 0;
     opacity: 1;
 }
 
@@ -761,6 +796,7 @@ iframe{
     margin: 0 auto;
     top: 0.5rem;
     box-shadow: 0 0px 15px rgba(0,0,0,0.2);
+    opacity: 0;
 
     @media(max-width: 913px){
         margin-top: 1rem;
@@ -1312,12 +1348,14 @@ body.loaded{
             
             aspect-ratio: 1;
             border-radius: 1.5%;
+            opacity: 0;
         }
         .hww-text{
             font-family: 'Inter', sans-serif;
             font-size: 1.17rem;
             margin: 0 3rem;
             color: var(--black-main);
+            opacity: 0;
         }
     }
     @media(max-width: 913px) and (min-width: 502px){
@@ -1412,7 +1450,7 @@ body.loaded{
 
         background-size: cover;
         background-position: 50% 10%;
-        width: 150% !important;
+        // width: 150% !important;
         opacity: 1;
     }
     .right-slideText3{
@@ -1424,7 +1462,32 @@ body.loaded{
     }
 
 
-    //.right-slideText3::after {content: "We operate on a no cure, no pay basis. Regarding the fees: Should our case be successful and your rent is reduced and retrospectively back-paid for the months you have stayed, our fee will be the difference between the old rent price and the new one (+ 21% BTW) . No charge will be levied until you receive a definite reduced rental price. Any costs with the Huurcommissee are covered by us. If the rent is not reduced, no charge will be levied.  ";}
+    @media(max-width: 913px) and (min-width: 500px){
+        .right-slideText{
+            -webkit-animation: fadeInl 2s both;
+            -moz-animation: fadeInl 2s both;
+            -o-animation: fadeInl 2s both;
+            animation: fadeInl 2s both;
+        }
+        .right-slideText1{
+            -webkit-animation: fadeInr 2s both;
+            -moz-animation: fadeInr 2s both;
+            -o-animation: fadeInr 2s both;
+            animation: fadeInr 2s both;
+        }
+        .right-slideText2{
+            -webkit-animation: fadeInl 2s both;
+            -moz-animation: fadeInl 2s both;
+            -o-animation: fadeInl 2s both;
+            animation: fadeInl 2s both;
+        }
+        .right-slideText3{
+            -webkit-animation: fadeInr 2s both;
+            -moz-animation: fadeInr 2s both;
+            -o-animation: fadeInr 2s both;
+            animation: fadeInr 2s both;
+        }
+    }
 
 
     @-webkit-keyframes fadeInl{
@@ -2225,6 +2288,15 @@ h2{
         opacity: 1;
         animation: carousel-animation 1.6s both;
     }
+    @media(max-width: 913px){
+        .carousel-animation{
+            animation: none;
+        }
+        .carousel{
+            opacity: 1;
+        }
+        
+    }
     
     @keyframes carousel-animation{
         0%{
@@ -2240,7 +2312,11 @@ h2{
 @media (max-width: 913px){
     .about-us-text-animation{
         opacity: 1;
-        animation: text-wrapper-animation 2.1s both;
+        // animation: text-wrapper-animation 2.1s both;
+        animation: none;
+    }
+    .text-wrapper{
+        opacity: 1;
     }
     
     @keyframes text-wrapper-animation{
@@ -2297,7 +2373,7 @@ h2{
         display: block !important;
 
         img{
-            margin-left: 2rem;
+            margin-left: 1.4rem;
         }
     }
 }
