@@ -106,6 +106,7 @@ body{
 
 }
 
+
 .header{
     position: fixed;
     background-color: var(--white-main);
@@ -934,8 +935,13 @@ iframe{
 }
 
 body.loaded{
+    .loader{
+        animation: loaderDisappear .8s forwards;
+        z-index: -100;
+    }
+
     .text-wrapper{
-        opacity: 1;
+        opacity: 0;
     }
     .video-wrapper{
         animation: videoFromRight 8.4s both;
@@ -1754,6 +1760,11 @@ body.loaded{
         color: rgba(0, 0, 0, 0.834);
         font-family: "Inter", sans-serif;
     }
+    @media(max-width: 333px){
+        p{
+            font-size: 14px !important;
+        }
+    }
 
     form{
         display: grid;
@@ -2311,12 +2322,13 @@ h2{
 }
 @media (max-width: 913px){
     .about-us-text-animation{
-        opacity: 1;
+        // opacity: 1;
         // animation: text-wrapper-animation 2.1s both;
         animation: none;
     }
     .text-wrapper{
-        opacity: 1;
+        // opacity: 1;
+        animation: text-wrapper-animation 1.3s forwards;
     }
     
     @keyframes text-wrapper-animation{

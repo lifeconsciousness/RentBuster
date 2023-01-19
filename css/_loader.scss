@@ -1,7 +1,69 @@
-// .loader{
-//     position: fixed;
-//     width: 100vw;
-//     height: 100vh;
-//     background-color: black;
-//     z-index: 99999;
-// }
+.loader{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    // background-color: black;
+    background-color: var(--white-main);
+    z-index: 999999;
+    display: grid;
+    place-items: center;
+    
+}
+
+@keyframes loaderDisappear{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+
+@mixin position-center($text-align: center) {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: $text-align;
+}
+
+
+.loading-text {
+	@include position-center;
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	span {
+		display: inline-block;
+		margin: 0 0px;
+		color: rgb(0, 0, 0);
+        font-family: 'Inter', sans-serif;
+        font-size: 2rem;
+
+        scale: 0.5;
+		@for $i from 0 through 6 {
+			&:nth-child(#{$i + 1}) {
+				animation: blur-text .7s (#{$i/7})+s infinite linear alternate;
+			}
+		}
+	}
+}
+
+@keyframes blur-text {
+	0% {
+        scale: 1;
+        transform: translateY(30px);
+    }
+
+	100% {
+        // scale: 1.2;
+        transform: translateY(0px);
+    }
+}

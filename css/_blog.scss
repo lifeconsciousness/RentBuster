@@ -162,6 +162,9 @@
         display: block;
         cursor: pointer;
     }
+    .close-button:active{
+        scale: .8;
+    }
 
     p{
         margin: 0;
@@ -238,17 +241,17 @@
 
 @keyframes appearSmoothly{
     0%{
-        scale: 1.07;
+        // scale: 1.07;
+        scale: 1.04;
         transform: translateX(-180px);
-        // opacity: .5;
     }
     60%{
-        scale: 1.07;
+        // scale: 1.07;
+        scale: 1.04;
         transform: translateX(0px);
     }
     100%{
         scale: 1;
-        // opacity: 1;
     }
 }
 

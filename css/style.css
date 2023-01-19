@@ -142,6 +142,9 @@
   display: block;
   cursor: pointer;
 }
+.article-expanded .close-button:active {
+  scale: 0.8;
+}
 .article-expanded p {
   margin: 0;
 }
@@ -210,11 +213,11 @@
 
 @-webkit-keyframes appearSmoothly {
   0% {
-    scale: 1.07;
+    scale: 1.04;
     transform: translateX(-180px);
   }
   60% {
-    scale: 1.07;
+    scale: 1.04;
     transform: translateX(0px);
   }
   100% {
@@ -224,11 +227,11 @@
 
 @keyframes appearSmoothly {
   0% {
-    scale: 1.07;
+    scale: 1.04;
     transform: translateX(-180px);
   }
   60% {
-    scale: 1.07;
+    scale: 1.04;
     transform: translateX(0px);
   }
   100% {
@@ -459,6 +462,107 @@
   100% {
     opacity: 1;
     scale: 1;
+  }
+}
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white-main);
+  z-index: 999999;
+  display: grid;
+  place-items: center;
+}
+
+@-webkit-keyframes loaderDisappear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes loaderDisappear {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.loading-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+}
+.loading-text span {
+  display: inline-block;
+  margin: 0 0px;
+  color: rgb(0, 0, 0);
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  scale: 0.5;
+}
+.loading-text span:nth-child(1) {
+  -webkit-animation: blur-text 0.7s 0s infinite linear alternate;
+          animation: blur-text 0.7s 0s infinite linear alternate;
+}
+.loading-text span:nth-child(2) {
+  -webkit-animation: blur-text 0.7s 0.1428571429s infinite linear alternate;
+          animation: blur-text 0.7s 0.1428571429s infinite linear alternate;
+}
+.loading-text span:nth-child(3) {
+  -webkit-animation: blur-text 0.7s 0.2857142857s infinite linear alternate;
+          animation: blur-text 0.7s 0.2857142857s infinite linear alternate;
+}
+.loading-text span:nth-child(4) {
+  -webkit-animation: blur-text 0.7s 0.4285714286s infinite linear alternate;
+          animation: blur-text 0.7s 0.4285714286s infinite linear alternate;
+}
+.loading-text span:nth-child(5) {
+  -webkit-animation: blur-text 0.7s 0.5714285714s infinite linear alternate;
+          animation: blur-text 0.7s 0.5714285714s infinite linear alternate;
+}
+.loading-text span:nth-child(6) {
+  -webkit-animation: blur-text 0.7s 0.7142857143s infinite linear alternate;
+          animation: blur-text 0.7s 0.7142857143s infinite linear alternate;
+}
+.loading-text span:nth-child(7) {
+  -webkit-animation: blur-text 0.7s 0.8571428571s infinite linear alternate;
+          animation: blur-text 0.7s 0.8571428571s infinite linear alternate;
+}
+
+@-webkit-keyframes blur-text {
+  0% {
+    scale: 1;
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes blur-text {
+  0% {
+    scale: 1;
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 .dark-theme {
@@ -1202,8 +1306,13 @@ iframe {
   opacity: 1;
 }
 
+body.loaded .loader {
+  -webkit-animation: loaderDisappear 0.8s forwards;
+          animation: loaderDisappear 0.8s forwards;
+  z-index: -100;
+}
 body.loaded .text-wrapper {
-  opacity: 1;
+  opacity: 0;
 }
 body.loaded .video-wrapper {
   -webkit-animation: videoFromRight 8.4s both;
@@ -1805,6 +1914,11 @@ body.loaded .fadeInLeft {
   color: rgba(0, 0, 0, 0.834);
   font-family: "Inter", sans-serif;
 }
+@media (max-width: 333px) {
+  .contact-us p {
+    font-size: 14px !important;
+  }
+}
 .contact-us form {
   display: grid;
   grid-template-columns: 1fr;
@@ -2313,12 +2427,12 @@ h2 {
 }
 @media (max-width: 913px) {
   .about-us-text-animation {
-    opacity: 1;
     -webkit-animation: none;
             animation: none;
   }
   .text-wrapper {
-    opacity: 1;
+    -webkit-animation: text-wrapper-animation 1.3s forwards;
+            animation: text-wrapper-animation 1.3s forwards;
   }
   @-webkit-keyframes text-wrapper-animation {
     0% {
