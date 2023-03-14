@@ -1,0 +1,87 @@
+.donate-btn {
+    color: rgb(46, 46, 220) !important;
+    // color: #3ac4d6 !important;
+    // color: blue !important;
+
+    position: relative;
+    // width: 300px;
+    // height: 200px;
+    // overflow: hidden;
+    z-index: 1000;
+    transition: 1s all;
+
+    &:hover {
+        // background-color: white;
+        color: rgb(20, 20, 20) !important;
+        transform: scale(1.1);
+        transition: all 1s ease-in-out;
+
+        .donate-shadow {
+            z-index: -1 !important;
+            transform: translateX(15px);
+            opacity: 0.6;
+            // transform: scale(0.01);
+            // transform: scale(0.3);
+            transform: scale(0.5);
+            border-radius: 50%;
+            // transform: translateY(-20px);
+        }
+
+        @media (max-width: 913px) {
+            .donate-shadow {
+                transform: scale(0.2);
+                transform: translateX(-300px);
+                transform: translateY(200px);
+                transform: scale(0.6);
+
+            }
+        }
+    }
+}
+
+
+
+
+.donate-shadow {
+    border-radius: 0;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+
+
+    transition: 1s;
+    opacity: 0;
+    z-index: 1 !important;
+    transform: scale(0.2);
+
+    position: absolute;
+    top: -630%;
+    right: -182%;
+    transform-origin: center;
+
+    box-shadow:
+        inset 0 0 50px #fff,
+        inset 20px 0 80px rgb(85, 0, 255),
+        inset -20px 0 80px #0ff,
+        inset 20px 0 300px rgb(22, 111, 201),
+        inset -20px 0 300px #0ff,
+        0 0 50px #fff,
+        -10px 0 80px rgb(0, 38, 255),
+        10px 0 80px #0ff;
+
+    // box-shadow:
+    //     inset 0 0 50px #fff,
+    //     inset 20px 0 80px #f0f,
+    //     inset -20px 0 80px #0ff,
+    //     inset 20px 0 300px #f0f,
+    //     inset -20px 0 300px #0ff,
+    //     0 0 50px #fff,
+    //     -10px 0 80px #f0f,
+    //     10px 0 80px #0ff;
+}
+
+// .navbar {
+//     li {
+//         z-index: 10 !important;
+//     }
+// }
