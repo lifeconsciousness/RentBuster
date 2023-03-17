@@ -3,6 +3,8 @@
 
 
 function loadContent() {
+  localStorage.setItem('cookieChoice', '0')
+
   const video = document.querySelector('.youtube-video')
   video.src = 'https://www.youtube-nocookie.com/embed/xwSltGbK46E'
 
@@ -217,4 +219,8 @@ iconNavbar.onclick = function(){
 document.addEventListener('DOMContentLoaded', () => {
   const loadButton = document.querySelector('.load-button');
   loadButton.addEventListener('click', loadContent);
+
+  if(localStorage.getItem('cookieChoice') === '0'){
+    loadContent()
+  }
 });

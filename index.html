@@ -510,13 +510,18 @@
   </div>
 
   <script>
-    const loadButton = document.querySelector('.load-button');
     const website = document.querySelector('.website');
     const consentPopup = document.querySelector('.consent-popup');
-    loadButton.addEventListener('click', () => {
+    if(localStorage.getItem('cookieChoice') === '0' ){
       website.style.display = 'block';
       consentPopup.style.display = 'none';
-    });
+    } else{
+      const loadButton = document.querySelector('.load-button');
+      loadButton.addEventListener('click', () => {
+        website.style.display = 'block';
+        consentPopup.style.display = 'none';
+      });
+    }
   </script>
 
   </body>
