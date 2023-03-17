@@ -448,13 +448,13 @@
   }
 }
 .donate-btn {
-  color: rgb(46, 46, 220) !important;
+  color: rgb(40, 40, 255) !important;
   position: relative;
   z-index: 1000;
   transition: 1s all;
 }
 .donate-btn:hover {
-  color: rgb(20, 20, 20) !important;
+  color: var(--black-main) !important;
   transform: scale(1.1);
   transition: all 1s ease-in-out;
 }
@@ -2224,16 +2224,34 @@ h2 {
     margin: 0 auto;
   }
 }
-#consent-popup {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 2rem;
-  opacity: 1;
-  background-color: var(--black-main);
-  transition: opacity 0.8s ease;
+.website {
+  display: none;
 }
-#consent-popup p {
-  color: var(--white-main);
+
+.consent-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.info * {
+  font-family: "Inter", sans-serif;
+}
+.info p {
+  text-align: center;
+  padding: 0 20px;
+}
+.info button {
+  width: 130px;
+  height: 50px;
+  scale: 0.7;
+  font-size: 20px;
 }/*# sourceMappingURL=style.css.map */

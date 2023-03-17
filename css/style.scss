@@ -2646,18 +2646,42 @@ h2 {
 
 
 
-#consent-popup {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 2rem;
-    opacity: 1;
-    background-color: var(--black-main);
 
-    p {
-        color: var(--white-main);
+
+
+.website {
+    display: none;
+}
+
+.consent-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    // padding: 2rem;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    * {
+        font-family: "Inter", sans-serif;
     }
 
-    transition: opacity .8s ease;
+    p {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    button {
+        width: 130px;
+        height: 50px;
+        scale: 0.7;
+        font-size: 20px;
+    }
 }

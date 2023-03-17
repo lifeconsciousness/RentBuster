@@ -48,3 +48,5 @@ document.addEventListener('mousemove', onMouseMove, false)
 
 initCursor()
 updateCursor()
+
+

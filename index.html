@@ -44,6 +44,34 @@
 
   </head>
   <body>
+     <!-- Cookies consent popup -->
+
+    <div class="consent-popup">
+      <div class="info">
+
+        <p>By using this website you agree to our cookies. </p>
+        <button class="load-button">Ok</button>
+      </div>
+    </div>
+
+    
+
+    <div class="website">
+
+    <!-- Loader -->
+
+    <div class="loader">
+      <div class="loading-text">
+        <span class="loading-text-words">L</span>
+        <span class="loading-text-words">O</span>
+        <span class="loading-text-words">A</span>
+        <span class="loading-text-words">D</span>
+        <span class="loading-text-words">I</span>
+        <span class="loading-text-words">N</span>
+        <span class="loading-text-words">G</span>
+      </div>
+    </div>
+
     <header class="header" id = "header">
       <div class="navbar-wrapper">
         <!-- Logo -->
@@ -147,26 +175,9 @@
       </p>
     </a>
 
-    <!-- Loader -->
+    
 
-    <div class="loader">
-        <div class="loading-text">
-          <span class="loading-text-words">L</span>
-          <span class="loading-text-words">O</span>
-          <span class="loading-text-words">A</span>
-          <span class="loading-text-words">D</span>
-          <span class="loading-text-words">I</span>
-          <span class="loading-text-words">N</span>
-          <span class="loading-text-words">G</span>
-        </div>
-    </div>
-
-    <!-- Cookies consent popup -->
-
-    <!-- <div id="consent-popup" class="hidden">
-      <p>By using this site you agree to our <a href="#">Terms and conditions</a>.
-      Please <a href="#" id="accept">Accept</a> these before using our site.</p>
-    </div> -->
+   
 
     <!-- Main body of the website -->
 
@@ -189,7 +200,7 @@
           </div>
           
           <div class="video-wrapper">
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xwSltGbK46E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe class="youtube-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
           
         </div>
@@ -495,35 +506,18 @@
     <script src="./js/carousel.js"></script>
     <script src="./js/cursor.js"></script>
     <script src="./js/navbar.js"></script>
-
-    <script>
-      //dark theme toggle
-      let icon = document.getElementById("moon")
-      let iconNavbar = document.getElementById("moon-navbar")
-
-      icon.onclick = function(){
-        document.body.classList.toggle("dark-theme");   
-        if(document.body.classList.contains("dark-theme")){
-          icon.src = "./translatedPages/sun.png";
-          iconNavbar.src = "./translatedPages/sun.png";
-        }else{
-          icon.src = "./translatedPages/moon.png";
-          iconNavbar.src = "./translatedPages/moon.png";
-        }     
-      }
-
-      iconNavbar.onclick = function(){
-        document.body.classList.toggle("dark-theme");   
-        if(document.body.classList.contains("dark-theme")){
-          iconNavbar.src = "./translatedPages/sun.png";
-          icon.src = "./translatedPages/sun.png";
-        }else{
-          iconNavbar.src = "./translatedPages/moon.png";
-          icon.src = "./translatedPages/moon.png";
-        }     
-      }
-
-    </script>
     
+  </div>
+
+  <script>
+    const loadButton = document.querySelector('.load-button');
+    const website = document.querySelector('.website');
+    const consentPopup = document.querySelector('.consent-popup');
+    loadButton.addEventListener('click', () => {
+      website.style.display = 'block';
+      consentPopup.style.display = 'none';
+    });
+  </script>
+
   </body>
 </html>

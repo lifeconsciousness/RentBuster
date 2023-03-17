@@ -1,32 +1,10 @@
-// cookies consent
 
-// const storageType = localStorage
-// const consentPropertyName = 'rb_concent'
-// const video = document.querySelector(`iframe`)
 
-// video.src = ``
 
-// const shouldShowPopup = () => !storageType.getItem(consentPropertyName)
-// const saveToStorage = () => storageType.setItem(consentPropertyName, true)
 
-// const consentPopup = document.querySelector(`#consent-popup`)
-// const acceptBtn = document.querySelector(`#accept`)
-
-// const acceptFn = e =>{
-//   saveToStorage(storageType)
-//   consentPopup.style.opacity = 0
-//   video.src = `https://www.youtube-nocookie.com/embed/xwSltGbK46E`
-// }
-
-// acceptBtn.addEventListener(`click`, acceptFn)
-
-// if(shouldShowPopup()){
-//   consentPopup.style.opacity = 1
-//   console.log(`show`)
-// } else{
-//   consentPopup.style.opacity = 0
-// }
-
+function loadContent() {
+  const video = document.querySelector('.youtube-video')
+  video.src = 'https://www.youtube-nocookie.com/embed/xwSltGbK46E'
 
 //activation of animation on scroll
 
@@ -207,5 +185,36 @@ closeButtons.forEach((button, index) => button.addEventListener(`click`,()=>{
 
 
 
+//dark theme toggle
+let icon = document.getElementById("moon")
+let iconNavbar = document.getElementById("moon-navbar")
+
+icon.onclick = function(){
+  document.body.classList.toggle("dark-theme");   
+  if(document.body.classList.contains("dark-theme")){
+    icon.src = "./translatedPages/sun.png";
+    iconNavbar.src = "./translatedPages/sun.png";
+  }else{
+    icon.src = "./translatedPages/moon.png";
+    iconNavbar.src = "./translatedPages/moon.png";
+  }     
+}
+
+iconNavbar.onclick = function(){
+  document.body.classList.toggle("dark-theme");   
+  if(document.body.classList.contains("dark-theme")){
+    iconNavbar.src = "./translatedPages/sun.png";
+    icon.src = "./translatedPages/sun.png";
+  }else{
+    iconNavbar.src = "./translatedPages/moon.png";
+    icon.src = "./translatedPages/moon.png";
+  }     
+}
 
 
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loadButton = document.querySelector('.load-button');
+  loadButton.addEventListener('click', loadContent);
+});
