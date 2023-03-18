@@ -43,6 +43,33 @@
 
   </head>
   <body class="dark-thoeme">
+    <!-- Cookies consent popup -->
+
+    <div class="consent-popup">
+      <div class="info">
+
+        <p>By using this website you agree to our cookies. </p>
+        <button class="load-button">Ok</button>
+      </div>
+    </div>
+
+    <div class="website">
+          <!-- Loader -->
+
+    <div class="loader">
+      <div class="loading-text">
+        <span class="loading-text-words">L</span>
+        <span class="loading-text-words">O</span>
+        <span class="loading-text-words">A</span>
+        <span class="loading-text-words">D</span>
+        <span class="loading-text-words">I</span>
+        <span class="loading-text-words">N</span>
+        <span class="loading-text-words">G</span>
+      </div>
+    </div>
+
+
+
     <header class="header" id = "header">
       <div class="navbar-wrapper">
         <!-- Logo -->
@@ -435,5 +462,23 @@ Dat is ook alleen het geval als u een contract voor bepaalde tijd hebt (minder d
     <script src="../js/carousel.js"></script>
     <script src="../js/cursor.js"></script>
     <script src="../js/navbar.js"></script>
+
+
+  </div>
+
+  <script>
+    const website = document.querySelector('.website');
+    const consentPopup = document.querySelector('.consent-popup');
+    if(localStorage.getItem('cookieChoice') === '0' ){
+      website.style.display = 'block';
+      consentPopup.style.display = 'none';
+    } else{
+      const loadButton = document.querySelector('.load-button');
+      loadButton.addEventListener('click', () => {
+        website.style.display = 'block';
+        consentPopup.style.display = 'none';
+      });
+    }
+  </script>
   </body>
 </html>
