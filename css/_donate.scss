@@ -33,9 +33,11 @@
         @media (max-width: 913px) {
             .donate-shadow {
                 transform: scale(0.2);
-                transform: translateX(-300px);
-                transform: translateY(200px);
-                transform: scale(0.6);
+                transform: translateX(-30px);
+                margin-top: 5px;
+                // transform: translateY(10px);
+                // transform: scale(0.6);
+                scale: 0.45;
 
             }
         }

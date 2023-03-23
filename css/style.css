@@ -468,9 +468,9 @@
 @media (max-width: 913px) {
   .donate-btn:hover .donate-shadow {
     transform: scale(0.2);
-    transform: translateX(-300px);
-    transform: translateY(200px);
-    transform: scale(0.6);
+    transform: translateX(-30px);
+    margin-top: 5px;
+    scale: 0.45;
   }
 }
 
@@ -650,15 +650,12 @@ nav {
   display: flex;
   margin: 0;
   margin-right: 1.05rem;
-  justify-content: center;
-  align-items: center;
   background: none;
   font-size: 1.55rem;
 }
 .navbar li {
   list-style-type: none;
   margin-left: 15px;
-  text-align: center;
 }
 .navbar .underline-animation {
   position: relative;
