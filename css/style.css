@@ -461,7 +461,7 @@
 .donate-btn:hover .donate-shadow {
   z-index: -1 !important;
   transform: translateX(15px);
-  opacity: 0.6;
+  opacity: 0.55;
   transform: scale(0.5);
   border-radius: 50%;
 }
@@ -839,6 +839,9 @@ iframe {
     height: 10vh;
     cursor: pointer;
     height: 50px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
   }
   .button-bg {
     display: block;
@@ -850,6 +853,9 @@ iframe {
     top: auto;
     z-index: 7;
     cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
   }
   .mobile-navbar-toggle[aria-expanded=true] {
     background: var(--close-btn-color);
@@ -1392,6 +1398,7 @@ body.loaded .fadeInLeft {
   align-items: center;
   padding: 0 6rem;
   max-width: 1000px;
+  min-height: 100vh;
 }
 .hww-container h1 {
   font-size: 5rem;
@@ -1466,6 +1473,7 @@ body.loaded .fadeInLeft {
   animation: fadeInr 2.2s both;
   background-size: cover;
   background-position: 50% 10%;
+  width: 150% !important;
   opacity: 1;
 }
 .hww-container .right-slideText3 {

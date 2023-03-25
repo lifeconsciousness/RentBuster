@@ -504,6 +504,7 @@ iframe {
         height: 10vh;
         cursor: pointer;
         height: 50px;
+        user-select: none;
     }
 
     .button-bg {
@@ -517,6 +518,7 @@ iframe {
         top: auto;
         z-index: 7;
         cursor: pointer;
+        user-select: none;
     }
 
     .mobile-navbar-toggle[aria-expanded="true"] {
@@ -1426,6 +1428,7 @@ body.loaded {
     align-items: center;
     padding: 0 6rem;
     max-width: 1000px;
+    min-height: 100vh;
 
     h1 {
         font-size: 5rem;
@@ -1484,6 +1487,7 @@ body.loaded {
         animation: fadeInl 2s both;
         opacity: 1;
         width: 150% !important;
+        // max-width: 150px;
 
     }
 
@@ -1555,7 +1559,7 @@ body.loaded {
 
         background-size: cover;
         background-position: 50% 10%;
-        // width: 150% !important;
+        width: 150% !important; //CHANGED RECENTLY
         opacity: 1;
     }
 
